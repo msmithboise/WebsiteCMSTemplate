@@ -9,12 +9,25 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebsiteTemplateProject.Models;
+using WebsiteTemplateProject.Service;
 
 namespace WebsiteTemplateProject.Controllers
 {
     public class HomePageController : ApiController
     {
         private HomePageDBEntities1 db = new HomePageDBEntities1();
+
+        //IHomePageService HomePageService;
+
+        //public HomePageController(IHomePageService homePageService)
+        //{
+        //    HomePageService = homePageService;
+        //}
+
+        public HomePageController()
+        {
+
+        }
 
         // GET: api/HomePage
         public IQueryable<HomePage> GetHomePages()
@@ -74,13 +87,17 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(HomePage))]
         public IHttpActionResult PostHomePage(HomePage homePage)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            HomePageService homeService = new HomePageService();
 
-            db.HomePages.Add(homePage);
-            db.SaveChanges();
+            homeService.UpsertHomePage(homePage,db);
+
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
+
+            //db.HomePages.Add(homePage);
+            //db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = homePage.UserID }, homePage);
         }

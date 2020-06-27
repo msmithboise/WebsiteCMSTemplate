@@ -25,6 +25,6 @@ namespace WebsiteTemplateProject.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<HomePage> HomePages { get; set; }
+        public DbSet<HomePage> HomePages { get; set; }
     }
 }
