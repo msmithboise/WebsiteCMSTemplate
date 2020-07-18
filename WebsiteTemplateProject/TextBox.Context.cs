@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebsiteTemplateProject.Models
+namespace WebsiteTemplateProject
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HomePageDBEntities1 : DbContext
+    public partial class WebsiteDBEntities1 : DbContext
     {
-        public HomePageDBEntities1()
-            : base("name=HomePageDBEntities1")
+        public WebsiteDBEntities1()
+            : base("name=WebsiteDBEntities1")
         {
         }
     
@@ -25,8 +25,6 @@ namespace WebsiteTemplateProject.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<HomePage> HomePages { get; set; }
-
-        public System.Data.Entity.DbSet<WebsiteTemplateProject.TextBox> TextBoxes { get; set; }
+        public virtual DbSet<TextBox> TextBoxes { get; set; }
     }
 }

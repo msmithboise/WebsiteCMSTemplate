@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TextBoxDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TextBox">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Color" Type="varchar" MaxLength="50" />
+          <Property Name="FontSize" Type="varchar" MaxLength="50" />
+          <Property Name="TextAlign" Type="varchar" MaxLength="50" />
+          <Property Name="PaddingTop" Type="varchar" MaxLength="50" />
+          <Property Name="PaddingBottom" Type="varchar" MaxLength="50" />
+          <Property Name="PaddingLeft" Type="varchar" MaxLength="50" />
+          <Property Name="PaddingRight" Type="varchar" MaxLength="50" />
+          <Property Name="Top" Type="varchar" MaxLength="50" />
+          <Property Name="Bottom" Type="varchar" MaxLength="50" />
+          <Property Name="Left" Type="varchar" MaxLength="50" />
+          <Property Name="Right" Type="varchar" MaxLength="50" />
+          <Property Name="MarginTop" Type="varchar" MaxLength="50" />
+          <Property Name="MarginBottom" Type="varchar" MaxLength="50" />
+          <Property Name="MarginLeft" Type="varchar" MaxLength="50" />
+          <Property Name="MarginRight" Type="varchar" MaxLength="50" />
+          <Property Name="LineHeight" Type="varchar" MaxLength="50" />
+          <Property Name="FontFamily" Type="varchar" MaxLength="50" />
+          <Property Name="Border" Type="varchar" MaxLength="50" />
+          <Property Name="BorderStyle" Type="varchar" MaxLength="50" />
+          <Property Name="CustomField" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="TextBoxDBModelStoreContainer">
+          <EntitySet Name="TextBox" EntityType="Self.TextBox" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TextBoxDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TextBox">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FontSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TextAlign" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaddingTop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaddingBottom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaddingLeft" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaddingRight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Top" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bottom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Left" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Right" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MarginTop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MarginBottom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MarginLeft" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MarginRight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LineHeight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FontFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Border" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BorderStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomField" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="WebsiteDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TextBoxes" EntityType="Self.TextBox" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TextBoxDBModelStoreContainer" CdmEntityContainer="WebsiteDBEntities1">
+          <EntitySetMapping Name="TextBoxes">
+            <EntityTypeMapping TypeName="TextBoxDBModel.TextBox">
+              <MappingFragment StoreEntitySet="TextBox">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="FontSize" ColumnName="FontSize" />
+                <ScalarProperty Name="TextAlign" ColumnName="TextAlign" />
+                <ScalarProperty Name="PaddingTop" ColumnName="PaddingTop" />
+                <ScalarProperty Name="PaddingBottom" ColumnName="PaddingBottom" />
+                <ScalarProperty Name="PaddingLeft" ColumnName="PaddingLeft" />
+                <ScalarProperty Name="PaddingRight" ColumnName="PaddingRight" />
+                <ScalarProperty Name="Top" ColumnName="Top" />
+                <ScalarProperty Name="Bottom" ColumnName="Bottom" />
+                <ScalarProperty Name="Left" ColumnName="Left" />
+                <ScalarProperty Name="Right" ColumnName="Right" />
+                <ScalarProperty Name="MarginTop" ColumnName="MarginTop" />
+                <ScalarProperty Name="MarginBottom" ColumnName="MarginBottom" />
+                <ScalarProperty Name="MarginLeft" ColumnName="MarginLeft" />
+                <ScalarProperty Name="MarginRight" ColumnName="MarginRight" />
+                <ScalarProperty Name="LineHeight" ColumnName="LineHeight" />
+                <ScalarProperty Name="FontFamily" ColumnName="FontFamily" />
+                <ScalarProperty Name="Border" ColumnName="Border" />
+                <ScalarProperty Name="BorderStyle" ColumnName="BorderStyle" />
+                <ScalarProperty Name="CustomField" ColumnName="CustomField" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
