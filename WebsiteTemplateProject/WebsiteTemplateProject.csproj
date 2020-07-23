@@ -176,7 +176,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
-    <Compile Include="Controllers\TextBoxController.cs" />
+    <Compile Include="Controllers\TextBoxOneController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WebPageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -215,29 +215,29 @@
     <Compile Include="Models\HomePage.cs">
       <DependentUpon>DBHomePage.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TextBox.cs">
+      <DependentUpon>TextBoxOne.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TextBoxOne.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TextBoxOne.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TextBoxOne.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TextBoxOne.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TextBoxOne.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TextBoxOne.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\WebPage.cs">
       <DependentUpon>DBWebPage.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\HomePageService.cs" />
-    <Compile Include="TextBox.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TextBox.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TextBox.cs">
-      <DependentUpon>TextBox.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TextBox.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TextBox.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="TextBox1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TextBox.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -267,6 +267,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBWebPage.edmx</DependentUpon>
       <LastGenOutput>DBWebPage.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\TextBoxOne.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TextBoxOne.edmx</DependentUpon>
+      <LastGenOutput>TextBoxOne.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\TextBoxOne.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TextBoxOne.edmx</DependentUpon>
+      <LastGenOutput>TextBoxOne.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -303,22 +313,19 @@
     <Content Include="Models\DBHomePage.edmx.diagram">
       <DependentUpon>DBHomePage.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\TextBoxOne.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TextBoxOne.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\TextBoxOne.edmx.diagram">
+      <DependentUpon>TextBoxOne.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="TextBox.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TextBox.edmx</DependentUpon>
-      <LastGenOutput>TextBox.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="TextBox.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TextBox.edmx</DependentUpon>
-      <LastGenOutput>TextBox1.cs</LastGenOutput>
-    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -333,13 +340,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <EntityDeploy Include="TextBox.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TextBox.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="TextBox.edmx.diagram">
-      <DependentUpon>TextBox.edmx</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

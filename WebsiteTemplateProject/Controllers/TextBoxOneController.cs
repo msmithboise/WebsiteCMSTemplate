@@ -8,22 +8,21 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using WebsiteTemplateProject;
 using WebsiteTemplateProject.Models;
 
 namespace WebsiteTemplateProject.Controllers
 {
-    public class TextBoxController : ApiController
+    public class TextBoxOneController : ApiController
     {
-        private HomePageDBEntities1 db = new HomePageDBEntities1();
+        private TextBoxOneDBEntities db = new TextBoxOneDBEntities();
 
-        // GET: api/TextBox
+        // GET: api/TextBoxOne
         public IQueryable<TextBox> GetTextBoxes()
         {
             return db.TextBoxes;
         }
 
-        // GET: api/TextBox/5
+        // GET: api/TextBoxOne/5
         [ResponseType(typeof(TextBox))]
         public IHttpActionResult GetTextBox(int id)
         {
@@ -36,7 +35,7 @@ namespace WebsiteTemplateProject.Controllers
             return Ok(textBox);
         }
 
-        // PUT: api/TextBox/5
+        // PUT: api/TextBoxOne/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutTextBox(int id, TextBox textBox)
         {
@@ -71,7 +70,7 @@ namespace WebsiteTemplateProject.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/TextBox
+        // POST: api/TextBoxOne
         [ResponseType(typeof(TextBox))]
         public IHttpActionResult PostTextBox(TextBox textBox)
         {
@@ -86,7 +85,7 @@ namespace WebsiteTemplateProject.Controllers
             return CreatedAtRoute("DefaultApi", new { id = textBox.Id }, textBox);
         }
 
-        // DELETE: api/TextBox/5
+        // DELETE: api/TextBoxOne/5
         [ResponseType(typeof(TextBox))]
         public IHttpActionResult DeleteTextBox(int id)
         {

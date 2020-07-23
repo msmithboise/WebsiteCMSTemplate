@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebsiteTemplateProject
+namespace WebsiteTemplateProject.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WebsiteDBEntities1 : DbContext
+    public partial class TextBoxOneDBEntities : DbContext
     {
-        public WebsiteDBEntities1()
-            : base("name=WebsiteDBEntities1")
+        public TextBoxOneDBEntities()
+            : base("name=TextBoxOneDBEntities")
         {
         }
     

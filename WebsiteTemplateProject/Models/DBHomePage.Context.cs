@@ -27,6 +27,6 @@ namespace WebsiteTemplateProject.Models
     
         public DbSet<HomePage> HomePages { get; set; }
 
-        public System.Data.Entity.DbSet<WebsiteTemplateProject.TextBox> TextBoxes { get; set; }
+    
     }
 }

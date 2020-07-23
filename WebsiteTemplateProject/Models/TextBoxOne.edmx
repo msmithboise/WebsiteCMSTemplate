@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TextBoxDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="TextBoxOneDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TextBox">
           <Key>
             <PropertyRef Name="Id" />
@@ -31,14 +31,14 @@
           <Property Name="BorderStyle" Type="varchar" MaxLength="50" />
           <Property Name="CustomField" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityContainer Name="TextBoxDBModelStoreContainer">
+        <EntityContainer Name="TextBoxOneDBModelStoreContainer">
           <EntitySet Name="TextBox" EntityType="Self.TextBox" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="TextBoxDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="TextBoxOneDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="TextBox">
           <Key>
             <PropertyRef Name="Id" />
@@ -65,7 +65,7 @@
           <Property Name="BorderStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CustomField" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="WebsiteDBEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="TextBoxOneDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TextBoxes" EntityType="Self.TextBox" />
         </EntityContainer>
       </Schema>
@@ -73,9 +73,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TextBoxDBModelStoreContainer" CdmEntityContainer="WebsiteDBEntities1">
+        <EntityContainerMapping StorageEntityContainer="TextBoxOneDBModelStoreContainer" CdmEntityContainer="TextBoxOneDBEntities">
           <EntitySetMapping Name="TextBoxes">
-            <EntityTypeMapping TypeName="TextBoxDBModel.TextBox">
+            <EntityTypeMapping TypeName="TextBoxOneDBModel.TextBox">
               <MappingFragment StoreEntitySet="TextBox">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Color" ColumnName="Color" />

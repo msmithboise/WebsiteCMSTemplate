@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebsiteTemplateProject
+namespace WebsiteTemplateProject.Models
 {
     using System;
     using System.Collections.Generic;
