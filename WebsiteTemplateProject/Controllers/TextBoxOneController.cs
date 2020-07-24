@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebsiteTemplateProject.Models;
+using WebsiteTemplateProject.Service;
 
 namespace WebsiteTemplateProject.Controllers
 {
@@ -74,13 +75,11 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(TextBox))]
         public IHttpActionResult PostTextBox(TextBox textBox)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            TextBoxOneService textBoxOneService = new TextBoxOneService();
 
-            db.TextBoxes.Add(textBox);
-            db.SaveChanges();
+            textBoxOneService.UpsertTextBoxOne(textBox, db);
+
+           
 
             return CreatedAtRoute("DefaultApi", new { id = textBox.Id }, textBox);
         }
