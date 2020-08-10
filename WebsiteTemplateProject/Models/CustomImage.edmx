@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WebsiteDBModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CustomImage">
+          <Key>
+            <PropertyRef Name="ImageId" />
+          </Key>
+          <Property Name="ImageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PageId" Type="int" />
+          <Property Name="backgroundAttachment" Type="varchar" MaxLength="500" />
+          <Property Name="backgroundClip" Type="varchar" MaxLength="500" />
+          <Property Name="backgroundImage" Type="varchar" MaxLength="500" />
+          <Property Name="backgroundOrigin" Type="varchar" MaxLength="50" />
+          <Property Name="backgroundPosition" Type="varchar" MaxLength="50" />
+          <Property Name="backgroundRepeat" Type="varchar" MaxLength="50" />
+          <Property Name="backgroundSize" Type="varchar" MaxLength="50" />
+          <Property Name="background" Type="varchar" MaxLength="500" />
+          <Property Name="border" Type="varchar" MaxLength="50" />
+          <Property Name="borderBottom" Type="varchar" MaxLength="50" />
+          <Property Name="borderBottomColor" Type="varchar" MaxLength="50" />
+          <Property Name="borderBottomLeftRadius" Type="varchar" MaxLength="50" />
+          <Property Name="borderBottomRightRadius" Type="varchar" MaxLength="50" />
+          <Property Name="borderBottomStyle" Type="varchar" MaxLength="50" />
+          <Property Name="borderBottomWidth" Type="varchar" MaxLength="50" />
+          <Property Name="borderColor" Type="varchar" MaxLength="50" />
+          <Property Name="borderImage" Type="varchar" MaxLength="50" />
+          <Property Name="borderImageOutset" Type="varchar" MaxLength="50" />
+          <Property Name="borderImageRepeat" Type="varchar" MaxLength="50" />
+          <Property Name="borderImageSlice" Type="varchar" MaxLength="50" />
+          <Property Name="borderImageSource" Type="varchar" MaxLength="50" />
+          <Property Name="borderImageWidth" Type="varchar" MaxLength="50" />
+          <Property Name="borderLeft" Type="varchar" MaxLength="50" />
+          <Property Name="borderLeftColor" Type="varchar" MaxLength="50" />
+          <Property Name="borderLeftStyle" Type="varchar" MaxLength="50" />
+          <Property Name="borderLeftWidth" Type="varchar" MaxLength="50" />
+          <Property Name="borderStyle" Type="varchar" MaxLength="50" />
+          <Property Name="borderTop" Type="varchar" MaxLength="50" />
+          <Property Name="borderTopColor" Type="varchar" MaxLength="50" />
+          <Property Name="borderTopLeftRadius" Type="varchar" MaxLength="50" />
+          <Property Name="borderTopRightRadius" Type="varchar" MaxLength="50" />
+          <Property Name="borderTopStyle" Type="varchar" MaxLength="50" />
+          <Property Name="borderTopWidth" Type="varchar" MaxLength="50" />
+          <Property Name="borderWidth" Type="varchar" MaxLength="50" />
+          <Property Name="boxShadow" Type="varchar" MaxLength="50" />
+          <Property Name="isImage" Type="varbinary" MaxLength="50" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityContainer Name="WebsiteDBModel1StoreContainer">
+          <EntitySet Name="CustomImage" EntityType="Self.CustomImage" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebsiteDBModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CustomImage">
+          <Key>
+            <PropertyRef Name="ImageId" />
+          </Key>
+          <Property Name="ImageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PageId" Type="Int32" />
+          <Property Name="backgroundAttachment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="backgroundClip" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="backgroundImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="backgroundOrigin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="backgroundPosition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="backgroundRepeat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="backgroundSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="background" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="border" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderBottom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderBottomColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderBottomLeftRadius" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderBottomRightRadius" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderBottomStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderBottomWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderImageOutset" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderImageRepeat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderImageSlice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderImageSource" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderImageWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderLeft" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderLeftColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderLeftStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderLeftWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderTop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderTopColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderTopLeftRadius" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderTopRightRadius" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderTopStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderTopWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="boxShadow" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isImage" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="CustomImageDBEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CustomImages" EntityType="Self.CustomImage" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WebsiteDBModel1StoreContainer" CdmEntityContainer="CustomImageDBEntities2">
+          <EntitySetMapping Name="CustomImages">
+            <EntityTypeMapping TypeName="WebsiteDBModel1.CustomImage">
+              <MappingFragment StoreEntitySet="CustomImage">
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+                <ScalarProperty Name="PageId" ColumnName="PageId" />
+                <ScalarProperty Name="backgroundAttachment" ColumnName="backgroundAttachment" />
+                <ScalarProperty Name="backgroundClip" ColumnName="backgroundClip" />
+                <ScalarProperty Name="backgroundImage" ColumnName="backgroundImage" />
+                <ScalarProperty Name="backgroundOrigin" ColumnName="backgroundOrigin" />
+                <ScalarProperty Name="backgroundPosition" ColumnName="backgroundPosition" />
+                <ScalarProperty Name="backgroundRepeat" ColumnName="backgroundRepeat" />
+                <ScalarProperty Name="backgroundSize" ColumnName="backgroundSize" />
+                <ScalarProperty Name="background" ColumnName="background" />
+                <ScalarProperty Name="border" ColumnName="border" />
+                <ScalarProperty Name="borderBottom" ColumnName="borderBottom" />
+                <ScalarProperty Name="borderBottomColor" ColumnName="borderBottomColor" />
+                <ScalarProperty Name="borderBottomLeftRadius" ColumnName="borderBottomLeftRadius" />
+                <ScalarProperty Name="borderBottomRightRadius" ColumnName="borderBottomRightRadius" />
+                <ScalarProperty Name="borderBottomStyle" ColumnName="borderBottomStyle" />
+                <ScalarProperty Name="borderBottomWidth" ColumnName="borderBottomWidth" />
+                <ScalarProperty Name="borderColor" ColumnName="borderColor" />
+                <ScalarProperty Name="borderImage" ColumnName="borderImage" />
+                <ScalarProperty Name="borderImageOutset" ColumnName="borderImageOutset" />
+                <ScalarProperty Name="borderImageRepeat" ColumnName="borderImageRepeat" />
+                <ScalarProperty Name="borderImageSlice" ColumnName="borderImageSlice" />
+                <ScalarProperty Name="borderImageSource" ColumnName="borderImageSource" />
+                <ScalarProperty Name="borderImageWidth" ColumnName="borderImageWidth" />
+                <ScalarProperty Name="borderLeft" ColumnName="borderLeft" />
+                <ScalarProperty Name="borderLeftColor" ColumnName="borderLeftColor" />
+                <ScalarProperty Name="borderLeftStyle" ColumnName="borderLeftStyle" />
+                <ScalarProperty Name="borderLeftWidth" ColumnName="borderLeftWidth" />
+                <ScalarProperty Name="borderStyle" ColumnName="borderStyle" />
+                <ScalarProperty Name="borderTop" ColumnName="borderTop" />
+                <ScalarProperty Name="borderTopColor" ColumnName="borderTopColor" />
+                <ScalarProperty Name="borderTopLeftRadius" ColumnName="borderTopLeftRadius" />
+                <ScalarProperty Name="borderTopRightRadius" ColumnName="borderTopRightRadius" />
+                <ScalarProperty Name="borderTopStyle" ColumnName="borderTopStyle" />
+                <ScalarProperty Name="borderTopWidth" ColumnName="borderTopWidth" />
+                <ScalarProperty Name="borderWidth" ColumnName="borderWidth" />
+                <ScalarProperty Name="boxShadow" ColumnName="boxShadow" />
+                <ScalarProperty Name="isImage" ColumnName="isImage" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

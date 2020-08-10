@@ -174,6 +174,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CustomImagesController.cs" />
     <Compile Include="Controllers\CustomPagesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
@@ -182,6 +183,24 @@
     <Compile Include="Controllers\WebPageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomImage.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomImage.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomImage.cs">
+      <DependentUpon>CustomImage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomImage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomImage.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomImage1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomImage.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomPage.Context.cs">
       <AutoGen>True</AutoGen>
@@ -268,6 +287,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\CustomImage.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CustomImage.edmx</DependentUpon>
+      <LastGenOutput>CustomImage.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CustomImage.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CustomImage.edmx</DependentUpon>
+      <LastGenOutput>CustomImage1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\CustomPage.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CustomPage.edmx</DependentUpon>
@@ -356,6 +385,13 @@
     </EntityDeploy>
     <Content Include="Models\CustomPage.edmx.diagram">
       <DependentUpon>CustomPage.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\CustomImage.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CustomImage.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CustomImage.edmx.diagram">
+      <DependentUpon>CustomImage.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
