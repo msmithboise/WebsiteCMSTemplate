@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebsiteTemplateProject.Models;
+using WebsiteTemplateProject.Service;
 
 namespace WebsiteTemplateProject.Controllers
 {
@@ -22,17 +23,19 @@ namespace WebsiteTemplateProject.Controllers
             return db.CustomImages;
         }
 
+        //this will pass through the user selected page id
+        //get image data based on the page id
         // GET: api/CustomImages/5
         [ResponseType(typeof(CustomImage))]
         public IHttpActionResult GetCustomImage(int id)
         {
-            CustomImage customImage = db.CustomImages.Find(id);
-            if (customImage == null)
-            {
-                return NotFound();
-            }
+            CustomImageService customImageservice = new CustomImageService();
 
-            return Ok(customImage);
+            List<CustomImage> customImagesByPageId = new List<CustomImage>();
+        
+            customImagesByPageId =  customImageservice.GetImagesByPageId(id, db, customImagesByPageId);
+
+            return Ok(customImagesByPageId);
         }
 
         // PUT: api/CustomImages/5
