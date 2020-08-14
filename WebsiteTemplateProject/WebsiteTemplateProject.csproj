@@ -295,6 +295,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\CustomImageService.cs" />
+    <Compile Include="Service\CustomTextService.cs" />
     <Compile Include="Service\HomePageService.cs" />
     <Compile Include="Service\TextBoxOneService.cs" />
   </ItemGroup>

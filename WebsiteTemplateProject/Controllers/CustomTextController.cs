@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebsiteTemplateProject.Models;
+using WebsiteTemplateProject.Service;
 
 namespace WebsiteTemplateProject.Controllers
 {
@@ -26,13 +27,13 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(CustomText))]
         public IHttpActionResult GetCustomText(int id)
         {
-            CustomText customText = db.CustomTexts.Find(id);
-            if (customText == null)
-            {
-                return NotFound();
-            }
+            CustomTextService customTextservice = new CustomTextService();
 
-            return Ok(customText);
+            List<CustomText> customTextByPageId = new List<CustomText>();
+
+            customTextByPageId = customTextservice.GetTextByPageId(id, db, customTextByPageId);
+
+            return Ok(customTextByPageId);
         }
 
         // PUT: api/CustomText/5
