@@ -176,6 +176,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CustomImagesController.cs" />
     <Compile Include="Controllers\CustomPagesController.cs" />
+    <Compile Include="Controllers\CustomTextController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\TextBoxOneController.cs" />
@@ -219,6 +220,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomPage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomText.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomText.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomText.cs">
+      <DependentUpon>CustomText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomText.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomText1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomText.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DBHomePage.Context.cs">
       <AutoGen>True</AutoGen>
@@ -308,6 +327,16 @@
       <DependentUpon>CustomPage.edmx</DependentUpon>
       <LastGenOutput>CustomPage1.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\CustomText.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CustomText.edmx</DependentUpon>
+      <LastGenOutput>CustomText.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CustomText.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CustomText.edmx</DependentUpon>
+      <LastGenOutput>CustomText1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\DBHomePage.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBHomePage.edmx</DependentUpon>
@@ -393,6 +422,13 @@
     </EntityDeploy>
     <Content Include="Models\CustomImage.edmx.diagram">
       <DependentUpon>CustomImage.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\CustomText.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CustomText.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CustomText.edmx.diagram">
+      <DependentUpon>CustomText.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
