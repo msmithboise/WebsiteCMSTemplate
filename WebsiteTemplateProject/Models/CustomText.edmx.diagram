@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="26a96e5ee1b14e84b85ab91ba438d6d5" Name="Diagram1" ZoomLevel="29">
-        <EntityTypeShape EntityType="CustomText.CustomText" Width="6.625" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomText.CustomText" Width="11" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -290,6 +290,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TextBoxOne.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Models\WebPage.cs">
       <DependentUpon>DBWebPage.tt</DependentUpon>
     </Compile>

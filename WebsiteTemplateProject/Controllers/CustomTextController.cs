@@ -16,10 +16,13 @@ namespace WebsiteTemplateProject.Controllers
     public class CustomTextController : ApiController
     {
         private CustomTextDBEntities2 db = new CustomTextDBEntities2();
+        private CustomImageDBEntities2 dbImage = new CustomImageDBEntities2();
 
         // GET: api/CustomText
         public IQueryable<CustomText> GetCustomTexts()
         {
+            
+
             return db.CustomTexts;
         }
 
@@ -31,57 +34,31 @@ namespace WebsiteTemplateProject.Controllers
 
             List<CustomText> customTextByPageId = new List<CustomText>();
 
-            customTextByPageId = customTextservice.GetTextByPageId(id, db, customTextByPageId);
+          var content =  customTextservice.getImagesAndText(db, dbImage,id );
 
-            return Ok(customTextByPageId);
+            //customTextByPageId = customTextservice.GetTextByPageId(id, db, customTextByPageId);
+
+            return Ok(content);
         }
 
         // PUT: api/CustomText/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutCustomText(int id, CustomText customText)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            CustomTextService customTextService = new CustomTextService();
 
-            if (id != customText.TextId)
-            {
-                return BadRequest();
-            }
+            customTextService.UpsertCustomText(customText, db);
 
-            db.Entry(customText).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CustomTextExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
+            return CreatedAtRoute("DefaultApi", new { id = customText.TextId }, customText);
         }
 
         // POST: api/CustomText
         [ResponseType(typeof(CustomText))]
         public IHttpActionResult PostCustomText(CustomText customText)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            CustomTextService customTextService = new CustomTextService();
 
-            db.CustomTexts.Add(customText);
-            db.SaveChanges();
+            customTextService.UpsertCustomText(customText, db);
 
             return CreatedAtRoute("DefaultApi", new { id = customText.TextId }, customText);
         }
