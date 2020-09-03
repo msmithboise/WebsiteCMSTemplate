@@ -181,6 +181,7 @@
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\TextBoxOneController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\WebContentController.cs" />
     <Compile Include="Controllers\WebPageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -291,6 +292,24 @@
       <DependentUpon>TextBoxOne.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModel.cs" />
+    <Compile Include="Models\WebContent.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebContent.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WebContent.cs">
+      <DependentUpon>WebContent.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WebContent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebContent.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WebContent1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebContent.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\WebPage.cs">
       <DependentUpon>DBWebPage.tt</DependentUpon>
     </Compile>
@@ -369,6 +388,16 @@
       <DependentUpon>TextBoxOne.edmx</DependentUpon>
       <LastGenOutput>TextBoxOne.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\WebContent.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WebContent.edmx</DependentUpon>
+      <LastGenOutput>WebContent.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\WebContent.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WebContent.edmx</DependentUpon>
+      <LastGenOutput>WebContent1.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -431,6 +460,13 @@
     </EntityDeploy>
     <Content Include="Models\CustomText.edmx.diagram">
       <DependentUpon>CustomText.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\WebContent.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WebContent.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\WebContent.edmx.diagram">
+      <DependentUpon>WebContent.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
