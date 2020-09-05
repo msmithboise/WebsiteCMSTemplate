@@ -16,9 +16,9 @@ namespace WebsiteTemplateProject.Service
 
     public class WebContentService
     {
-        public readonly WebContentDBEntities _context;
+        public readonly MyContentDBEntities _context;
 
-        public WebContentService(WebContentDBEntities context)
+        public WebContentService(MyContentDBEntities context)
         {
             _context = context;
         }
@@ -28,7 +28,7 @@ namespace WebsiteTemplateProject.Service
 
         }
 
-        public WebContent UpsertWebContent(WebContent webContent, WebContentDBEntities db)
+        public WebContent UpsertWebContent(WebContent webContent, MyContentDBEntities db)
         {
             using (db)
             {
@@ -48,7 +48,7 @@ namespace WebsiteTemplateProject.Service
 
        
 
-        public List<WebContent> GetWebContentByPageId(int pageId, WebContentDBEntities db)
+        public List<WebContent> GetWebContentByPageId(int pageId, MyContentDBEntities db)
         {
             List<WebContent> webContentByPageId = new List<WebContent>();
 

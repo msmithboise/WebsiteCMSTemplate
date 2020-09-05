@@ -15,7 +15,7 @@ namespace WebsiteTemplateProject.Controllers
 {
     public class WebContentController : ApiController
     {
-        private WebContentDBEntities db = new WebContentDBEntities();
+        private MyContentDBEntities db = new MyContentDBEntities();
 
         // GET: api/WebContent
         public IQueryable<WebContent> GetWebContents()

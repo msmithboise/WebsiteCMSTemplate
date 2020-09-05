@@ -18,7 +18,7 @@ namespace WebsiteTemplateProject.Models
         public Nullable<int> PageId { get; set; }
         public string TextBody { get; set; }
         public string ImageUrl { get; set; }
-        public byte[] DateCreated { get; set; }
+        public Nullable<System.DateTime> DateCreated { get; set; }
         public string isText { get; set; }
         public string isImage { get; set; }
         public Nullable<int> TextId { get; set; }
@@ -158,6 +158,6 @@ namespace WebsiteTemplateProject.Models
         public string customFieldThree { get; set; }
         public string customFieldFour { get; set; }
         public string customFieldFive { get; set; }
-        public byte[] imageUpload { get; set; }
+        public string imageUpload { get; set; }
     }
 }
