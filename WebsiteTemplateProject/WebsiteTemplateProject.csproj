@@ -180,6 +180,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\TextBoxOneController.cs" />
+    <Compile Include="Controllers\UploadImageController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WebContentController.cs" />
     <Compile Include="Controllers\WebPageController.cs" />
@@ -291,6 +292,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TextBoxOne.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\UploadImage.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UploadImage.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UploadImage.cs">
+      <DependentUpon>UploadImage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UploadImage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UploadImage.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UploadImage1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UploadImage.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Models\WebContent.Context.cs">
       <AutoGen>True</AutoGen>
@@ -318,6 +337,7 @@
     <Compile Include="Service\CustomTextService.cs" />
     <Compile Include="Service\HomePageService.cs" />
     <Compile Include="Service\TextBoxOneService.cs" />
+    <Compile Include="Service\WebContentService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -387,6 +407,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TextBoxOne.edmx</DependentUpon>
       <LastGenOutput>TextBoxOne.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\UploadImage.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UploadImage.edmx</DependentUpon>
+      <LastGenOutput>UploadImage.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\UploadImage.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UploadImage.edmx</DependentUpon>
+      <LastGenOutput>UploadImage1.cs</LastGenOutput>
     </Content>
     <Content Include="Models\WebContent.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -468,6 +498,13 @@
     <Content Include="Models\WebContent.edmx.diagram">
       <DependentUpon>WebContent.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\UploadImage.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UploadImage.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\UploadImage.edmx.diagram">
+      <DependentUpon>UploadImage.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -491,6 +528,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
+    <Folder Include="Views\UploadImage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -158,5 +158,6 @@ namespace WebsiteTemplateProject.Models
         public string customFieldThree { get; set; }
         public string customFieldFour { get; set; }
         public string customFieldFive { get; set; }
+        public byte[] imageUpload { get; set; }
     }
 }

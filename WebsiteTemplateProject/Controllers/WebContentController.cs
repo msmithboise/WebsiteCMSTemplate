@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebsiteTemplateProject.Models;
+using WebsiteTemplateProject.Service;
 
 namespace WebsiteTemplateProject.Controllers
 {
@@ -26,13 +27,11 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(WebContent))]
         public IHttpActionResult GetWebContent(int id)
         {
-            WebContent webContent = db.WebContents.Find(id);
-            if (webContent == null)
-            {
-                return NotFound();
-            }
+            WebContentService webContentService = new WebContentService();
 
-            return Ok(webContent);
+            var content = webContentService.GetWebContentByPageId(id, db);
+
+            return Ok(content);
         }
 
         // PUT: api/WebContent/5
