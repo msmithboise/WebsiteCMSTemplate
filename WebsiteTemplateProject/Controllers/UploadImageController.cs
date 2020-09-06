@@ -18,29 +18,32 @@ namespace WebsiteTemplateProject.Controllers
 
         public HttpResponseMessage UploadImage()
         {
-            string imageUrl = null;
+           
             var httpRequest = HttpContext.Current.Request;
             //Upload Image
+            var postedForm = httpRequest.Form["imageUrl"];
+            var postedFile = httpRequest.Files["imageUrl"];
 
-            var postedFile = httpRequest.Files["Image"];
-            //Create custom filename
-            imageUrl = new String(Path.GetFileNameWithoutExtension(postedFile.FileName).Take(10).ToArray()).Replace(" ", "-");
-            imageUrl = imageUrl + DateTime.Now.ToString("yymmssfff") + Path.GetExtension(postedFile.FileName);
-            var filePath = HttpContext.Current.Server.MapPath("~/Images/" + imageUrl);
-            postedFile.SaveAs(filePath);
-
-            //Save to DB
-            using (MyContentDBEntities db = new MyContentDBEntities())
+            if (postedForm != null && postedFile == null)
             {
-                WebContent uploadImage = new WebContent()
+                var fireBaseUrl = postedForm;
+
+                //Save to DB
+                using (MyContentDBEntities db = new MyContentDBEntities())
                 {
-                    ImageUrl = imageUrl
-                };
-                db.WebContents.Add(uploadImage);
-                db.SaveChanges();
+                    WebContent uploadImage = new WebContent()
+                    {
+                        ImageUrl = fireBaseUrl
+                    };
+                    db.WebContents.Add(uploadImage);
+                    db.SaveChanges();
+                }
+
             }
-            return Request.CreateResponse(HttpStatusCode.Created);
+                return Request.CreateResponse(HttpStatusCode.Created);
         }
+
+        
 
         //Download Image file
 
