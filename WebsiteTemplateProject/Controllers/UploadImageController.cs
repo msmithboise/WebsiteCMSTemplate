@@ -17,25 +17,25 @@ namespace WebsiteTemplateProject.Controllers
 
         public HttpResponseMessage UploadImage()
         {
-            string imageName = null;
+            string imageUrl = null;
             var httpRequest = HttpContext.Current.Request;
             //Upload Image
 
             var postedFile = httpRequest.Files["Image"];
             //Create custom filename
-            imageName = new String(Path.GetFileNameWithoutExtension(postedFile.FileName).Take(10).ToArray()).Replace(" ", "-");
-            imageName = imageName + DateTime.Now.ToString("yymmssfff") + Path.GetExtension(postedFile.FileName);
-            var filePath = HttpContext.Current.Server.MapPath("~/Images/" + imageName);
+            imageUrl = new String(Path.GetFileNameWithoutExtension(postedFile.FileName).Take(10).ToArray()).Replace(" ", "-");
+            imageUrl = imageUrl + DateTime.Now.ToString("yymmssfff") + Path.GetExtension(postedFile.FileName);
+            var filePath = HttpContext.Current.Server.MapPath("~/Images/" + imageUrl);
             postedFile.SaveAs(filePath);
 
             //Save to DB
-            using (UploadImageDBEntities db = new UploadImageDBEntities())
+            using (MyContentDBEntities db = new MyContentDBEntities())
             {
-                UploadImage uploadImage = new UploadImage()
+                WebContent uploadImage = new WebContent()
                 {
-                    ImageName = imageName
+                    ImageUrl = imageUrl
                 };
-                db.UploadImages.Add(uploadImage);
+                db.WebContents.Add(uploadImage);
                 db.SaveChanges();
             }
             return Request.CreateResponse(HttpStatusCode.Created);
