@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebsiteTemplateProject.Models;
+using WebsiteTemplateProject.Service;
 
 namespace WebsiteTemplateProject.Controllers
 {
@@ -74,15 +75,15 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(CustomPage))]
         public IHttpActionResult PostCustomPage(CustomPage customPage)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            
 
-            db.CustomPages.Add(customPage);
-            db.SaveChanges();
+
+            CustomPageService customPageService = new CustomPageService();
+
+            customPageService.UpsertCustomPage(customPage, db);
 
             return CreatedAtRoute("DefaultApi", new { id = customPage.PageId }, customPage);
+           
         }
 
         // DELETE: api/CustomPages/5

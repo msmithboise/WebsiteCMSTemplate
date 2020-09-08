@@ -21,19 +21,22 @@ namespace WebsiteTemplateProject.Controllers
            
             var httpRequest = HttpContext.Current.Request;
             //Upload Image
-            var postedForm = httpRequest.Form["imageUrl"];
+            var postedFormPageId = httpRequest.Form["pageId"];
+            var postedFormUrl = httpRequest.Form["imageUrl"];
             var postedFile = httpRequest.Files["imageUrl"];
 
-            if (postedForm != null && postedFile == null)
+            if (postedFormUrl != null && postedFile == null)
             {
-                var fireBaseUrl = postedForm;
+                var fireBaseUrl = postedFormUrl;
+                var pageId = Int32.Parse(postedFormPageId);
 
                 //Save to DB
                 using (MyContentDBEntities db = new MyContentDBEntities())
                 {
                     WebContent uploadImage = new WebContent()
                     {
-                        ImageUrl = fireBaseUrl
+                        ImageUrl = fireBaseUrl,
+                        PageId = pageId
                     };
                     db.WebContents.Add(uploadImage);
                     db.SaveChanges();
