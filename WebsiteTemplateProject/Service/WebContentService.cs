@@ -46,7 +46,9 @@ namespace WebsiteTemplateProject.Service
             }
         }
 
-       
+        
+
+
 
         public List<WebContent> GetWebContentByPageId(int pageId, MyContentDBEntities db)
         {

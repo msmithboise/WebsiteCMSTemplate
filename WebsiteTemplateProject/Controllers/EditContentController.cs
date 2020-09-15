@@ -78,8 +78,11 @@ namespace WebsiteTemplateProject.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.WebContents.Add(webContent);
-            db.SaveChanges();
+            WebContentService webContentService = new WebContentService();
+
+            webContentService.UpsertWebContent(webContent, db);
+
+
 
             return CreatedAtRoute("DefaultApi", new { id = webContent.Id }, webContent);
         }
