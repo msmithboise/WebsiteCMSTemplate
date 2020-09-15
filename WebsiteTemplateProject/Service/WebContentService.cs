@@ -68,5 +68,25 @@ namespace WebsiteTemplateProject.Service
 
             return webContentByPageId.OrderBy(x => x.Id).ToList();
         }
+
+        public List<WebContent> GetWebContentById(int id, MyContentDBEntities db)
+        {
+            List<WebContent> webContentById = new List<WebContent>();
+
+            foreach (var webContent in db.WebContents)
+            {
+                webContentById.Add(webContent);
+            }
+
+            foreach (var webContent in webContentById.ToList())
+            {
+                if (webContent.Id != id)
+                {
+                    webContentById.Remove(webContent);
+                }
+            }
+            return webContentById.OrderBy(x => x.Id).ToList();
+        }
+
     }
 }
