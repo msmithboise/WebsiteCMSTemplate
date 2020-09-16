@@ -73,13 +73,9 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(WebContent))]
         public IHttpActionResult PostWebContent(WebContent webContent)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            WebContentService webContentService = new WebContentService();
 
-            db.WebContents.Add(webContent);
-            db.SaveChanges();
+            webContentService.UpsertWebContent(webContent, db);
 
             return CreatedAtRoute("DefaultApi", new { id = webContent.Id }, webContent);
         }
