@@ -35,7 +35,7 @@ namespace WebsiteTemplateProject.Controllers
                 var bgImage = postedBackgroundImage;
 
                 //Save to DB
-                using (MyContentDBEntities db = new MyContentDBEntities())
+                using (NewWebContentEntities2 db = new NewWebContentEntities2())
                 {
                     WebContent uploadImage = new WebContent()
                     {

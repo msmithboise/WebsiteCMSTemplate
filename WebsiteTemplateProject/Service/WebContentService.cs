@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WebsiteTemplateProject.Models;
+
 using System.Data.Entity;
 
 namespace WebsiteTemplateProject.Service
@@ -16,9 +16,9 @@ namespace WebsiteTemplateProject.Service
 
     public class WebContentService
     {
-        public readonly MyContentDBEntities _context;
+        public readonly NewWebContentEntities2 _context;
 
-        public WebContentService(MyContentDBEntities context)
+        public WebContentService(NewWebContentEntities2 context)
         {
             _context = context;
         }
@@ -28,7 +28,7 @@ namespace WebsiteTemplateProject.Service
 
         }
 
-        public WebContent UpsertWebContent(WebContent webContent, MyContentDBEntities db)
+        public WebContent UpsertWebContent(WebContent webContent, NewWebContentEntities2 db)
         {
             using (db)
             {
@@ -50,7 +50,7 @@ namespace WebsiteTemplateProject.Service
 
 
 
-        public List<WebContent> GetWebContentByPageId(int pageId, MyContentDBEntities db)
+        public List<WebContent> GetWebContentByPageId(int pageId, NewWebContentEntities2 db)
         {
             List<WebContent> webContentByPageId = new List<WebContent>();
 
@@ -71,7 +71,7 @@ namespace WebsiteTemplateProject.Service
             return webContentByPageId.OrderBy(x => x.Id).ToList();
         }
 
-        public List<WebContent> GetWebContentById(int id, MyContentDBEntities db)
+        public List<WebContent> GetWebContentById(int id, NewWebContentEntities2 db)
         {
             List<WebContent> webContentById = new List<WebContent>();
 

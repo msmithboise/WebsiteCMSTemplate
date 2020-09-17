@@ -348,6 +348,21 @@
     <Compile Include="Models\WebPage.cs">
       <DependentUpon>DBWebPage.tt</DependentUpon>
     </Compile>
+    <Compile Include="NewContent.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewContent.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewContent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewContent.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewContent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewContent.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\CustomImageService.cs" />
     <Compile Include="Service\CustomPageService.cs" />
@@ -356,6 +371,9 @@
     <Compile Include="Service\TextBoxOneService.cs" />
     <Compile Include="Service\WebContentService.cs" />
     <Compile Include="Validation\FormattedDbEntityValidationException.cs" />
+    <Compile Include="WebContent.cs">
+      <DependentUpon>NewContent.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -456,6 +474,16 @@
       <DependentUpon>WebContent.edmx</DependentUpon>
       <LastGenOutput>WebContent1.cs</LastGenOutput>
     </Content>
+    <Content Include="NewContent.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NewContent.edmx</DependentUpon>
+      <LastGenOutput>NewContent.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="NewContent.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NewContent.edmx</DependentUpon>
+      <LastGenOutput>NewContent.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -539,6 +567,13 @@
     </EntityDeploy>
     <Content Include="Models\MyContent.edmx.diagram">
       <DependentUpon>MyContent.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="NewContent.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NewContent.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="NewContent.edmx.diagram">
+      <DependentUpon>NewContent.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
