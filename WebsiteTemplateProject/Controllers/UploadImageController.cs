@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -8,6 +9,7 @@ using System.Net.Http.Headers;
 using System.Web;
 using System.Web.Http;
 using WebsiteTemplateProject.Models;
+using WebsiteTemplateProject.Validation;
 
 namespace WebsiteTemplateProject.Controllers
 {
@@ -23,12 +25,14 @@ namespace WebsiteTemplateProject.Controllers
             //Upload Image
             var postedFormPageId = httpRequest.Form["pageId"];
             var postedFormUrl = httpRequest.Form["imageUrl"];
+            var postedBackgroundImage = httpRequest.Form["backgroundImage"];
             var postedFile = httpRequest.Files["imageUrl"];
 
             if (postedFormUrl != null && postedFile == null)
             {
                 var fireBaseUrl = postedFormUrl;
                 var pageId = Int32.Parse(postedFormPageId);
+                var bgImage = postedBackgroundImage;
 
                 //Save to DB
                 using (MyContentDBEntities db = new MyContentDBEntities())
@@ -36,10 +40,23 @@ namespace WebsiteTemplateProject.Controllers
                     WebContent uploadImage = new WebContent()
                     {
                         ImageUrl = fireBaseUrl,
-                        PageId = pageId
+                        PageId = pageId,
+                        backgroundImage = bgImage
                     };
                     db.WebContents.Add(uploadImage);
+
+                    try
+                    {
+
                     db.SaveChanges();
+                    }
+                    catch (DbEntityValidationException e)
+                    {
+                        var newException = new FormattedDbEntityValidationException(e);
+                        throw newException;
+                    }
+
+
                 }
 
             }

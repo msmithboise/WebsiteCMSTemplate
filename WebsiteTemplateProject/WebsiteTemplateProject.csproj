@@ -355,6 +355,7 @@
     <Compile Include="Service\HomePageService.cs" />
     <Compile Include="Service\TextBoxOneService.cs" />
     <Compile Include="Service\WebContentService.cs" />
+    <Compile Include="Validation\FormattedDbEntityValidationException.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
