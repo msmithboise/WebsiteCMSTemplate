@@ -41,7 +41,7 @@ namespace WebsiteTemplateProject.Controllers
                     {
                         ImageUrl = fireBaseUrl,
                         PageId = pageId,
-                        backgroundImage = bgImage
+                        backgroundImage = fireBaseUrl
                     };
                     db.WebContents.Add(uploadImage);
 
