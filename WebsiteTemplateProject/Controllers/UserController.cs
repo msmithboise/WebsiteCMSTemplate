@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebsiteTemplateProject.Models;
+using WebsiteTemplateProject.Service;
 
 namespace WebsiteTemplateProject.Controllers
 {
@@ -74,13 +75,9 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(User))]
         public IHttpActionResult PostUser(User user)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            UserService userService = new UserService();
 
-            db.Users.Add(user);
-            db.SaveChanges();
+            userService.UpsertWebContent(user, db);
 
             return CreatedAtRoute("DefaultApi", new { id = user.Id }, user);
         }
