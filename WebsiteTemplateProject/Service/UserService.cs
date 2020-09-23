@@ -47,16 +47,16 @@ namespace WebsiteTemplateProject.Service
 
                 encryptPassword(user, db);
 
-                try
-                {
+                 try
+                    {
 
                     db.SaveChanges();
-                }
-                catch (DbEntityValidationException e)
-                {
-                    var newException = new FormattedDbEntityValidationException(e);
-                    throw newException;
-                }
+                    }
+                    catch (DbEntityValidationException e)
+                    {
+                        var newException = new FormattedDbEntityValidationException(e);
+                        throw newException;
+                    }
 
 
                 return user;
@@ -89,7 +89,7 @@ namespace WebsiteTemplateProject.Service
             byte[] hash = sha256hashstring.ComputeHash(bytes);
 
             user.Salt = salt;
-            password = BtyeArrayToHexString(hash);
+            password = ByteArrayToHexString(hash);
             user.Hash = password;
 
             return password;
@@ -97,12 +97,12 @@ namespace WebsiteTemplateProject.Service
             
         }
 
-        public static string BtyeArrayToHexString(byte[] byteArray)
+        public static string ByteArrayToHexString(byte[] byteArray)
         {
-            StringBuilder hex = new StringBuilder(byteArray.Length);
+            StringBuilder hex = new StringBuilder(byteArray.Length * 2);
             foreach (byte b in byteArray)
             {
-                hex.AppendFormat("{0}", b);
+                hex.AppendFormat("{0:x2}", b);
 
             }
                 return hex.ToString();
