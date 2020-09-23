@@ -20,9 +20,9 @@ namespace WebsiteTemplateProject.Service
 
     public class UserService
     {
-        public readonly UsersDBEntities _context;
+        public readonly NewUserDbEntities _context;
 
-        public UserService(UsersDBEntities context)
+        public UserService(NewUserDbEntities context)
         {
             _context = context;
         }
@@ -32,7 +32,7 @@ namespace WebsiteTemplateProject.Service
 
         }
 
-        public User UpsertWebContent(User user, UsersDBEntities db)
+        public User UpsertWebContent(User user, NewUserDbEntities db)
         {
             using (db)
             {
@@ -63,7 +63,7 @@ namespace WebsiteTemplateProject.Service
             }
         }
 
-        private void encryptPassword(User user, UsersDBEntities db)
+        private void encryptPassword(User user, NewUserDbEntities db)
         {
             string salt = CreateSalt(10);
             string hashedPassword = CreateHash(user.Hash, salt, user);
