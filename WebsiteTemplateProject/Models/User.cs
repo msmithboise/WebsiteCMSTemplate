@@ -13,9 +13,9 @@ namespace WebsiteTemplateProject.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class User : IdentityUser
+    public partial class User 
     {
-        public new int Id { get; set; }
+        public int Id { get; set; }
         public string Username { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
