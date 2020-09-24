@@ -9,12 +9,13 @@
 
 namespace WebsiteTemplateProject.Models
 {
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class User : IdentityUser
     {
-        public int Id { get; set; }
+        public new int Id { get; set; }
         public string Username { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

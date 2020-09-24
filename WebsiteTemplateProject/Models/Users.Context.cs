@@ -9,11 +9,12 @@
 
 namespace WebsiteTemplateProject.Models
 {
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NewUserDbEntities : DbContext
+    public partial class NewUserDbEntities : IdentityDbContext
     {
         public NewUserDbEntities()
             : base("name=NewUserDbEntities")
