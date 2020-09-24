@@ -19,7 +19,7 @@ namespace WebsiteTemplateProject
             //app.UseCors(CorsOptions.AllowAll);
             OAuthAuthorizationServerOptions option = new OAuthAuthorizationServerOptions
             {
-                TokenEndpointPath = new PathString("/token"),
+                TokenEndpointPath = new PathString("/api/token"),
                 Provider = new ApplicationOAuthProvider(),
                 AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(20),
                 AllowInsecureHttp = true
