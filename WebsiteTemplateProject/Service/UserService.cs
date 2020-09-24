@@ -21,6 +21,7 @@ namespace WebsiteTemplateProject.Service
     public class UserService
     {
         public readonly NewUserDbEntities _context;
+        public bool isLoggedIn = false;
 
         public UserService(NewUserDbEntities context)
         {
@@ -34,6 +35,33 @@ namespace WebsiteTemplateProject.Service
 
         public User UpsertWebContent(User user, NewUserDbEntities db)
         {
+
+            //foreach (var u in db.Users.Where(x => x.Username == user.Username && x.Hash == user.Hash))
+            //{
+            //    if (u.Username == user.Username && u.Hash == user.Hash)
+            //    {
+
+            //        user.Username = u.Username;
+            //        user.EmailAddress = u.EmailAddress;
+            //        user.Hash = u.Hash;
+            //        user.Id = u.Id;
+            //        user.FirstName = u.FirstName;
+            //        user.LastName = u.LastName;
+            //        user.Organization = u.Organization;
+            //        user.Salt = u.Salt;
+
+
+            //    encryptPassword(user, db);
+
+            //    db.Entry(user).State = EntityState.Modified;
+
+                   
+
+            //    }
+            //}
+
+        
+
             using (db)
             {
                 if (user.Id == default(int))
@@ -45,7 +73,7 @@ namespace WebsiteTemplateProject.Service
                     db.Entry(user).State = EntityState.Modified;
                 }
 
-                encryptPassword(user, db);
+               // encryptPassword(user, db);
 
                  try
                     {
@@ -63,10 +91,12 @@ namespace WebsiteTemplateProject.Service
             }
         }
 
-        private void encryptPassword(User user, NewUserDbEntities db)
+        public void encryptPassword(User user, NewUserDbEntities db)
         {
             string salt = CreateSalt(10);
             string hashedPassword = CreateHash(user.Hash, salt, user);
+
+         
         }
 
 
