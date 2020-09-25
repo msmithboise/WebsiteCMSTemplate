@@ -37,34 +37,11 @@ namespace WebsiteTemplateProject.Service
         public User UpsertWebContent(User user, NewUserDbEntities db)
         {
 
-            foreach (var u in db.Users.Where(x => x.Username == user.Username && x.Hash == user.Hash))
-            {
-                if (u.Username == user.Username && u.Hash == user.Hash)
-                {
+            //If user is logging on after already being registered and already has a set Id, this will encrypt password, and post isLoggedIn to be true
 
-                    user.Username = u.Username;
-                    user.EmailAddress = u.EmailAddress;
-                    user.Hash = u.Hash;
-                    user.Id = u.Id;
-                    user.FirstName = u.FirstName;
-                    user.LastName = u.LastName;
-                    user.Organization = u.Organization;
-                    user.Salt = u.Salt;
+           
+                    PostDataOnLogin(user, db);
 
-
-                    encryptPassword(user, db);
-
-                   // db.Entry(user).State = EntityState.Modified;
-
-                    db.Set<User>().AddOrUpdate(user);
-
-
-
-
-                }
-            }
-                    db.SaveChanges();
-                    return user;
 
 
 
@@ -74,10 +51,10 @@ namespace WebsiteTemplateProject.Service
                 {
                     db.Users.Add(user);
                 }
-                else
-                {
-                    db.Entry(user).State = EntityState.Modified;
-                }
+                //else
+                //{
+                //    db.Entry(user).State = EntityState.Modified;
+                //}
 
                // encryptPassword(user, db);
 
@@ -142,6 +119,41 @@ namespace WebsiteTemplateProject.Service
 
             }
                 return hex.ToString();
+        }
+
+        public User PostDataOnLogin(User user, NewUserDbEntities db)
+        {
+            foreach (var u in db.Users.Where(x => x.Username == user.Username && x.Hash == user.Hash))
+            {
+                if (u.Username == user.Username && u.Hash == user.Hash)
+                {
+
+                    user.Username = u.Username;
+                    user.EmailAddress = u.EmailAddress;
+                    user.Hash = u.Hash;
+                    user.Id = u.Id;
+                    user.FirstName = u.FirstName;
+                    user.LastName = u.LastName;
+                    user.Organization = u.Organization;
+                    user.Salt = u.Salt;
+                    u.isLoggedIn = true;
+                    user.isLoggedIn = u.isLoggedIn;
+                    user.Token = "test";
+
+
+                    encryptPassword(user, db);
+
+                    // db.Entry(user).State = EntityState.Modified;
+
+                    db.Set<User>().AddOrUpdate(user);
+
+
+
+
+                }
+            }
+            db.SaveChanges();
+            return user;
         }
 
     }
