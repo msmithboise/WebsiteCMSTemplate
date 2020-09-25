@@ -8,6 +8,7 @@ using WebsiteTemplateProject.Models;
 using System.Text;
 using System.Data.Entity.Validation;
 using WebsiteTemplateProject.Validation;
+using System.Data.Entity.Migrations;
 
 namespace WebsiteTemplateProject.Service
 {
@@ -36,31 +37,36 @@ namespace WebsiteTemplateProject.Service
         public User UpsertWebContent(User user, NewUserDbEntities db)
         {
 
-            //foreach (var u in db.Users.Where(x => x.Username == user.Username && x.Hash == user.Hash))
-            //{
-            //    if (u.Username == user.Username && u.Hash == user.Hash)
-            //    {
+            foreach (var u in db.Users.Where(x => x.Username == user.Username && x.Hash == user.Hash))
+            {
+                if (u.Username == user.Username && u.Hash == user.Hash)
+                {
 
-            //        user.Username = u.Username;
-            //        user.EmailAddress = u.EmailAddress;
-            //        user.Hash = u.Hash;
-            //        user.Id = u.Id;
-            //        user.FirstName = u.FirstName;
-            //        user.LastName = u.LastName;
-            //        user.Organization = u.Organization;
-            //        user.Salt = u.Salt;
+                    user.Username = u.Username;
+                    user.EmailAddress = u.EmailAddress;
+                    user.Hash = u.Hash;
+                    user.Id = u.Id;
+                    user.FirstName = u.FirstName;
+                    user.LastName = u.LastName;
+                    user.Organization = u.Organization;
+                    user.Salt = u.Salt;
 
 
-            //    encryptPassword(user, db);
+                    encryptPassword(user, db);
 
-            //    db.Entry(user).State = EntityState.Modified;
+                   // db.Entry(user).State = EntityState.Modified;
 
-                   
+                    db.Set<User>().AddOrUpdate(user);
 
-            //    }
-            //}
 
-        
+
+
+                }
+            }
+                    db.SaveChanges();
+                    return user;
+
+
 
             using (db)
             {

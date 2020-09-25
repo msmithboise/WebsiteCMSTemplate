@@ -365,7 +365,7 @@
       <DependentUpon>User.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>Users.tt</DependentUpon>
+      <DependentUpon>UserData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.Designer.cs">
       <DependentUpon>User.edmx</DependentUpon>
@@ -376,6 +376,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>User.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserData.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Users.Context.cs">
       <AutoGen>True</AutoGen>
@@ -542,6 +557,16 @@
       <DependentUpon>User.edmx</DependentUpon>
       <LastGenOutput>User2.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\UserData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserData.edmx</DependentUpon>
+      <LastGenOutput>UserData.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\UserData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserData.edmx</DependentUpon>
+      <LastGenOutput>UserData.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\Users.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Users.edmx</DependentUpon>
@@ -676,6 +701,13 @@
     </EntityDeploy>
     <Content Include="Models\Users.edmx.diagram">
       <DependentUpon>Users.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\UserData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\UserData.edmx.diagram">
+      <DependentUpon>UserData.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

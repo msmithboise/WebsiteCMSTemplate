@@ -9,11 +9,10 @@
 
 namespace WebsiteTemplateProject.Models
 {
-    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Collections.Generic;
     
-    public partial class User 
+    public partial class User
     {
         public int Id { get; set; }
         public string Username { get; set; }
@@ -24,5 +23,8 @@ namespace WebsiteTemplateProject.Models
         public string Hash { get; set; }
         public string Salt { get; set; }
         public byte[] HashByte { get; set; }
+        public Nullable<bool> isLoggedIn { get; set; }
+        public string Token { get; set; }
+        public string Password { get; set; }
     }
 }
