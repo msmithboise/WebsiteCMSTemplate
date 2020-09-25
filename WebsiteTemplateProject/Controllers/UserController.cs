@@ -15,7 +15,7 @@ namespace WebsiteTemplateProject.Controllers
 {
     public class UserController : ApiController
     {
-        private NewUserDbEntities db = new NewUserDbEntities();
+        private MyUserDBEntities db = new MyUserDBEntities();
 
         // GET: api/User
         public IQueryable<User> GetUsers()

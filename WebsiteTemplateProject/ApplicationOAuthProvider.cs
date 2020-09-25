@@ -25,10 +25,10 @@ namespace WebsiteTemplateProject
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             UserService userservice = new UserService();
-            NewUserDbEntities userDb = new NewUserDbEntities();
+            MyUserDBEntities userDb = new MyUserDBEntities();
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
 
-            using (var db = new NewUserDbEntities())
+            using (var db = new MyUserDBEntities())
             {
                 var user = db.Users.ToList();
 

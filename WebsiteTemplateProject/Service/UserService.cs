@@ -21,10 +21,10 @@ namespace WebsiteTemplateProject.Service
 
     public class UserService
     {
-        public readonly NewUserDbEntities _context;
+        public readonly MyUserDBEntities _context;
         public bool isLoggedIn = false;
 
-        public UserService(NewUserDbEntities context)
+        public UserService(MyUserDBEntities context)
         {
             _context = context;
         }
@@ -34,7 +34,7 @@ namespace WebsiteTemplateProject.Service
 
         }
 
-        public User UpsertWebContent(User user, NewUserDbEntities db)
+        public User UpsertWebContent(User user, MyUserDBEntities db)
         {
 
             //If user is logging on after already being registered and already has a set Id, this will encrypt password, and post isLoggedIn to be true
@@ -74,7 +74,7 @@ namespace WebsiteTemplateProject.Service
             }
         }
 
-        public void encryptPassword(User user, NewUserDbEntities db)
+        public void encryptPassword(User user, MyUserDBEntities db)
         {
             string salt = CreateSalt(10);
             string hashedPassword = CreateHash(user.Hash, salt, user);
@@ -121,7 +121,7 @@ namespace WebsiteTemplateProject.Service
                 return hex.ToString();
         }
 
-        public User PostDataOnLogin(User user, NewUserDbEntities db)
+        public User PostDataOnLogin(User user, MyUserDBEntities db)
         {
             foreach (var u in db.Users.Where(x => x.Username == user.Username && x.Hash == user.Hash))
             {
