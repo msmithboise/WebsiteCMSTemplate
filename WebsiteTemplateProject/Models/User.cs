@@ -22,12 +22,12 @@ namespace WebsiteTemplateProject.Models
         public string Organization { get; set; }
         public string Hash { get; set; }
         public string Salt { get; set; }
-        public byte[] HashByte { get; set; }
         public Nullable<bool> isLoggedIn { get; set; }
         public string Token { get; set; }
         public string Password { get; set; }
         public Nullable<System.DateTime> timeLoggedIn { get; set; }
         public Nullable<System.DateTime> timeLoggedOut { get; set; }
         public string isLoggedInString { get; set; }
+        public Nullable<bool> isPasswordHashed { get; set; }
     }
 }

@@ -21,10 +21,11 @@ namespace WebsiteTemplateProject.Service
 
     public class UserService
     {
-        public readonly MyUserDBEntities _context;
+        public readonly MyUsersDBEntities _context;
         public bool isLoggedIn = false;
+        public bool isPasswordHashed = false;
 
-        public UserService(MyUserDBEntities context)
+        public UserService(MyUsersDBEntities context)
         {
             _context = context;
         }
@@ -34,13 +35,13 @@ namespace WebsiteTemplateProject.Service
 
         }
 
-        public User UpsertWebContent(User user, MyUserDBEntities db)
+        public User UpsertWebContent(User user, MyUsersDBEntities db)
         {
 
             //If user is logging on after already being registered and already has a set Id, this will encrypt password, and post isLoggedIn to be true
 
            
-                    PostDataOnLogin(user, db);
+                    
 
 
 
@@ -74,12 +75,12 @@ namespace WebsiteTemplateProject.Service
             }
         }
 
-        public void encryptPassword(User user, MyUserDBEntities db)
+        public string encryptPassword(User user, MyUsersDBEntities db)
         {
             string salt = CreateSalt(10);
             string hashedPassword = CreateHash(user.Hash, salt, user);
 
-         
+            return hashedPassword;
         }
 
 
@@ -121,7 +122,7 @@ namespace WebsiteTemplateProject.Service
                 return hex.ToString();
         }
 
-        public User PostDataOnLogin(User user, MyUserDBEntities db)
+        public User PostDataOnLogin(User user, MyUsersDBEntities db)
         {
             foreach (var u in db.Users.Where(x => x.Username == user.Username && x.Hash == user.Hash))
             {
@@ -141,7 +142,7 @@ namespace WebsiteTemplateProject.Service
                     user.Token = "test";
 
 
-                    encryptPassword(user, db);
+                    //encryptPassword(user, db);
 
                     // db.Entry(user).State = EntityState.Modified;
 
@@ -154,6 +155,15 @@ namespace WebsiteTemplateProject.Service
             }
             db.SaveChanges();
             return user;
+        }
+
+
+        //Need to write method that takes the salt from the data base, and the hash that was saved and on login, have 
+        //an algorythm that brings them together, this means, the rng to create the salt is fine, but no more rng after that
+
+        public string RecreateHashedPassword()
+        {
+            return null;
         }
 
     }

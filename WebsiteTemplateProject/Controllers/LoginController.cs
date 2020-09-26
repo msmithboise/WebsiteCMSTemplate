@@ -13,17 +13,17 @@ using WebsiteTemplateProject.Service;
 
 namespace WebsiteTemplateProject.Controllers
 {
-    public class UserController : ApiController
+    public class LoginController : ApiController
     {
         private MyUsersDBEntities db = new MyUsersDBEntities();
 
-        // GET: api/User
+        // GET: api/Login
         public IQueryable<User> GetUsers()
         {
             return db.Users;
         }
 
-        // GET: api/User/5
+        // GET: api/Login/5
         [ResponseType(typeof(User))]
         public IHttpActionResult GetUser(int id)
         {
@@ -36,7 +36,7 @@ namespace WebsiteTemplateProject.Controllers
             return Ok(user);
         }
 
-        // PUT: api/User/5
+        // PUT: api/Login/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutUser(int id, User user)
         {
@@ -71,20 +71,18 @@ namespace WebsiteTemplateProject.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/User
+        // POST: api/Login
         [ResponseType(typeof(User))]
         public IHttpActionResult PostUser(User user)
         {
-            UserService userService = new UserService();
+            LoginService loginService = new LoginService();
 
-            userService.UpsertWebContent(user, db);
-
-            
+            loginService.PostDataOnLogin(user, db);
 
             return CreatedAtRoute("DefaultApi", new { id = user.Id }, user);
         }
 
-        // DELETE: api/User/5
+        // DELETE: api/Login/5
         [ResponseType(typeof(User))]
         public IHttpActionResult DeleteUser(int id)
         {

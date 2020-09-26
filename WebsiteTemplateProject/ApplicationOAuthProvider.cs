@@ -25,23 +25,37 @@ namespace WebsiteTemplateProject
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             UserService userservice = new UserService();
-            MyUserDBEntities userDb = new MyUserDBEntities();
+            MyUsersDBEntities userDb = new MyUsersDBEntities();
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+            string contextPassword = "";
 
-            using (var db = new MyUserDBEntities())
+            using (var db = new MyUsersDBEntities())
             {
                 var user = db.Users.ToList();
 
                 if (user != null)
                 {
-                    if (!string.IsNullOrEmpty(user.Where(x => x.Username == context.UserName && x.Hash == context.Password).FirstOrDefault().Username))
-                    {
-                        var currentUser = user.Where(x => x.Username == context.UserName && x.Hash == context.Password).FirstOrDefault();
 
-                        foreach (var u in db.Users.Where(x => x.Username == context.UserName && x.Hash == context.Password))
+                    foreach (var u in db.Users.Where(x => x.isPasswordHashed == true && x.Username == context.UserName))
+                    {
+                        LoginService loginService = new LoginService();
+
+                        contextPassword = context.Password.ToString() ;
+                        
+
+                        contextPassword = loginService.reEncryptPassword(contextPassword, u.Salt, u.Hash, u);
+
+                        
+                    }
+
+                    if (!string.IsNullOrEmpty(user.Where(x => x.Username == context.UserName && x.Hash == contextPassword).FirstOrDefault().Username))
+                    {
+                        var currentUser = user.Where(x => x.Username == context.UserName && x.Hash == contextPassword).FirstOrDefault();
+
+                        foreach (var u in db.Users.Where(x => x.Username == context.UserName && x.Hash == contextPassword))
                         {
 
-                        userservice.encryptPassword(u,db);
+                        //userservice.encryptPassword(u,db);
                         }
 
 
