@@ -97,6 +97,10 @@ namespace WebsiteTemplateProject.Service
 
             var newHash = userService.CreateHash(password, salt, user );
 
+            if (hash != newHash)
+            {
+                throw new Exception("Password is incorrect!");
+            }
 
 
             return newHash;
