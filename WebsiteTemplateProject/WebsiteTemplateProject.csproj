@@ -212,6 +212,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Controllers\TextBoxOneController.cs" />
     <Compile Include="Controllers\UploadImageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -481,6 +482,7 @@
     <Compile Include="Service\CustomTextService.cs" />
     <Compile Include="Service\HomePageService.cs" />
     <Compile Include="Service\LoginService.cs" />
+    <Compile Include="Service\LogoutService.cs" />
     <Compile Include="Service\TextBoxOneService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\WebContentService.cs" />

@@ -63,9 +63,10 @@ namespace WebsiteTemplateProject.Service
                     user.Hash = userService.encryptPassword(u, db);
                     }
 
+                 
+                    user.FirstName = u.FirstName;
                     user.isPasswordHashed = true;
                     user.Id = u.Id;
-                    user.FirstName = u.FirstName;
                     user.LastName = u.LastName;
                     user.Organization = u.Organization;
                     user.Salt = u.Salt;

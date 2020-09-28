@@ -45,25 +45,18 @@ namespace WebsiteTemplateProject
 
                         contextPassword = loginService.reEncryptPassword(contextPassword, u.Salt, u.Hash, u);
 
-                        
-                    }
-
-                    if (!string.IsNullOrEmpty(user.Where(x => x.Username == context.UserName && x.Hash == contextPassword).FirstOrDefault().Username))
-                    {
-                        var currentUser = user.Where(x => x.Username == context.UserName && x.Hash == contextPassword).FirstOrDefault();
-
-                        foreach (var u in db.Users.Where(x => x.Username == context.UserName && x.Hash == contextPassword))
+                        if (!string.IsNullOrEmpty(user.Where(x => x.Username == context.UserName && x.Hash == contextPassword).FirstOrDefault().Username))
                         {
-
-                        //userservice.encryptPassword(u,db);
-                        }
+                            var currentUser = user.Where(x => x.Username == context.UserName && x.Hash == contextPassword).FirstOrDefault();
 
 
 
-                        identity.AddClaim(new Claim("UserName", currentUser.Username));
-                        identity.AddClaim(new Claim("Id", Convert.ToString(currentUser.Id)));
 
-                        var props = new AuthenticationProperties(new Dictionary<string, string>
+
+                            identity.AddClaim(new Claim("UserName", currentUser.Username));
+                            identity.AddClaim(new Claim("Id", Convert.ToString(currentUser.Id)));
+
+                            var props = new AuthenticationProperties(new Dictionary<string, string>
                         {
                             {
                                 "Username", context.UserName
@@ -71,18 +64,55 @@ namespace WebsiteTemplateProject
 
                         });
 
-                        var ticket = new AuthenticationTicket(identity, props);
-                        context.Validated(ticket);
+                            var ticket = new AuthenticationTicket(identity, props);
+                            context.Validated(ticket);
+                        }
+                        else
+                        {
+                            context.SetError("invalid_grant", "Provided username and password is not matching, Please retry.");
+                            context.Rejected();
+
+                        }
+
+
                     }
-                    else
+
+                    foreach (var u in db.Users.Where(x => x.isPasswordHashed == null && x.Username == context.UserName))
                     {
-                        context.SetError("invalid_grant", "Provided username and password is not matching, Please retry.");
-                        context.Rejected();
+                        contextPassword = context.Password;
+
+
+                        if (!string.IsNullOrEmpty(user.Where(x => x.Username == context.UserName && x.Hash == contextPassword).FirstOrDefault().Username))
+                        {
+                            var currentUser = user.Where(x => x.Username == context.UserName && x.Hash == contextPassword).FirstOrDefault();
+
+                         
+
+
+
+                            identity.AddClaim(new Claim("UserName", currentUser.Username));
+                            identity.AddClaim(new Claim("Id", Convert.ToString(currentUser.Id)));
+
+                            var props = new AuthenticationProperties(new Dictionary<string, string>
+                        {
+                            {
+                                "Username", context.UserName
+                            },
+
+                        });
+
+                            var ticket = new AuthenticationTicket(identity, props);
+                            context.Validated(ticket);
+                        }
+                        else
+                        {
+                            context.SetError("invalid_grant", "Provided username and password is not matching, Please retry.");
+                            context.Rejected();
+
+                        }
+
 
                     }
-
-
-
 
                 }
                 else
