@@ -40,8 +40,10 @@ namespace WebsiteTemplateProject.Service
         {
 
             UserService userService = new UserService();
-            foreach (var u in db.Users.Where(x => x.Username == user.Username && x.Hash == user.Hash))
+            foreach (var u in db.Users.Where(x => x.Username == user.Username))
             {
+
+
               
 
                     user.isPasswordHashed = true;

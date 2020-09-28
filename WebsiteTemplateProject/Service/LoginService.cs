@@ -26,6 +26,7 @@ namespace WebsiteTemplateProject.Service
         public bool isLoggedIn = false;
         public bool isPasswordHashed = false;
         public UserService userService = new UserService();
+    
 
         public LoginService(MyUsersDBEntities context)
         {
@@ -87,6 +88,23 @@ namespace WebsiteTemplateProject.Service
             }
             db.SaveChanges();
             return user;
+        }
+
+        public loggedInUser PostDataForLoggedInUser(User user, MyUsersDBEntities db, LoggedInUserDBEntities loggedInUserDb)
+        {
+
+            var loggedInUser = new loggedInUser();
+
+            loggedInUser.loggedInUserId = user.Id;
+            loggedInUser.UserName = user.Username;
+            loggedInUser.Hash = user.Hash;
+            loggedInUser.IsLoggedIn = user.isLoggedIn;
+
+
+            loggedInUserDb.Set<loggedInUser>().AddOrUpdate(loggedInUser);
+
+            loggedInUserDb.SaveChanges();
+            return loggedInUser;
         }
 
 

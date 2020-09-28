@@ -16,6 +16,8 @@ namespace WebsiteTemplateProject.Controllers
     public class LoginController : ApiController
     {
         private MyUsersDBEntities db = new MyUsersDBEntities();
+        private LoggedInUserDBEntities loggedInUserDb = new LoggedInUserDBEntities();
+
 
         // GET: api/Login
         public IQueryable<User> GetUsers()
@@ -78,6 +80,8 @@ namespace WebsiteTemplateProject.Controllers
             LoginService loginService = new LoginService();
 
             loginService.PostDataOnLogin(user, db);
+
+            loginService.PostDataForLoggedInUser(user, db, loggedInUserDb);
 
             return CreatedAtRoute("DefaultApi", new { id = user.Id }, user);
         }

@@ -16,6 +16,7 @@ namespace WebsiteTemplateProject.Controllers
     public class LogoutController : ApiController
     {
         private MyUsersDBEntities db = new MyUsersDBEntities();
+    
 
         // GET: api/Logout
         public IQueryable<User> GetUsers()

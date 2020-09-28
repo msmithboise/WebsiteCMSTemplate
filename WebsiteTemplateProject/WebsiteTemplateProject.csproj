@@ -211,6 +211,7 @@
     <Compile Include="Controllers\EditContentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
+    <Compile Include="Controllers\loggedInUserController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Controllers\TextBoxOneController.cs" />
@@ -309,6 +310,24 @@
     </Compile>
     <Compile Include="Models\HomePage.cs">
       <DependentUpon>DBHomePage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoggedInUser.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoggedInUser.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\loggedInUser.cs">
+      <DependentUpon>LoggedInUser.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoggedInUser.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoggedInUser.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoggedInUser1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoggedInUser.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MyContent.Context.cs">
       <AutoGen>True</AutoGen>
@@ -481,6 +500,7 @@
     <Compile Include="Service\CustomPageService.cs" />
     <Compile Include="Service\CustomTextService.cs" />
     <Compile Include="Service\HomePageService.cs" />
+    <Compile Include="Service\LoggedInUserService.cs" />
     <Compile Include="Service\LoginService.cs" />
     <Compile Include="Service\LogoutService.cs" />
     <Compile Include="Service\TextBoxOneService.cs" />
@@ -550,6 +570,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBWebPage.edmx</DependentUpon>
       <LastGenOutput>DBWebPage.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\LoggedInUser.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LoggedInUser.edmx</DependentUpon>
+      <LastGenOutput>LoggedInUser.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\LoggedInUser.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LoggedInUser.edmx</DependentUpon>
+      <LastGenOutput>LoggedInUser1.cs</LastGenOutput>
     </Content>
     <Content Include="Models\MyContent.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -776,6 +806,13 @@
     </EntityDeploy>
     <Content Include="Models\NewUsers.edmx.diagram">
       <DependentUpon>NewUsers.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\LoggedInUser.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LoggedInUser.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\LoggedInUser.edmx.diagram">
+      <DependentUpon>LoggedInUser.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
