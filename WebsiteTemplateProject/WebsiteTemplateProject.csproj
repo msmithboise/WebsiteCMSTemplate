@@ -208,6 +208,7 @@
     <Compile Include="Controllers\CustomImagesController.cs" />
     <Compile Include="Controllers\CustomPagesController.cs" />
     <Compile Include="Controllers\CustomTextController.cs" />
+    <Compile Include="Controllers\DefaultTemplateController.cs" />
     <Compile Include="Controllers\EditContentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
@@ -499,6 +500,7 @@
     <Compile Include="Service\CustomImageService.cs" />
     <Compile Include="Service\CustomPageService.cs" />
     <Compile Include="Service\CustomTextService.cs" />
+    <Compile Include="Service\DefaultTemplateService.cs" />
     <Compile Include="Service\HomePageService.cs" />
     <Compile Include="Service\LoggedInUserService.cs" />
     <Compile Include="Service\LoginService.cs" />
