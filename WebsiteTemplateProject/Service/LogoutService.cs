@@ -44,8 +44,8 @@ namespace WebsiteTemplateProject.Service
             {
 
 
-              
 
+                user.EmailAddress = u.EmailAddress;
                     user.isPasswordHashed = true;
                     user.Id = u.Id;
                     user.FirstName = u.FirstName;
