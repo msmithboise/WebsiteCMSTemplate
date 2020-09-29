@@ -16,6 +16,7 @@ namespace WebsiteTemplateProject.Controllers
     public class LogoutController : ApiController
     {
         private MyUsersDBEntities db = new MyUsersDBEntities();
+        private LoggedInUserDBEntities loggedInUser = new LoggedInUserDBEntities();
     
 
         // GET: api/Logout
@@ -79,6 +80,8 @@ namespace WebsiteTemplateProject.Controllers
             LogoutService logoutService = new LogoutService();
 
             logoutService.PostDataOnLogout(user,db);
+
+            logoutService.PostDataForLoggedOutUser(user, db, loggedInUser);
 
             return CreatedAtRoute("DefaultApi", new { id = user.Id }, user);
         }

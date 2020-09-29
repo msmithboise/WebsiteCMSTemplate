@@ -93,18 +93,42 @@ namespace WebsiteTemplateProject.Service
         public loggedInUser PostDataForLoggedInUser(User user, MyUsersDBEntities db, LoggedInUserDBEntities loggedInUserDb)
         {
 
-            var loggedInUser = new loggedInUser();
+            var loggedInUserToReturn = new loggedInUser();
 
-            loggedInUser.loggedInUserId = user.Id;
-            loggedInUser.UserName = user.Username;
-            loggedInUser.Hash = user.Hash;
-            loggedInUser.IsLoggedIn = user.isLoggedIn;
+           List<loggedInUser> loggedInUsersList = new List<loggedInUser>();
+
+            loggedInUsersList = loggedInUserDb.loggedInUsers.ToList();
+
+            if (loggedInUsersList.Count <= 0)
+            {
+                loggedInUserToReturn = new loggedInUser();
+
+                loggedInUserToReturn.loggedInUserId = user.Id;
+               loggedInUserToReturn.UserName = user.Username;
+               loggedInUserToReturn.Hash = user.Hash;
+                loggedInUserToReturn.IsLoggedIn = user.isLoggedIn;
 
 
-            loggedInUserDb.Set<loggedInUser>().AddOrUpdate(loggedInUser);
+            }
+            else
+            {
+
+            foreach (var loggedInUser in loggedInUserDb.loggedInUsers)
+            {
+              
+                loggedInUser.UserName = user.Username;
+                loggedInUser.Hash = user.Hash;
+                loggedInUser.IsLoggedIn = user.isLoggedIn;
+
+                loggedInUserToReturn = loggedInUser;
+            }
+
+            }
+
+            loggedInUserDb.Set<loggedInUser>().AddOrUpdate(loggedInUserToReturn);
 
             loggedInUserDb.SaveChanges();
-            return loggedInUser;
+            return loggedInUserToReturn;
         }
 
 

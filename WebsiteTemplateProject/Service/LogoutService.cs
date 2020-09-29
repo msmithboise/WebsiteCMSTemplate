@@ -64,5 +64,46 @@ namespace WebsiteTemplateProject.Service
             db.SaveChanges();
             return user;
         }
+
+        public loggedInUser PostDataForLoggedOutUser(User user, MyUsersDBEntities db, LoggedInUserDBEntities loggedInUserDb)
+        {
+
+            var loggedInUserToReturn = new loggedInUser();
+
+            List<loggedInUser> loggedInUsersList = new List<loggedInUser>();
+
+            loggedInUsersList = loggedInUserDb.loggedInUsers.ToList();
+
+            if (loggedInUsersList.Count <= 0)
+            {
+                loggedInUserToReturn = new loggedInUser();
+
+                loggedInUserToReturn.loggedInUserId = user.Id;
+                loggedInUserToReturn.UserName = user.Username;
+                loggedInUserToReturn.Hash = user.Hash;
+                loggedInUserToReturn.IsLoggedIn = false;
+
+
+            }
+            else
+            {
+
+                foreach (var loggedInUser in loggedInUserDb.loggedInUsers)
+                {
+
+                    loggedInUser.UserName = user.Username;
+                    loggedInUser.Hash = user.Hash;
+                    loggedInUser.IsLoggedIn = false;
+
+                    loggedInUserToReturn = loggedInUser;
+                }
+
+            }
+
+            loggedInUserDb.Set<loggedInUser>().AddOrUpdate(loggedInUserToReturn);
+
+            loggedInUserDb.SaveChanges();
+            return loggedInUserToReturn;
+        }
     }
 }
