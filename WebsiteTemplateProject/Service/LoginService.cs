@@ -104,8 +104,8 @@ namespace WebsiteTemplateProject.Service
                 loggedInUserToReturn = new loggedInUser();
 
                 loggedInUserToReturn.loggedInUserId = user.Id;
-               loggedInUserToReturn.UserName = user.Username;
-               loggedInUserToReturn.Hash = user.Hash;
+                loggedInUserToReturn.UserName = user.Username;
+                loggedInUserToReturn.Hash = DateTime.Now.ToString();
                 loggedInUserToReturn.IsLoggedIn = user.isLoggedIn;
 
 
@@ -117,10 +117,10 @@ namespace WebsiteTemplateProject.Service
             {
               
                 loggedInUser.UserName = user.Username;
-                loggedInUser.Hash = user.Hash;
                 loggedInUser.IsLoggedIn = user.isLoggedIn;
-
+                loggedInUserToReturn.Hash = DateTime.Now.ToString();
                 loggedInUserToReturn = loggedInUser;
+
             }
 
             }

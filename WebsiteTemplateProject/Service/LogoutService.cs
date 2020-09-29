@@ -80,7 +80,7 @@ namespace WebsiteTemplateProject.Service
 
                 loggedInUserToReturn.loggedInUserId = user.Id;
                 loggedInUserToReturn.UserName = user.Username;
-                loggedInUserToReturn.Hash = user.Hash;
+                loggedInUserToReturn.Hash = DateTime.Now.ToString();
                 loggedInUserToReturn.IsLoggedIn = false;
 
 
@@ -92,7 +92,7 @@ namespace WebsiteTemplateProject.Service
                 {
 
                     loggedInUser.UserName = user.Username;
-                    loggedInUser.Hash = user.Hash;
+                    loggedInUser.Hash = DateTime.Now.ToString();
                     loggedInUser.IsLoggedIn = false;
 
                     loggedInUserToReturn = loggedInUser;
