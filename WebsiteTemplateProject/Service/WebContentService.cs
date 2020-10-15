@@ -32,6 +32,9 @@ namespace WebsiteTemplateProject.Service
         {
             using (db)
             {
+
+
+
                 if (webContent.Id == default(int))
                 {
                     db.WebContents.Add(webContent);

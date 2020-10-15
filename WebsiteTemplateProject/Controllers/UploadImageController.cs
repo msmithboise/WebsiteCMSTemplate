@@ -33,6 +33,7 @@ namespace WebsiteTemplateProject.Controllers
                 var fireBaseUrl = postedFormUrl;
                 var pageId = Int32.Parse(postedFormPageId);
                 var bgImage = postedBackgroundImage;
+               
 
                 //Save to DB
                 using (NewWebContentEntities2 db = new NewWebContentEntities2())
@@ -42,6 +43,8 @@ namespace WebsiteTemplateProject.Controllers
                         ImageUrl = fireBaseUrl,
                         PageId = pageId,
                         backgroundImage = fireBaseUrl
+                        //height = "500px",
+                        //backgroundRepeat = "no-repeat"
                     };
                     db.WebContents.Add(uploadImage);
 
