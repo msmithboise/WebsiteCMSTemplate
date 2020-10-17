@@ -215,6 +215,7 @@
     <Compile Include="Controllers\loggedInUserController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
+    <Compile Include="Controllers\SubPagesController.cs" />
     <Compile Include="Controllers\TextBoxOneController.cs" />
     <Compile Include="Controllers\UploadImageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -374,6 +375,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NewUsers.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubPage.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubPage.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubPage.cs">
+      <DependentUpon>SubPage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubPage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubPage.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubPage1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubPage.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TextBox.cs">
       <DependentUpon>TextBoxOne.tt</DependentUpon>
@@ -613,6 +632,16 @@
       <DependentUpon>NewUsers.edmx</DependentUpon>
       <LastGenOutput>NewUsers.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\SubPage.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SubPage.edmx</DependentUpon>
+      <LastGenOutput>SubPage.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SubPage.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SubPage.edmx</DependentUpon>
+      <LastGenOutput>SubPage1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\TextBoxOne.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TextBoxOne.edmx</DependentUpon>
@@ -815,6 +844,13 @@
     </EntityDeploy>
     <Content Include="Models\LoggedInUser.edmx.diagram">
       <DependentUpon>LoggedInUser.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\SubPage.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SubPage.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SubPage.edmx.diagram">
+      <DependentUpon>SubPage.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
