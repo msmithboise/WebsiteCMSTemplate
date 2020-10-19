@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebsiteTemplateProject.Models;
+using WebsiteTemplateProject.Service;
 
 namespace WebsiteTemplateProject.Controllers
 {
@@ -26,13 +27,11 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(SubPage))]
         public IHttpActionResult GetSubPage(int id)
         {
-            SubPage subPage = db.SubPages.Find(id);
-            if (subPage == null)
-            {
-                return NotFound();
-            }
+            SubPageService subPageService = new SubPageService();
 
-            return Ok(subPage);
+            var subPages = subPageService.GetSubPagesByPageId(id, db);
+
+            return Ok(subPages);
         }
 
         // PUT: api/SubPages/5
@@ -74,13 +73,9 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(SubPage))]
         public IHttpActionResult PostSubPage(SubPage subPage)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            SubPageService subPageService = new SubPageService();
 
-            db.SubPages.Add(subPage);
-            db.SaveChanges();
+            subPageService.UpsertSubPage(subPage, db);
 
             return CreatedAtRoute("DefaultApi", new { id = subPage.SubPageId }, subPage);
         }
