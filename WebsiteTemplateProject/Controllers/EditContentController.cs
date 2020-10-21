@@ -15,10 +15,10 @@ namespace WebsiteTemplateProject.Controllers
 {
     public class EditContentController : ApiController
     {
-        private NewWebContentEntities2 db = new NewWebContentEntities2();
+        private ContentDBEntities db = new ContentDBEntities();
 
         // GET: api/EditContent
-        public IQueryable<WebContent> GetWebContents()
+        public IQueryable<Models.WebContent> GetWebContents()
         {
             return db.WebContents;
         }
@@ -70,8 +70,8 @@ namespace WebsiteTemplateProject.Controllers
         }
 
         // POST: api/EditContent
-        [ResponseType(typeof(WebContent))]
-        public IHttpActionResult PostWebContent(WebContent webContent)
+        [ResponseType(typeof(Models.WebContent))]
+        public IHttpActionResult PostWebContent(Models.WebContent webContent)
         {
             if (!ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(WebContent))]
         public IHttpActionResult DeleteWebContent(int id)
         {
-            WebContent webContent = db.WebContents.Find(id);
+            Models.WebContent webContent = db.WebContents.Find(id);
             if (webContent == null)
             {
                 return NotFound();

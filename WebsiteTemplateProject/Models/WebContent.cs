@@ -12,7 +12,7 @@ namespace WebsiteTemplateProject.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class WebContent
+    public class WebContent
     {
         public int Id { get; set; }
         public Nullable<int> PageId { get; set; }
@@ -24,6 +24,7 @@ namespace WebsiteTemplateProject.Models
         public Nullable<int> TextId { get; set; }
         public Nullable<int> ImageId { get; set; }
         public Nullable<int> SettingsId { get; set; }
+        public Nullable<int> SubPageId { get; set; }
         public string backgroundAttachment { get; set; }
         public string backgroundClip { get; set; }
         public string backgroundImage { get; set; }
@@ -103,7 +104,7 @@ namespace WebsiteTemplateProject.Models
         public string width { get; set; }
         public string zIndex { get; set; }
         public string display { get; set; }
-        public string cssFloat { get; set; }
+        public string @float { get; set; }
         public string filter { get; set; }
         public string backgroundColor { get; set; }
         public string lineBreak { get; set; }
@@ -158,6 +159,25 @@ namespace WebsiteTemplateProject.Models
         public string customFieldThree { get; set; }
         public string customFieldFour { get; set; }
         public string customFieldFive { get; set; }
-        public string imageUpload { get; set; }
+        public string embedUrl { get; set; }
+        public string animationName { get; set; }
+        public string animationDuration { get; set; }
+        public string animationTimingFunction { get; set; }
+        public string animationDelay { get; set; }
+        public string animationIterationCount { get; set; }
+        public string animationDirection { get; set; }
+        public string animationFillMode { get; set; }
+        public string animationPlayState { get; set; }
+        public string flexBasis { get; set; }
+        public string flexDirection { get; set; }
+        public string flexFlow { get; set; }
+        public string flexGrow { get; set; }
+        public string flexShrink { get; set; }
+        public string flexWrap { get; set; }
+        public string fontFeatureSettings { get; set; }
+        public string fontVariantCaps { get; set; }
+        public string resize { get; set; }
+        public string scrollBehavior { get; set; }
+        public string writingMode { get; set; }
     }
 }

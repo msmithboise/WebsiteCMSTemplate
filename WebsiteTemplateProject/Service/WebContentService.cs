@@ -4,21 +4,22 @@ using System.Linq;
 using System.Web;
 
 using System.Data.Entity;
+using WebsiteTemplateProject.Models;
 
 namespace WebsiteTemplateProject.Service
 {
 
     public interface IWebContentService
     {
-        WebContent UpsertWebContent(WebContent webContent);
+        WebsiteTemplateProject.Models.WebContent UpsertWebContent(WebsiteTemplateProject.Models.WebContent webContent);
     }
 
 
     public class WebContentService
     {
-        public readonly NewWebContentEntities2 _context;
+        public readonly ContentDBEntities _context;
 
-        public WebContentService(NewWebContentEntities2 context)
+        public WebContentService(ContentDBEntities context)
         {
             _context = context;
         }
@@ -28,7 +29,7 @@ namespace WebsiteTemplateProject.Service
 
         }
 
-        public WebContent UpsertWebContent(WebContent webContent, NewWebContentEntities2 db)
+        public WebsiteTemplateProject.Models.WebContent UpsertWebContent(WebsiteTemplateProject.Models.WebContent webContent, ContentDBEntities db)
         {
             using (db)
             {
@@ -53,9 +54,9 @@ namespace WebsiteTemplateProject.Service
 
 
 
-        public List<WebContent> GetWebContentByPageId(int pageId, NewWebContentEntities2 db)
+        public List<Models.WebContent> GetWebContentByPageId(int pageId, ContentDBEntities db)
         {
-            List<WebContent> webContentByPageId = new List<WebContent>();
+            List<Models.WebContent> webContentByPageId = new List<Models.WebContent>();
 
             foreach (var webContent in db.WebContents)
             {
@@ -74,9 +75,9 @@ namespace WebsiteTemplateProject.Service
             return webContentByPageId.OrderBy(x => x.Id).ToList();
         }
 
-        public List<WebContent> GetWebContentById(int id, NewWebContentEntities2 db)
+        public List<Models.WebContent> GetWebContentById(int id, ContentDBEntities db)
         {
-            List<WebContent> webContentById = new List<WebContent>();
+            List<Models.WebContent> webContentById = new List<Models.WebContent>();
 
             foreach (var webContent in db.WebContents)
             {

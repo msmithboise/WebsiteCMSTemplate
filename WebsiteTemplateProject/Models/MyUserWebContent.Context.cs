@@ -3,7 +3,7 @@
 //     This code was generated from a template.
 //
 //     Manual changes to this file may cause unexpected behavior in your application.
-//     Manual changes to this file will be overwritten if the code is regenerated.C:\Users\msmit\source\repos\WebsiteTemplateProject\WebsiteTemplateProject\Controllers\WebContentController.cs
+//     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
 
@@ -13,10 +13,10 @@ namespace WebsiteTemplateProject.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WebContentDBEntities : DbContext
+    public partial class ContentDBEntities : DbContext
     {
-        public WebContentDBEntities()
-            : base("name=WebContentDBEntities")
+        public ContentDBEntities()
+            : base("name=ContentDBEntities")
         {
         }
     

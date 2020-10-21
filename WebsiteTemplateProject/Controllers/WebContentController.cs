@@ -15,10 +15,10 @@ namespace WebsiteTemplateProject.Controllers
 {
     public class WebContentController : ApiController
     {
-        private NewWebContentEntities2 db = new NewWebContentEntities2();
+        private ContentDBEntities db = new ContentDBEntities();
 
         // GET: api/WebContent
-        public IQueryable<WebContent> GetWebContents()
+        public IQueryable<WebsiteTemplateProject.Models.WebContent> GetWebContents()
         {
             return db.WebContents;
         }
@@ -71,7 +71,7 @@ namespace WebsiteTemplateProject.Controllers
 
         // POST: api/WebContent
         [ResponseType(typeof(WebContent))]
-        public IHttpActionResult PostWebContent(WebContent webContent)
+        public IHttpActionResult PostWebContent(Models.WebContent webContent)
         {
             WebContentService webContentService = new WebContentService();
 
@@ -84,7 +84,7 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(WebContent))]
         public IHttpActionResult DeleteWebContent(int id)
         {
-            WebContent webContent = db.WebContents.Find(id);
+            Models.WebContent webContent = db.WebContents.Find(id);
             if (webContent == null)
             {
                 return NotFound();

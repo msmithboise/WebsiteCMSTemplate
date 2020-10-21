@@ -362,6 +362,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MyUser.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\MyUserWebContent.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyUserWebContent.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyUserWebContent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyUserWebContent.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyUserWebContent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyUserWebContent.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\NewUsers.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -486,7 +501,7 @@
       <DependentUpon>WebContent.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WebContent.cs">
-      <DependentUpon>MyContent.tt</DependentUpon>
+      <DependentUpon>MyUserWebContent.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WebContent.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -623,6 +638,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MyUser.edmx</DependentUpon>
       <LastGenOutput>MyUser.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MyUserWebContent.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MyUserWebContent.edmx</DependentUpon>
+      <LastGenOutput>MyUserWebContent.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MyUserWebContent.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MyUserWebContent.edmx</DependentUpon>
+      <LastGenOutput>MyUserWebContent.cs</LastGenOutput>
     </Content>
     <Content Include="Models\NewUsers.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -853,6 +878,13 @@
     </EntityDeploy>
     <Content Include="Models\SubPage.edmx.diagram">
       <DependentUpon>SubPage.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\MyUserWebContent.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyUserWebContent.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MyUserWebContent.edmx.diagram">
+      <DependentUpon>MyUserWebContent.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
