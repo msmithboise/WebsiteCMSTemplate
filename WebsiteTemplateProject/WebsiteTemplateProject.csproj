@@ -215,6 +215,7 @@
     <Compile Include="Controllers\loggedInUserController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
+    <Compile Include="Controllers\SubContentController.cs" />
     <Compile Include="Controllers\SubPageContentController.cs" />
     <Compile Include="Controllers\SubPagesController.cs" />
     <Compile Include="Controllers\TextBoxOneController.cs" />
