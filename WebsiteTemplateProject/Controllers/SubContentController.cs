@@ -4,7 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 using WebsiteTemplateProject.Models;
+using WebsiteTemplateProject.Service;
 
 namespace WebsiteTemplateProject.Controllers
 {
@@ -29,9 +31,26 @@ namespace WebsiteTemplateProject.Controllers
         }
 
         // POST: api/SubContent
-        public void Post([FromBody]string value)
+        [ResponseType(typeof(Models.WebContent))]
+        public IHttpActionResult Post([FromBody]Models.WebContent webContent)
         {
+            SubContentService subContentService = new SubContentService();
+
+            subContentService.UpsertSubContent(webContent,db);
+
+
+            return CreatedAtRoute("DefaultApi", new { id = webContent.Id }, webContent);
         }
+
+        //[ResponseType(typeof(WebContent))]
+        //public IHttpActionResult PostWebContent(Models.WebContent webContent)
+        //{
+        //    WebContentService webContentService = new WebContentService();
+
+        //    webContentService.UpsertWebContent(webContent, db);
+
+        //    return CreatedAtRoute("DefaultApi", new { id = webContent.Id }, webContent);
+        //}
 
         // PUT: api/SubContent/5
         public void Put(int id, [FromBody]string value)
