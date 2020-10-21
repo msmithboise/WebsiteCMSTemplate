@@ -22,12 +22,16 @@ namespace WebsiteTemplateProject.Controllers
             return db.WebContents;
         }
 
-
         // GET: api/SubContent/5
-        [Route("api/SubContent/{id}/{subId}")]
-        public string Get(int id, int subId)
+        [Route("api/SubContent/{subPageId}/{pageId}")]
+        [ResponseType(typeof(Models.WebContent))]
+        public IHttpActionResult Get(int pageId, int subPageId)
         {
-            return "value";
+            SubContentService subContentService = new SubContentService();
+
+           var content = subContentService.GetWebContentByPageIdAndSubPageId(pageId, subPageId, db);
+
+            return Ok(content);
         }
 
         // POST: api/SubContent
@@ -42,15 +46,7 @@ namespace WebsiteTemplateProject.Controllers
             return CreatedAtRoute("DefaultApi", new { id = webContent.Id }, webContent);
         }
 
-        //[ResponseType(typeof(WebContent))]
-        //public IHttpActionResult PostWebContent(Models.WebContent webContent)
-        //{
-        //    WebContentService webContentService = new WebContentService();
-
-        //    webContentService.UpsertWebContent(webContent, db);
-
-        //    return CreatedAtRoute("DefaultApi", new { id = webContent.Id }, webContent);
-        //}
+     
 
         // PUT: api/SubContent/5
         public void Put(int id, [FromBody]string value)

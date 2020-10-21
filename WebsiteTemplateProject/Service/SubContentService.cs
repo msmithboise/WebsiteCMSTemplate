@@ -21,6 +21,38 @@ namespace WebsiteTemplateProject.Service
 
         }
 
+        public List<Models.WebContent> GetWebContentByPageIdAndSubPageId(int pageId, int subPageId, ContentDBEntities db)
+        {
+            List<Models.WebContent> webContentByPageIdAndSubId = new List<Models.WebContent>();
+
+            //First adds all content to list
+            foreach (var webContent in db.WebContents)
+            {
+                webContentByPageIdAndSubId.Add(webContent);
+            }
+
+
+           
+
+            //Removes any content that doesn't match both page id and sub page id
+            foreach (var webContent in webContentByPageIdAndSubId.ToList())
+            {
+                //Remove any content that doesn't have a page id or sub id
+                if (webContent.PageId == null || webContent.SubPageId == null)
+                {
+                    webContentByPageIdAndSubId.Remove(webContent);
+                }
+
+                if (webContent.PageId != pageId && webContent.SubPageId != subPageId)
+                {
+                    webContentByPageIdAndSubId.Remove(webContent);
+                }
+            }
+
+            //Return list ordered by Id
+            return webContentByPageIdAndSubId.OrderBy(x => x.Id).ToList();
+        }
+
         public WebsiteTemplateProject.Models.WebContent UpsertSubContent(Models.WebContent webContent, ContentDBEntities db)
         {
             using (db)
