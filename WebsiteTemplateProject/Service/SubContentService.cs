@@ -32,7 +32,7 @@ namespace WebsiteTemplateProject.Service
             }
 
 
-           
+
 
             //Removes any content that doesn't match both page id and sub page id
             foreach (var webContent in webContentByPageIdAndSubId.ToList())
@@ -43,10 +43,26 @@ namespace WebsiteTemplateProject.Service
                     webContentByPageIdAndSubId.Remove(webContent);
                 }
 
-                if (webContent.PageId != pageId && webContent.SubPageId != subPageId)
+
+                //If page or subpage id is not null
+                if (webContent.PageId != null && webContent.SubPageId != null)
                 {
-                    webContentByPageIdAndSubId.Remove(webContent);
+                    //Remove content if pageid doesn't equal page id
+                    if (webContent.PageId != pageId)
+                    {
+                        webContentByPageIdAndSubId.Remove(webContent);
+
+                    }
+                    //Remove content if pageid doesn't equal page id
+
+                    if (webContent.SubPageId != subPageId)
+                    {
+                        webContentByPageIdAndSubId.Remove(webContent);
+
+                    }
+
                 }
+
             }
 
             //Return list ordered by Id
