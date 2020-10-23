@@ -38,7 +38,7 @@ namespace WebsiteTemplateProject.Controllers
                
 
                 //Save to DB
-                using (ContentDBEntities db = new ContentDBEntities())
+                using (WebUserDBEntities db = new WebUserDBEntities())
                 {
                     Models.WebContent uploadImage = new Models.WebContent()
                     {

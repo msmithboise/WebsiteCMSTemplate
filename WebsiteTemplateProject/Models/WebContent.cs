@@ -12,19 +12,41 @@ namespace WebsiteTemplateProject.Models
     using System;
     using System.Collections.Generic;
     
-    public class WebContent
+    public partial class WebContent
     {
         public int Id { get; set; }
         public Nullable<int> PageId { get; set; }
-        public string TextBody { get; set; }
+        public string PageDescription { get; set; }
+        public Nullable<int> SubPageId { get; set; }
+        public string SubPageDescription { get; set; }
+        public Nullable<int> AudioId { get; set; }
+        public string AudioUrl { get; set; }
+        public Nullable<int> SocialMediaLinkId { get; set; }
+        public string SocialMediaLink { get; set; }
         public string ImageUrl { get; set; }
+        public string TextBody { get; set; }
+        public string PlayList { get; set; }
+        public string Class { get; set; }
+        public Nullable<int> ParentId { get; set; }
+        public Nullable<int> ChildId { get; set; }
+        public string GridValues { get; set; }
         public Nullable<System.DateTime> DateCreated { get; set; }
         public string isText { get; set; }
         public string isImage { get; set; }
         public Nullable<int> TextId { get; set; }
         public Nullable<int> ImageId { get; set; }
         public Nullable<int> SettingsId { get; set; }
-        public Nullable<int> SubPageId { get; set; }
+        public Nullable<int> EmbedId { get; set; }
+        public string embedUrl { get; set; }
+        public Nullable<bool> isHidden { get; set; }
+        public Nullable<bool> isPublished { get; set; }
+        public string Logo { get; set; }
+        public Nullable<int> LogoId { get; set; }
+        public string HyperLink { get; set; }
+        public string HyperLinkId { get; set; }
+        public string MapUrl { get; set; }
+        public Nullable<int> MapId { get; set; }
+        public string Email { get; set; }
         public string backgroundAttachment { get; set; }
         public string backgroundClip { get; set; }
         public string backgroundImage { get; set; }
@@ -159,7 +181,6 @@ namespace WebsiteTemplateProject.Models
         public string customFieldThree { get; set; }
         public string customFieldFour { get; set; }
         public string customFieldFive { get; set; }
-        public string embedUrl { get; set; }
         public string animationName { get; set; }
         public string animationDuration { get; set; }
         public string animationTimingFunction { get; set; }

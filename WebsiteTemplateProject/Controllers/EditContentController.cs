@@ -15,7 +15,7 @@ namespace WebsiteTemplateProject.Controllers
 {
     public class EditContentController : ApiController
     {
-        private ContentDBEntities db = new ContentDBEntities();
+        private WebUserDBEntities db = new WebUserDBEntities();
 
         // GET: api/EditContent
         public IQueryable<Models.WebContent> GetWebContents()
