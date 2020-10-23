@@ -58,17 +58,31 @@ namespace WebsiteTemplateProject.Service
         {
             List<Models.WebContent> webContentByPageId = new List<Models.WebContent>();
 
+
+            //Ignore any content that is tied to a subpage id
+
             foreach (var webContent in db.WebContents)
             {
+                if (webContent.SubPageId == null)
+                {
                 webContentByPageId.Add(webContent);
+
+                }
+
             }
 
             foreach (var webContent in webContentByPageId.ToList())
             {
+                //Ignore any content that is tied to a subpage id
+                if (webContent.SubPageId == null)
+                {
                 if (webContent.PageId != pageId)
                 {
                     webContentByPageId.Remove(webContent);
                 }
+
+                }
+
             }
 
 

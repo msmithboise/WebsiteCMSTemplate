@@ -24,6 +24,7 @@ namespace WebsiteTemplateProject.Controllers
             var httpRequest = HttpContext.Current.Request;
             //Upload Image
             var postedFormPageId = httpRequest.Form["pageId"];
+            var postedFormSubPageId = httpRequest.Form["subPageId"];
             var postedFormUrl = httpRequest.Form["imageUrl"];
             var postedBackgroundImage = httpRequest.Form["backgroundImage"];
             var postedFile = httpRequest.Files["imageUrl"];
@@ -33,15 +34,17 @@ namespace WebsiteTemplateProject.Controllers
                 var fireBaseUrl = postedFormUrl;
                 var pageId = Int32.Parse(postedFormPageId);
                 var bgImage = postedBackgroundImage;
+                var subPageId = Int32.Parse(postedFormSubPageId);
                
 
                 //Save to DB
-                using (NewWebContentEntities2 db = new NewWebContentEntities2())
+                using (ContentDBEntities db = new ContentDBEntities())
                 {
-                    WebContent uploadImage = new WebContent()
+                    Models.WebContent uploadImage = new Models.WebContent()
                     {
                         ImageUrl = fireBaseUrl,
                         PageId = pageId,
+                        SubPageId = subPageId,
                         backgroundImage = fireBaseUrl
                         //height = "500px",
                         //backgroundRepeat = "no-repeat"
