@@ -13,20 +13,26 @@ using WebsiteTemplateProject.Validation;
 
 namespace WebsiteTemplateProject.Controllers
 {
-    public class UploadImageController : ApiController
+    public class UploadSubPageImageController : ApiController
     {
-        
+        string postedFormSubPageId;
+        int subPageId;
 
         [HttpPost]
-        [Route("api/UploadImage")]
+        [Route("api/UploadSubPageImage")]
 
         public HttpResponseMessage UploadImage()
         {
-           
+
             var httpRequest = HttpContext.Current.Request;
             //Upload Image
             var postedFormPageId = httpRequest.Form["pageId"];
 
+            if (httpRequest.Form["subPageId"] != null || postedFormSubPageId != "undefined")
+            {
+                postedFormSubPageId = httpRequest.Form["subPageId"];
+
+            }
 
             var postedFormUrl = httpRequest.Form["imageUrl"];
             var postedBackgroundImage = httpRequest.Form["backgroundImage"];
@@ -38,9 +44,15 @@ namespace WebsiteTemplateProject.Controllers
                 var pageId = Int32.Parse(postedFormPageId);
                 var bgImage = postedBackgroundImage;
 
-             
+                if (postedFormSubPageId != null || postedFormSubPageId != "undefined")
+                {
 
-               
+
+                    subPageId = Int32.Parse(postedFormSubPageId);
+
+                }
+
+
 
                 //Save to DB
                 using (WebUserDBEntities db = new WebUserDBEntities())
@@ -49,16 +61,17 @@ namespace WebsiteTemplateProject.Controllers
                     {
                         ImageUrl = fireBaseUrl,
                         PageId = pageId,
-                    
+                        SubPageId = subPageId,
                         backgroundImage = fireBaseUrl
-                  
+                        //height = "500px",
+                        //backgroundRepeat = "no-repeat"
                     };
                     db.WebContents.Add(uploadImage);
 
                     try
                     {
 
-                    db.SaveChanges();
+                        db.SaveChanges();
                     }
                     catch (DbEntityValidationException e)
                     {
@@ -70,10 +83,10 @@ namespace WebsiteTemplateProject.Controllers
                 }
 
             }
-                return Request.CreateResponse(HttpStatusCode.Created);
+            return Request.CreateResponse(HttpStatusCode.Created);
         }
 
-        
+
 
         //Download Image file
 
@@ -113,8 +126,13 @@ namespace WebsiteTemplateProject.Controllers
             //Set the file Content Type.
             response.Content.Headers.ContentType = new MediaTypeHeaderValue(MimeMapping.GetMimeMapping(image + ".PNG"));
             return response;
-            
-        }
 
+        }
     }
 }
+
+
+
+
+
+
