@@ -41,6 +41,8 @@ namespace WebsiteTemplateProject.Service
         public User PostDataOnLogin(User user, MyUsersDBEntities db)
         {
 
+            var a = db.Users;
+
             UserService userService = new UserService();
             foreach (var u in db.Users.Where(x => x.Username == user.Username && x.Hash == user.Hash))
             {
