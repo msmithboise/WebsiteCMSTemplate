@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebsiteTemplateProject.Models;
+using WebsiteTemplateProject.Service;
 
 namespace WebsiteTemplateProject.Controllers
 {
@@ -74,13 +75,9 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(NavBar))]
         public IHttpActionResult PostNavBar(NavBar navBar)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            NavBarService navBarService = new NavBarService();
 
-            db.NavBars.Add(navBar);
-            db.SaveChanges();
+            navBarService.UpsertNavBarData(navBar, db);
 
             return CreatedAtRoute("DefaultApi", new { id = navBar.NavBarId }, navBar);
         }
