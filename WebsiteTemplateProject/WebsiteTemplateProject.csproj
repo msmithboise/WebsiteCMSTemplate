@@ -216,6 +216,7 @@
     <Compile Include="Controllers\loggedInUserController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
+    <Compile Include="Controllers\NavBarController.cs" />
     <Compile Include="Controllers\SubContentController.cs" />
     <Compile Include="Controllers\SubPageContentController.cs" />
     <Compile Include="Controllers\SubPagesController.cs" />
@@ -379,6 +380,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MyUserWebContent.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NavBar.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NavBar.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NavBar.cs">
+      <DependentUpon>NavBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NavBar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NavBar.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NavBar1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NavBar.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NewUsers.Context.cs">
       <AutoGen>True</AutoGen>
@@ -674,6 +693,16 @@
       <DependentUpon>MyUserWebContent.edmx</DependentUpon>
       <LastGenOutput>MyUserWebContent.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\NavBar.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NavBar.edmx</DependentUpon>
+      <LastGenOutput>NavBar.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\NavBar.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NavBar.edmx</DependentUpon>
+      <LastGenOutput>NavBar1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\NewUsers.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NewUsers.edmx</DependentUpon>
@@ -927,6 +956,13 @@
     </EntityDeploy>
     <Content Include="Models\WebUserContent.edmx.diagram">
       <DependentUpon>WebUserContent.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\NavBar.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NavBar.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NavBar.edmx.diagram">
+      <DependentUpon>NavBar.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

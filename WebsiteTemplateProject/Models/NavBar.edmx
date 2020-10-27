@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NavBarDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="NavBar">
+          <Key>
+            <PropertyRef Name="NavBarId" />
+          </Key>
+          <Property Name="NavBarId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LogoId" Type="int" />
+          <Property Name="LogoUrl" Type="varchar" MaxLength="5000" />
+          <Property Name="LogoAlignment" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarBgColor" Type="varchar" MaxLength="5000" />
+          <Property Name="NavBarFontColor" Type="varchar" MaxLength="5000" />
+          <Property Name="NavBarType" Type="varchar" MaxLength="50" />
+          <Property Name="LogoHeight" Type="varchar" MaxLength="50" />
+          <Property Name="LogoWidth" Type="varchar" MaxLength="50" />
+          <Property Name="LogoPadding" Type="varchar" MaxLength="50" />
+          <Property Name="LogoMargin" Type="varchar" MaxLength="50" />
+          <Property Name="LogoAnimation" Type="varchar" MaxLength="50" />
+          <Property Name="LogoDisplay" Type="varchar" MaxLength="50" />
+          <Property Name="LogoOpacity" Type="varchar" MaxLength="50" />
+          <Property Name="LogoHyperLink" Type="varchar" MaxLength="50" />
+          <Property Name="LogoColor" Type="varchar" MaxLength="50" />
+          <Property Name="LogoAttachment" Type="varchar" MaxLength="50" />
+          <Property Name="LogoPosition" Type="varchar" MaxLength="50" />
+          <Property Name="LogoRepeat" Type="varchar" MaxLength="50" />
+          <Property Name="LogoSize" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarDisplay" Type="varchar" MaxLength="50" />
+          <Property Name="LogoFloat" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarPadding" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarOverflow" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarMargin" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarHoverLink" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarActiveLink" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarFloat" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarTextAlign" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarTextDecoration" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarBorder" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarBorderStyle" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarOpacity" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarPosition" Type="varchar" MaxLength="50" />
+          <Property Name="NavBarWebKit" Type="varchar" MaxLength="50" />
+          <Property Name="NavTop" Type="varchar" MaxLength="50" />
+          <Property Name="NavBottom" Type="varchar" MaxLength="50" />
+          <Property Name="NavLeft" Type="varchar" MaxLength="50" />
+          <Property Name="NavRight" Type="varchar" MaxLength="50" />
+          <Property Name="LogoTop" Type="varchar" MaxLength="50" />
+          <Property Name="LogoBottom" Type="varchar" MaxLength="50" />
+          <Property Name="LogoLeft" Type="varchar" MaxLength="50" />
+          <Property Name="LogoRight" Type="varchar" MaxLength="50" />
+          <Property Name="NavBoxShadow" Type="varchar" MaxLength="50" />
+          <Property Name="NavMinWidth" Type="varchar" MaxLength="50" />
+          <Property Name="NavMaxWidth" Type="varchar" MaxLength="50" />
+          <Property Name="NavHeight" Type="varchar" MaxLength="50" />
+          <Property Name="NavWidth" Type="varchar" MaxLength="50" />
+          <Property Name="LogoMinWidth" Type="varchar" MaxLength="50" />
+          <Property Name="LogoMaxWidth" Type="varchar" MaxLength="50" />
+          <Property Name="LogoZIndex" Type="varchar" MaxLength="50" />
+          <Property Name="NavZIndex" Type="varchar" MaxLength="50" />
+          <Property Name="NavListStyleType" Type="varchar" MaxLength="50" />
+          <Property Name="NavBorderTop" Type="varchar" MaxLength="50" />
+          <Property Name="NavBorderBottom" Type="varchar" MaxLength="50" />
+          <Property Name="NavBorderLeft" Type="varchar" MaxLength="50" />
+          <Property Name="NavBorderRight" Type="varchar" MaxLength="50" />
+          <Property Name="NavImageUrl" Type="varchar" MaxLength="5000" />
+          <Property Name="NavFontUrl" Type="varchar" MaxLength="5000" />
+          <Property Name="NavGradient" Type="varchar" MaxLength="50" />
+          <Property Name="NavAnimation" Type="varchar" MaxLength="50" />
+          <Property Name="NavFontFamily" Type="varchar" MaxLength="50" />
+          <Property Name="NavFontSize" Type="varchar" MaxLength="50" />
+          <Property Name="NavHyperLink" Type="varchar" MaxLength="5000" />
+          <Property Name="NavFontLineHeight" Type="varchar" MaxLength="50" />
+          <Property Name="NavFontLetterSpacing" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="NavBarDBModelStoreContainer">
+          <EntitySet Name="NavBar" EntityType="Self.NavBar" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NavBarDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="NavBar">
+          <Key>
+            <PropertyRef Name="NavBarId" />
+          </Key>
+          <Property Name="NavBarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogoId" Type="Int32" />
+          <Property Name="LogoUrl" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="LogoAlignment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarBgColor" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarFontColor" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoHeight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoPadding" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoMargin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoAnimation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoDisplay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoOpacity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoHyperLink" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoAttachment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoPosition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoRepeat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarDisplay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoFloat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarPadding" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarOverflow" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarMargin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarHoverLink" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarActiveLink" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarFloat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarTextAlign" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarTextDecoration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarBorder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarBorderStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarOpacity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarPosition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBarWebKit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavTop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBottom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavLeft" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavRight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoTop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoBottom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoLeft" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoRight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBoxShadow" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavMinWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavMaxWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavHeight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoMinWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoMaxWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogoZIndex" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavZIndex" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavListStyleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBorderTop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBorderBottom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBorderLeft" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavBorderRight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavImageUrl" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="NavFontUrl" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="NavGradient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavAnimation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavFontFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavFontSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavHyperLink" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="NavFontLineHeight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavFontLetterSpacing" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="NavBarDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="NavBars" EntityType="Self.NavBar" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NavBarDBModelStoreContainer" CdmEntityContainer="NavBarDBEntities">
+          <EntitySetMapping Name="NavBars">
+            <EntityTypeMapping TypeName="NavBarDBModel.NavBar">
+              <MappingFragment StoreEntitySet="NavBar">
+                <ScalarProperty Name="NavBarId" ColumnName="NavBarId" />
+                <ScalarProperty Name="LogoId" ColumnName="LogoId" />
+                <ScalarProperty Name="LogoUrl" ColumnName="LogoUrl" />
+                <ScalarProperty Name="LogoAlignment" ColumnName="LogoAlignment" />
+                <ScalarProperty Name="NavBarBgColor" ColumnName="NavBarBgColor" />
+                <ScalarProperty Name="NavBarFontColor" ColumnName="NavBarFontColor" />
+                <ScalarProperty Name="NavBarType" ColumnName="NavBarType" />
+                <ScalarProperty Name="LogoHeight" ColumnName="LogoHeight" />
+                <ScalarProperty Name="LogoWidth" ColumnName="LogoWidth" />
+                <ScalarProperty Name="LogoPadding" ColumnName="LogoPadding" />
+                <ScalarProperty Name="LogoMargin" ColumnName="LogoMargin" />
+                <ScalarProperty Name="LogoAnimation" ColumnName="LogoAnimation" />
+                <ScalarProperty Name="LogoDisplay" ColumnName="LogoDisplay" />
+                <ScalarProperty Name="LogoOpacity" ColumnName="LogoOpacity" />
+                <ScalarProperty Name="LogoHyperLink" ColumnName="LogoHyperLink" />
+                <ScalarProperty Name="LogoColor" ColumnName="LogoColor" />
+                <ScalarProperty Name="LogoAttachment" ColumnName="LogoAttachment" />
+                <ScalarProperty Name="LogoPosition" ColumnName="LogoPosition" />
+                <ScalarProperty Name="LogoRepeat" ColumnName="LogoRepeat" />
+                <ScalarProperty Name="LogoSize" ColumnName="LogoSize" />
+                <ScalarProperty Name="NavBarDisplay" ColumnName="NavBarDisplay" />
+                <ScalarProperty Name="LogoFloat" ColumnName="LogoFloat" />
+                <ScalarProperty Name="NavBarPadding" ColumnName="NavBarPadding" />
+                <ScalarProperty Name="NavBarOverflow" ColumnName="NavBarOverflow" />
+                <ScalarProperty Name="NavBarMargin" ColumnName="NavBarMargin" />
+                <ScalarProperty Name="NavBarHoverLink" ColumnName="NavBarHoverLink" />
+                <ScalarProperty Name="NavBarActiveLink" ColumnName="NavBarActiveLink" />
+                <ScalarProperty Name="NavBarFloat" ColumnName="NavBarFloat" />
+                <ScalarProperty Name="NavBarTextAlign" ColumnName="NavBarTextAlign" />
+                <ScalarProperty Name="NavBarTextDecoration" ColumnName="NavBarTextDecoration" />
+                <ScalarProperty Name="NavBarBorder" ColumnName="NavBarBorder" />
+                <ScalarProperty Name="NavBarBorderStyle" ColumnName="NavBarBorderStyle" />
+                <ScalarProperty Name="NavBarOpacity" ColumnName="NavBarOpacity" />
+                <ScalarProperty Name="NavBarPosition" ColumnName="NavBarPosition" />
+                <ScalarProperty Name="NavBarWebKit" ColumnName="NavBarWebKit" />
+                <ScalarProperty Name="NavTop" ColumnName="NavTop" />
+                <ScalarProperty Name="NavBottom" ColumnName="NavBottom" />
+                <ScalarProperty Name="NavLeft" ColumnName="NavLeft" />
+                <ScalarProperty Name="NavRight" ColumnName="NavRight" />
+                <ScalarProperty Name="LogoTop" ColumnName="LogoTop" />
+                <ScalarProperty Name="LogoBottom" ColumnName="LogoBottom" />
+                <ScalarProperty Name="LogoLeft" ColumnName="LogoLeft" />
+                <ScalarProperty Name="LogoRight" ColumnName="LogoRight" />
+                <ScalarProperty Name="NavBoxShadow" ColumnName="NavBoxShadow" />
+                <ScalarProperty Name="NavMinWidth" ColumnName="NavMinWidth" />
+                <ScalarProperty Name="NavMaxWidth" ColumnName="NavMaxWidth" />
+                <ScalarProperty Name="NavHeight" ColumnName="NavHeight" />
+                <ScalarProperty Name="NavWidth" ColumnName="NavWidth" />
+                <ScalarProperty Name="LogoMinWidth" ColumnName="LogoMinWidth" />
+                <ScalarProperty Name="LogoMaxWidth" ColumnName="LogoMaxWidth" />
+                <ScalarProperty Name="LogoZIndex" ColumnName="LogoZIndex" />
+                <ScalarProperty Name="NavZIndex" ColumnName="NavZIndex" />
+                <ScalarProperty Name="NavListStyleType" ColumnName="NavListStyleType" />
+                <ScalarProperty Name="NavBorderTop" ColumnName="NavBorderTop" />
+                <ScalarProperty Name="NavBorderBottom" ColumnName="NavBorderBottom" />
+                <ScalarProperty Name="NavBorderLeft" ColumnName="NavBorderLeft" />
+                <ScalarProperty Name="NavBorderRight" ColumnName="NavBorderRight" />
+                <ScalarProperty Name="NavImageUrl" ColumnName="NavImageUrl" />
+                <ScalarProperty Name="NavFontUrl" ColumnName="NavFontUrl" />
+                <ScalarProperty Name="NavGradient" ColumnName="NavGradient" />
+                <ScalarProperty Name="NavAnimation" ColumnName="NavAnimation" />
+                <ScalarProperty Name="NavFontFamily" ColumnName="NavFontFamily" />
+                <ScalarProperty Name="NavFontSize" ColumnName="NavFontSize" />
+                <ScalarProperty Name="NavHyperLink" ColumnName="NavHyperLink" />
+                <ScalarProperty Name="NavFontLineHeight" ColumnName="NavFontLineHeight" />
+                <ScalarProperty Name="NavFontLetterSpacing" ColumnName="NavFontLetterSpacing" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
