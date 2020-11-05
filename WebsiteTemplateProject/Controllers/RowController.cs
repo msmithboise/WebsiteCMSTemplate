@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebsiteTemplateProject.Models;
+using WebsiteTemplateProject.Service;
 
 namespace WebsiteTemplateProject.Controllers
 {
@@ -26,13 +27,11 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(Row))]
         public IHttpActionResult GetRow(int id)
         {
-            Row row = db.Rows.Find(id);
-            if (row == null)
-            {
-                return NotFound();
-            }
+            WebStructureService webStructureService = new WebStructureService();
 
-            return Ok(row);
+            var content = webStructureService.GetRowsByPageId(id, db);
+
+            return Ok(content);
         }
 
         // PUT: api/Row/5
@@ -74,28 +73,9 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(Row))]
         public IHttpActionResult PostRow(Row row)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            WebStructureService webStructureService = new WebStructureService();
 
-            db.Rows.Add(row);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (RowExists(row.RowId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+           webStructureService.UpsertRows(row, db);
 
             return CreatedAtRoute("DefaultApi", new { id = row.RowId }, row);
         }

@@ -642,6 +642,7 @@
     <Compile Include="Service\TextBoxOneService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\WebContentService.cs" />
+    <Compile Include="Service\WebStructureService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Validation\FormattedDbEntityValidationException.cs" />
     <Compile Include="WebContent.cs">
