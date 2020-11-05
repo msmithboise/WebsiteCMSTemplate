@@ -19,10 +19,24 @@ namespace WebsiteTemplateProject.Models
         public string PageDescription { get; set; }
         public Nullable<int> SubPageId { get; set; }
         public string SubPageDescription { get; set; }
+        public string Body { get; set; }
+        public Nullable<int> BodyId { get; set; }
+        public string ContainerClass { get; set; }
+        public Nullable<int> ContainerId { get; set; }
+        public string RowClass { get; set; }
+        public Nullable<int> RowId { get; set; }
+        public string ColumnClass { get; set; }
+        public Nullable<int> ColumnId { get; set; }
+        public string ElementTag { get; set; }
+        public Nullable<int> ElementTagId { get; set; }
+        public string Icon { get; set; }
+        public Nullable<int> IconId { get; set; }
         public Nullable<int> AudioId { get; set; }
         public string AudioUrl { get; set; }
+        public Nullable<bool> isAudio { get; set; }
         public Nullable<int> SocialMediaLinkId { get; set; }
         public string SocialMediaLink { get; set; }
+        public Nullable<bool> isSocialMediaLink { get; set; }
         public string ImageUrl { get; set; }
         public string TextBody { get; set; }
         public string PlayList { get; set; }
@@ -38,14 +52,17 @@ namespace WebsiteTemplateProject.Models
         public Nullable<int> SettingsId { get; set; }
         public Nullable<int> EmbedId { get; set; }
         public string embedUrl { get; set; }
+        public Nullable<bool> isEmbedUrl { get; set; }
         public Nullable<bool> isHidden { get; set; }
         public Nullable<bool> isPublished { get; set; }
         public string Logo { get; set; }
         public Nullable<int> LogoId { get; set; }
         public string HyperLink { get; set; }
         public string HyperLinkId { get; set; }
+        public Nullable<bool> isHyperLink { get; set; }
         public string MapUrl { get; set; }
         public Nullable<int> MapId { get; set; }
+        public Nullable<bool> isMap { get; set; }
         public string Email { get; set; }
         public string backgroundAttachment { get; set; }
         public string backgroundClip { get; set; }

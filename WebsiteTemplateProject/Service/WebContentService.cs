@@ -17,9 +17,9 @@ namespace WebsiteTemplateProject.Service
 
     public class WebContentService
     {
-        public readonly WebUserDBEntities _context;
+        public readonly NewWebUserDBEntities _context;
 
-        public WebContentService(WebUserDBEntities context)
+        public WebContentService(NewWebUserDBEntities context)
         {
             _context = context;
         }
@@ -29,7 +29,7 @@ namespace WebsiteTemplateProject.Service
 
         }
 
-        public WebsiteTemplateProject.Models.WebContent UpsertWebContent(WebsiteTemplateProject.Models.WebContent webContent, WebUserDBEntities db)
+        public WebsiteTemplateProject.Models.WebContent UpsertWebContent(WebsiteTemplateProject.Models.WebContent webContent, NewWebUserDBEntities db)
         {
             using (db)
             {
@@ -54,7 +54,7 @@ namespace WebsiteTemplateProject.Service
 
 
 
-        public List<Models.WebContent> GetWebContentByPageId(int pageId, WebUserDBEntities db)
+        public List<Models.WebContent> GetWebContentByPageId(int pageId, NewWebUserDBEntities db)
         {
             List<Models.WebContent> webContentByPageId = new List<Models.WebContent>();
 
@@ -89,7 +89,7 @@ namespace WebsiteTemplateProject.Service
             return webContentByPageId.OrderBy(x => x.Id).ToList();
         }
 
-        public List<Models.WebContent> GetWebContentById(int id, WebUserDBEntities db)
+        public List<Models.WebContent> GetWebContentById(int id, NewWebUserDBEntities db)
         {
             List<Models.WebContent> webContentById = new List<Models.WebContent>();
 

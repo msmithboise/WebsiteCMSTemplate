@@ -38,7 +38,7 @@ namespace WebsiteTemplateProject.Controllers
 
 
                 //Save to DB
-                using (WebUserDBEntities db = new WebUserDBEntities())
+                using (NewWebUserDBEntities db = new NewWebUserDBEntities())
                 {
                     Models.WebContent uploadAudio = new Models.WebContent()
                     {

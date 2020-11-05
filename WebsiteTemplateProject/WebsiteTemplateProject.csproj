@@ -415,6 +415,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NewUsers.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\NewWebUserDBEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewWebUserDBEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewWebUserDBEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewWebUserDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewWebUserDBEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewWebUserDBEntities.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>WebUserContent.tt</DependentUpon>
     </Compile>
@@ -530,7 +545,7 @@
       <DependentUpon>WebContent.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WebContent.cs">
-      <DependentUpon>WebUserContent.tt</DependentUpon>
+      <DependentUpon>NewWebUserDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WebContent.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -714,6 +729,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NewUsers.edmx</DependentUpon>
       <LastGenOutput>NewUsers.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\NewWebUserDBEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NewWebUserDBEntities.edmx</DependentUpon>
+      <LastGenOutput>NewWebUserDBEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\NewWebUserDBEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NewWebUserDBEntities.edmx</DependentUpon>
+      <LastGenOutput>NewWebUserDBEntities.cs</LastGenOutput>
     </Content>
     <Content Include="Models\SubPage.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -965,6 +990,13 @@
     </EntityDeploy>
     <Content Include="Models\NavBar.edmx.diagram">
       <DependentUpon>NavBar.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\NewWebUserDBEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NewWebUserDBEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NewWebUserDBEntities.edmx.diagram">
+      <DependentUpon>NewWebUserDBEntities.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

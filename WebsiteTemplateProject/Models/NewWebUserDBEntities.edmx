@@ -1,0 +1,673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NewWebUserDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="WebContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PageId" Type="int" />
+          <Property Name="PageDescription" Type="varchar" MaxLength="5000" />
+          <Property Name="SubPageId" Type="int" />
+          <Property Name="SubPageDescription" Type="varchar" MaxLength="5000" />
+          <Property Name="Body" Type="varchar" MaxLength="5000" />
+          <Property Name="BodyId" Type="int" />
+          <Property Name="ContainerClass" Type="varchar" MaxLength="5000" />
+          <Property Name="ContainerId" Type="int" />
+          <Property Name="RowClass" Type="varchar" MaxLength="5000" />
+          <Property Name="RowId" Type="int" />
+          <Property Name="ColumnClass" Type="varchar" MaxLength="5000" />
+          <Property Name="ColumnId" Type="int" />
+          <Property Name="ElementTag" Type="varchar" MaxLength="5000" />
+          <Property Name="ElementTagId" Type="int" />
+          <Property Name="Icon" Type="varchar" MaxLength="5000" />
+          <Property Name="IconId" Type="int" />
+          <Property Name="AudioId" Type="int" />
+          <Property Name="AudioUrl" Type="varchar" MaxLength="5000" />
+          <Property Name="isAudio" Type="bit" />
+          <Property Name="SocialMediaLinkId" Type="int" />
+          <Property Name="SocialMediaLink" Type="varchar" MaxLength="5000" />
+          <Property Name="isSocialMediaLink" Type="bit" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="5000" />
+          <Property Name="TextBody" Type="varchar" MaxLength="5000" />
+          <Property Name="PlayList" Type="varchar" MaxLength="5000" />
+          <Property Name="Class" Type="varchar" MaxLength="5000" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="ChildId" Type="int" />
+          <Property Name="GridValues" Type="varchar" MaxLength="5000" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="isText" Type="varchar" MaxLength="50" />
+          <Property Name="isImage" Type="varchar" MaxLength="50" />
+          <Property Name="TextId" Type="int" />
+          <Property Name="ImageId" Type="int" />
+          <Property Name="SettingsId" Type="int" />
+          <Property Name="EmbedId" Type="int" />
+          <Property Name="embedUrl" Type="varchar" MaxLength="5000" />
+          <Property Name="isEmbedUrl" Type="bit" />
+          <Property Name="isHidden" Type="bit" />
+          <Property Name="isPublished" Type="bit" />
+          <Property Name="Logo" Type="varchar" MaxLength="5000" />
+          <Property Name="LogoId" Type="int" />
+          <Property Name="HyperLink" Type="varchar" MaxLength="5000" />
+          <Property Name="HyperLinkId" Type="varchar" MaxLength="5000" />
+          <Property Name="isHyperLink" Type="bit" />
+          <Property Name="MapUrl" Type="varchar" MaxLength="5000" />
+          <Property Name="MapId" Type="int" />
+          <Property Name="isMap" Type="bit" />
+          <Property Name="Email" Type="varchar" MaxLength="5000" />
+          <Property Name="backgroundAttachment" Type="varchar" MaxLength="50" />
+          <Property Name="backgroundClip" Type="varchar" MaxLength="50" />
+          <Property Name="backgroundImage" Type="varchar" MaxLength="5000" />
+          <Property Name="backgroundOrigin" Type="varchar" MaxLength="50" />
+          <Property Name="backgroundPosition" Type="varchar" MaxLength="50" />
+          <Property Name="backgroundRepeat" Type="varchar" MaxLength="50" />
+          <Property Name="backgroundSize" Type="varchar" MaxLength="50" />
+          <Property Name="background" Type="varchar" MaxLength="50" />
+          <Property Name="border" Type="varchar" MaxLength="50" />
+          <Property Name="borderBottom" Type="varchar" MaxLength="50" />
+          <Property Name="borderBottomColor" Type="varchar" MaxLength="50" />
+          <Property Name="borderBottomLeftRadius" Type="varchar" MaxLength="50" />
+          <Property Name="borderBottomRightRadius" Type="varchar" MaxLength="50" />
+          <Property Name="borderBottomStyle" Type="varchar" MaxLength="50" />
+          <Property Name="borderBottomWidth" Type="varchar" MaxLength="50" />
+          <Property Name="borderColor" Type="varchar" MaxLength="50" />
+          <Property Name="borderImage" Type="varchar" MaxLength="50" />
+          <Property Name="borderImageOutset" Type="varchar" MaxLength="50" />
+          <Property Name="borderImageRepeat" Type="varchar" MaxLength="50" />
+          <Property Name="borderImageSlice" Type="varchar" MaxLength="50" />
+          <Property Name="borderImageSource" Type="varchar" MaxLength="50" />
+          <Property Name="borderImageWidth" Type="varchar" MaxLength="50" />
+          <Property Name="borderLeft" Type="varchar" MaxLength="50" />
+          <Property Name="borderLeftColor" Type="varchar" MaxLength="50" />
+          <Property Name="borderLeftStyle" Type="varchar" MaxLength="50" />
+          <Property Name="borderLeftWidth" Type="varchar" MaxLength="50" />
+          <Property Name="borderStyle" Type="varchar" MaxLength="50" />
+          <Property Name="borderTop" Type="varchar" MaxLength="50" />
+          <Property Name="borderTopColor" Type="varchar" MaxLength="50" />
+          <Property Name="borderTopLeftRadius" Type="varchar" MaxLength="50" />
+          <Property Name="borderTopRightRadius" Type="varchar" MaxLength="50" />
+          <Property Name="borderTopStyle" Type="varchar" MaxLength="50" />
+          <Property Name="borderTopWidth" Type="varchar" MaxLength="50" />
+          <Property Name="borderWidth" Type="varchar" MaxLength="50" />
+          <Property Name="boxShadow" Type="varchar" MaxLength="50" />
+          <Property Name="animation" Type="varchar" MaxLength="50" />
+          <Property Name="color" Type="varchar" MaxLength="50" />
+          <Property Name="fontSize" Type="varchar" MaxLength="50" />
+          <Property Name="textAlign" Type="varchar" MaxLength="50" />
+          <Property Name="paddingTop" Type="varchar" MaxLength="50" />
+          <Property Name="paddingBottom" Type="varchar" MaxLength="50" />
+          <Property Name="paddingLeft" Type="varchar" MaxLength="50" />
+          <Property Name="paddingRight" Type="varchar" MaxLength="50" />
+          <Property Name="marginTop" Type="varchar" MaxLength="50" />
+          <Property Name="marginBottom" Type="varchar" MaxLength="50" />
+          <Property Name="marginLeft" Type="varchar" MaxLength="50" />
+          <Property Name="marginRight" Type="varchar" MaxLength="50" />
+          <Property Name="lineHeight" Type="varchar" MaxLength="50" />
+          <Property Name="fontFamily" Type="varchar" MaxLength="50" />
+          <Property Name="clear" Type="varchar" MaxLength="50" />
+          <Property Name="clip" Type="varchar" MaxLength="50" />
+          <Property Name="cursor" Type="varchar" MaxLength="50" />
+          <Property Name="font" Type="varchar" MaxLength="50" />
+          <Property Name="fontVariant" Type="varchar" MaxLength="50" />
+          <Property Name="fontWieght" Type="varchar" MaxLength="50" />
+          <Property Name="height" Type="varchar" MaxLength="50" />
+          <Property Name="left" Type="varchar" MaxLength="50" />
+          <Property Name="letterSpacing" Type="varchar" MaxLength="50" />
+          <Property Name="listStyle" Type="varchar" MaxLength="50" />
+          <Property Name="listStyleImage" Type="varchar" MaxLength="50" />
+          <Property Name="listStyleType" Type="varchar" MaxLength="50" />
+          <Property Name="margin" Type="varchar" MaxLength="50" />
+          <Property Name="pageBreakAfter" Type="varchar" MaxLength="50" />
+          <Property Name="pageBreakBefore" Type="varchar" MaxLength="50" />
+          <Property Name="position" Type="varchar" MaxLength="50" />
+          <Property Name="strokeDasharray" Type="varchar" MaxLength="50" />
+          <Property Name="strokeDashoffset" Type="varchar" MaxLength="50" />
+          <Property Name="strokeWidth" Type="varchar" MaxLength="50" />
+          <Property Name="textDecoration" Type="varchar" MaxLength="50" />
+          <Property Name="textIndent" Type="varchar" MaxLength="50" />
+          <Property Name="textTransform" Type="varchar" MaxLength="50" />
+          <Property Name="top" Type="varchar" MaxLength="50" />
+          <Property Name="right" Type="varchar" MaxLength="50" />
+          <Property Name="bottom" Type="varchar" MaxLength="50" />
+          <Property Name="verticalAlign" Type="varchar" MaxLength="50" />
+          <Property Name="visibility" Type="varchar" MaxLength="50" />
+          <Property Name="width" Type="varchar" MaxLength="50" />
+          <Property Name="zIndex" Type="varchar" MaxLength="50" />
+          <Property Name="display" Type="varchar" MaxLength="50" />
+          <Property Name="float" Type="varchar" MaxLength="50" />
+          <Property Name="filter" Type="varchar" MaxLength="50" />
+          <Property Name="backgroundColor" Type="varchar" MaxLength="50" />
+          <Property Name="lineBreak" Type="varchar" MaxLength="50" />
+          <Property Name="opacity" Type="varchar" MaxLength="50" />
+          <Property Name="outline" Type="varchar" MaxLength="50" />
+          <Property Name="outlineColor" Type="varchar" MaxLength="50" />
+          <Property Name="outlineOffset" Type="varchar" MaxLength="50" />
+          <Property Name="outlineWidth" Type="varchar" MaxLength="50" />
+          <Property Name="padding" Type="varchar" MaxLength="50" />
+          <Property Name="paddingBlock" Type="varchar" MaxLength="50" />
+          <Property Name="paddingBlockEnd" Type="varchar" MaxLength="50" />
+          <Property Name="paddingBlockStart" Type="varchar" MaxLength="50" />
+          <Property Name="paddingInLineEnd" Type="varchar" MaxLength="50" />
+          <Property Name="paddingInLineStart" Type="varchar" MaxLength="50" />
+          <Property Name="pageBreakInside" Type="varchar" MaxLength="50" />
+          <Property Name="rotate" Type="varchar" MaxLength="50" />
+          <Property Name="textAlignLast" Type="varchar" MaxLength="50" />
+          <Property Name="textCombineUpright" Type="varchar" MaxLength="50" />
+          <Property Name="textDecorationColor" Type="varchar" MaxLength="50" />
+          <Property Name="textDecorationLine" Type="varchar" MaxLength="50" />
+          <Property Name="textDecorationSkipInk" Type="varchar" MaxLength="50" />
+          <Property Name="textDecorationStyle" Type="varchar" MaxLength="50" />
+          <Property Name="textDecorationThickness" Type="varchar" MaxLength="50" />
+          <Property Name="textEmphasis" Type="varchar" MaxLength="50" />
+          <Property Name="textEmphasisColor" Type="varchar" MaxLength="50" />
+          <Property Name="textEmphasisPosition" Type="varchar" MaxLength="50" />
+          <Property Name="textEmphasisStyle" Type="varchar" MaxLength="50" />
+          <Property Name="textJustify" Type="varchar" MaxLength="50" />
+          <Property Name="textOrientation" Type="varchar" MaxLength="50" />
+          <Property Name="textRendering" Type="varchar" MaxLength="50" />
+          <Property Name="textShadow" Type="varchar" MaxLength="50" />
+          <Property Name="textUnderLineOffset" Type="varchar" MaxLength="50" />
+          <Property Name="textUnderLinePosition" Type="varchar" MaxLength="50" />
+          <Property Name="transformBox" Type="varchar" MaxLength="50" />
+          <Property Name="transformOrigin" Type="varchar" MaxLength="50" />
+          <Property Name="transition" Type="varchar" MaxLength="50" />
+          <Property Name="transitionDelay" Type="varchar" MaxLength="50" />
+          <Property Name="transitionDuration" Type="varchar" MaxLength="50" />
+          <Property Name="transitionProperty" Type="varchar" MaxLength="50" />
+          <Property Name="transitionTimingFunction" Type="varchar" MaxLength="50" />
+          <Property Name="translate" Type="varchar" MaxLength="50" />
+          <Property Name="whiteSpace" Type="varchar" MaxLength="50" />
+          <Property Name="wordBreak" Type="varchar" MaxLength="50" />
+          <Property Name="wordSpacing" Type="varchar" MaxLength="50" />
+          <Property Name="wordWrap" Type="varchar" MaxLength="50" />
+          <Property Name="flex" Type="varchar" MaxLength="50" />
+          <Property Name="alignContent" Type="varchar" MaxLength="50" />
+          <Property Name="alignItems" Type="varchar" MaxLength="50" />
+          <Property Name="alignSelf" Type="varchar" MaxLength="50" />
+          <Property Name="customField" Type="varchar" MaxLength="50" />
+          <Property Name="customFieldTwo" Type="varchar" MaxLength="50" />
+          <Property Name="customFieldThree" Type="varchar" MaxLength="50" />
+          <Property Name="customFieldFour" Type="varchar" MaxLength="50" />
+          <Property Name="customFieldFive" Type="varchar" MaxLength="50" />
+          <Property Name="animationName" Type="varchar" MaxLength="50" />
+          <Property Name="animationDuration" Type="varchar" MaxLength="50" />
+          <Property Name="animationTimingFunction" Type="varchar" MaxLength="50" />
+          <Property Name="animationDelay" Type="varchar" MaxLength="50" />
+          <Property Name="animationIterationCount" Type="varchar" MaxLength="50" />
+          <Property Name="animationDirection" Type="varchar" MaxLength="50" />
+          <Property Name="animationFillMode" Type="varchar" MaxLength="50" />
+          <Property Name="animationPlayState" Type="varchar" MaxLength="50" />
+          <Property Name="flexBasis" Type="varchar" MaxLength="50" />
+          <Property Name="flexDirection" Type="varchar" MaxLength="50" />
+          <Property Name="flexFlow" Type="varchar" MaxLength="50" />
+          <Property Name="flexGrow" Type="varchar" MaxLength="50" />
+          <Property Name="flexShrink" Type="varchar" MaxLength="50" />
+          <Property Name="flexWrap" Type="varchar" MaxLength="50" />
+          <Property Name="fontFeatureSettings" Type="varchar" MaxLength="50" />
+          <Property Name="fontVariantCaps" Type="varchar" MaxLength="50" />
+          <Property Name="resize" Type="varchar" MaxLength="50" />
+          <Property Name="scrollBehavior" Type="varchar" MaxLength="50" />
+          <Property Name="writingMode" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="NewWebUserDBModelStoreContainer">
+          <EntitySet Name="WebContent" EntityType="Self.WebContent" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NewWebUserDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="WebContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PageId" Type="Int32" />
+          <Property Name="PageDescription" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="SubPageId" Type="Int32" />
+          <Property Name="SubPageDescription" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="Body" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="BodyId" Type="Int32" />
+          <Property Name="ContainerClass" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="ContainerId" Type="Int32" />
+          <Property Name="RowClass" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="RowId" Type="Int32" />
+          <Property Name="ColumnClass" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="ColumnId" Type="Int32" />
+          <Property Name="ElementTag" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="ElementTagId" Type="Int32" />
+          <Property Name="Icon" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="IconId" Type="Int32" />
+          <Property Name="AudioId" Type="Int32" />
+          <Property Name="AudioUrl" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="isAudio" Type="Boolean" />
+          <Property Name="SocialMediaLinkId" Type="Int32" />
+          <Property Name="SocialMediaLink" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="isSocialMediaLink" Type="Boolean" />
+          <Property Name="ImageUrl" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="TextBody" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="PlayList" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="Class" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="ChildId" Type="Int32" />
+          <Property Name="GridValues" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="isText" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TextId" Type="Int32" />
+          <Property Name="ImageId" Type="Int32" />
+          <Property Name="SettingsId" Type="Int32" />
+          <Property Name="EmbedId" Type="Int32" />
+          <Property Name="embedUrl" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="isEmbedUrl" Type="Boolean" />
+          <Property Name="isHidden" Type="Boolean" />
+          <Property Name="isPublished" Type="Boolean" />
+          <Property Name="Logo" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="LogoId" Type="Int32" />
+          <Property Name="HyperLink" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="HyperLinkId" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="isHyperLink" Type="Boolean" />
+          <Property Name="MapUrl" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="MapId" Type="Int32" />
+          <Property Name="isMap" Type="Boolean" />
+          <Property Name="Email" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="backgroundAttachment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="backgroundClip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="backgroundImage" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="backgroundOrigin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="backgroundPosition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="backgroundRepeat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="backgroundSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="background" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="border" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderBottom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderBottomColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderBottomLeftRadius" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderBottomRightRadius" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderBottomStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderBottomWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderImageOutset" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderImageRepeat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderImageSlice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderImageSource" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderImageWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderLeft" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderLeftColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderLeftStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderLeftWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderTop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderTopColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderTopLeftRadius" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderTopRightRadius" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderTopStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderTopWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="borderWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="boxShadow" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="animation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fontSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textAlign" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="paddingTop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="paddingBottom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="paddingLeft" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="paddingRight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="marginTop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="marginBottom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="marginLeft" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="marginRight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lineHeight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fontFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="clear" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="clip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cursor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="font" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fontVariant" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fontWieght" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="height" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="left" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="letterSpacing" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="listStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="listStyleImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="listStyleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="margin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pageBreakAfter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pageBreakBefore" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="strokeDasharray" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="strokeDashoffset" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="strokeWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textDecoration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textIndent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textTransform" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="top" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="right" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bottom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="verticalAlign" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="visibility" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="width" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zIndex" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="display" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="float" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="filter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="backgroundColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lineBreak" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="opacity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="outline" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="outlineColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="outlineOffset" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="outlineWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="padding" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="paddingBlock" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="paddingBlockEnd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="paddingBlockStart" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="paddingInLineEnd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="paddingInLineStart" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pageBreakInside" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rotate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textAlignLast" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textCombineUpright" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textDecorationColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textDecorationLine" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textDecorationSkipInk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textDecorationStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textDecorationThickness" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textEmphasis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textEmphasisColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textEmphasisPosition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textEmphasisStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textJustify" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textOrientation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textRendering" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textShadow" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textUnderLineOffset" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="textUnderLinePosition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="transformBox" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="transformOrigin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="transition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="transitionDelay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="transitionDuration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="transitionProperty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="transitionTimingFunction" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="translate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="whiteSpace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="wordBreak" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="wordSpacing" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="wordWrap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="flex" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="alignContent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="alignItems" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="alignSelf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="customField" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="customFieldTwo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="customFieldThree" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="customFieldFour" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="customFieldFive" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="animationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="animationDuration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="animationTimingFunction" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="animationDelay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="animationIterationCount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="animationDirection" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="animationFillMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="animationPlayState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="flexBasis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="flexDirection" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="flexFlow" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="flexGrow" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="flexShrink" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="flexWrap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fontFeatureSettings" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fontVariantCaps" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="resize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="scrollBehavior" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="writingMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="NewWebUserDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="WebContents" EntityType="Self.WebContent" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NewWebUserDBModelStoreContainer" CdmEntityContainer="NewWebUserDBEntities">
+          <EntitySetMapping Name="WebContents">
+            <EntityTypeMapping TypeName="NewWebUserDBModel.WebContent">
+              <MappingFragment StoreEntitySet="WebContent">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PageId" ColumnName="PageId" />
+                <ScalarProperty Name="PageDescription" ColumnName="PageDescription" />
+                <ScalarProperty Name="SubPageId" ColumnName="SubPageId" />
+                <ScalarProperty Name="SubPageDescription" ColumnName="SubPageDescription" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="BodyId" ColumnName="BodyId" />
+                <ScalarProperty Name="ContainerClass" ColumnName="ContainerClass" />
+                <ScalarProperty Name="ContainerId" ColumnName="ContainerId" />
+                <ScalarProperty Name="RowClass" ColumnName="RowClass" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="ColumnClass" ColumnName="ColumnClass" />
+                <ScalarProperty Name="ColumnId" ColumnName="ColumnId" />
+                <ScalarProperty Name="ElementTag" ColumnName="ElementTag" />
+                <ScalarProperty Name="ElementTagId" ColumnName="ElementTagId" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="IconId" ColumnName="IconId" />
+                <ScalarProperty Name="AudioId" ColumnName="AudioId" />
+                <ScalarProperty Name="AudioUrl" ColumnName="AudioUrl" />
+                <ScalarProperty Name="isAudio" ColumnName="isAudio" />
+                <ScalarProperty Name="SocialMediaLinkId" ColumnName="SocialMediaLinkId" />
+                <ScalarProperty Name="SocialMediaLink" ColumnName="SocialMediaLink" />
+                <ScalarProperty Name="isSocialMediaLink" ColumnName="isSocialMediaLink" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="TextBody" ColumnName="TextBody" />
+                <ScalarProperty Name="PlayList" ColumnName="PlayList" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+                <ScalarProperty Name="GridValues" ColumnName="GridValues" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="isText" ColumnName="isText" />
+                <ScalarProperty Name="isImage" ColumnName="isImage" />
+                <ScalarProperty Name="TextId" ColumnName="TextId" />
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+                <ScalarProperty Name="SettingsId" ColumnName="SettingsId" />
+                <ScalarProperty Name="EmbedId" ColumnName="EmbedId" />
+                <ScalarProperty Name="embedUrl" ColumnName="embedUrl" />
+                <ScalarProperty Name="isEmbedUrl" ColumnName="isEmbedUrl" />
+                <ScalarProperty Name="isHidden" ColumnName="isHidden" />
+                <ScalarProperty Name="isPublished" ColumnName="isPublished" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="LogoId" ColumnName="LogoId" />
+                <ScalarProperty Name="HyperLink" ColumnName="HyperLink" />
+                <ScalarProperty Name="HyperLinkId" ColumnName="HyperLinkId" />
+                <ScalarProperty Name="isHyperLink" ColumnName="isHyperLink" />
+                <ScalarProperty Name="MapUrl" ColumnName="MapUrl" />
+                <ScalarProperty Name="MapId" ColumnName="MapId" />
+                <ScalarProperty Name="isMap" ColumnName="isMap" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="backgroundAttachment" ColumnName="backgroundAttachment" />
+                <ScalarProperty Name="backgroundClip" ColumnName="backgroundClip" />
+                <ScalarProperty Name="backgroundImage" ColumnName="backgroundImage" />
+                <ScalarProperty Name="backgroundOrigin" ColumnName="backgroundOrigin" />
+                <ScalarProperty Name="backgroundPosition" ColumnName="backgroundPosition" />
+                <ScalarProperty Name="backgroundRepeat" ColumnName="backgroundRepeat" />
+                <ScalarProperty Name="backgroundSize" ColumnName="backgroundSize" />
+                <ScalarProperty Name="background" ColumnName="background" />
+                <ScalarProperty Name="border" ColumnName="border" />
+                <ScalarProperty Name="borderBottom" ColumnName="borderBottom" />
+                <ScalarProperty Name="borderBottomColor" ColumnName="borderBottomColor" />
+                <ScalarProperty Name="borderBottomLeftRadius" ColumnName="borderBottomLeftRadius" />
+                <ScalarProperty Name="borderBottomRightRadius" ColumnName="borderBottomRightRadius" />
+                <ScalarProperty Name="borderBottomStyle" ColumnName="borderBottomStyle" />
+                <ScalarProperty Name="borderBottomWidth" ColumnName="borderBottomWidth" />
+                <ScalarProperty Name="borderColor" ColumnName="borderColor" />
+                <ScalarProperty Name="borderImage" ColumnName="borderImage" />
+                <ScalarProperty Name="borderImageOutset" ColumnName="borderImageOutset" />
+                <ScalarProperty Name="borderImageRepeat" ColumnName="borderImageRepeat" />
+                <ScalarProperty Name="borderImageSlice" ColumnName="borderImageSlice" />
+                <ScalarProperty Name="borderImageSource" ColumnName="borderImageSource" />
+                <ScalarProperty Name="borderImageWidth" ColumnName="borderImageWidth" />
+                <ScalarProperty Name="borderLeft" ColumnName="borderLeft" />
+                <ScalarProperty Name="borderLeftColor" ColumnName="borderLeftColor" />
+                <ScalarProperty Name="borderLeftStyle" ColumnName="borderLeftStyle" />
+                <ScalarProperty Name="borderLeftWidth" ColumnName="borderLeftWidth" />
+                <ScalarProperty Name="borderStyle" ColumnName="borderStyle" />
+                <ScalarProperty Name="borderTop" ColumnName="borderTop" />
+                <ScalarProperty Name="borderTopColor" ColumnName="borderTopColor" />
+                <ScalarProperty Name="borderTopLeftRadius" ColumnName="borderTopLeftRadius" />
+                <ScalarProperty Name="borderTopRightRadius" ColumnName="borderTopRightRadius" />
+                <ScalarProperty Name="borderTopStyle" ColumnName="borderTopStyle" />
+                <ScalarProperty Name="borderTopWidth" ColumnName="borderTopWidth" />
+                <ScalarProperty Name="borderWidth" ColumnName="borderWidth" />
+                <ScalarProperty Name="boxShadow" ColumnName="boxShadow" />
+                <ScalarProperty Name="animation" ColumnName="animation" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="fontSize" ColumnName="fontSize" />
+                <ScalarProperty Name="textAlign" ColumnName="textAlign" />
+                <ScalarProperty Name="paddingTop" ColumnName="paddingTop" />
+                <ScalarProperty Name="paddingBottom" ColumnName="paddingBottom" />
+                <ScalarProperty Name="paddingLeft" ColumnName="paddingLeft" />
+                <ScalarProperty Name="paddingRight" ColumnName="paddingRight" />
+                <ScalarProperty Name="marginTop" ColumnName="marginTop" />
+                <ScalarProperty Name="marginBottom" ColumnName="marginBottom" />
+                <ScalarProperty Name="marginLeft" ColumnName="marginLeft" />
+                <ScalarProperty Name="marginRight" ColumnName="marginRight" />
+                <ScalarProperty Name="lineHeight" ColumnName="lineHeight" />
+                <ScalarProperty Name="fontFamily" ColumnName="fontFamily" />
+                <ScalarProperty Name="clear" ColumnName="clear" />
+                <ScalarProperty Name="clip" ColumnName="clip" />
+                <ScalarProperty Name="cursor" ColumnName="cursor" />
+                <ScalarProperty Name="font" ColumnName="font" />
+                <ScalarProperty Name="fontVariant" ColumnName="fontVariant" />
+                <ScalarProperty Name="fontWieght" ColumnName="fontWieght" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="left" ColumnName="left" />
+                <ScalarProperty Name="letterSpacing" ColumnName="letterSpacing" />
+                <ScalarProperty Name="listStyle" ColumnName="listStyle" />
+                <ScalarProperty Name="listStyleImage" ColumnName="listStyleImage" />
+                <ScalarProperty Name="listStyleType" ColumnName="listStyleType" />
+                <ScalarProperty Name="margin" ColumnName="margin" />
+                <ScalarProperty Name="pageBreakAfter" ColumnName="pageBreakAfter" />
+                <ScalarProperty Name="pageBreakBefore" ColumnName="pageBreakBefore" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="strokeDasharray" ColumnName="strokeDasharray" />
+                <ScalarProperty Name="strokeDashoffset" ColumnName="strokeDashoffset" />
+                <ScalarProperty Name="strokeWidth" ColumnName="strokeWidth" />
+                <ScalarProperty Name="textDecoration" ColumnName="textDecoration" />
+                <ScalarProperty Name="textIndent" ColumnName="textIndent" />
+                <ScalarProperty Name="textTransform" ColumnName="textTransform" />
+                <ScalarProperty Name="top" ColumnName="top" />
+                <ScalarProperty Name="right" ColumnName="right" />
+                <ScalarProperty Name="bottom" ColumnName="bottom" />
+                <ScalarProperty Name="verticalAlign" ColumnName="verticalAlign" />
+                <ScalarProperty Name="visibility" ColumnName="visibility" />
+                <ScalarProperty Name="width" ColumnName="width" />
+                <ScalarProperty Name="zIndex" ColumnName="zIndex" />
+                <ScalarProperty Name="display" ColumnName="display" />
+                <ScalarProperty Name="float" ColumnName="float" />
+                <ScalarProperty Name="filter" ColumnName="filter" />
+                <ScalarProperty Name="backgroundColor" ColumnName="backgroundColor" />
+                <ScalarProperty Name="lineBreak" ColumnName="lineBreak" />
+                <ScalarProperty Name="opacity" ColumnName="opacity" />
+                <ScalarProperty Name="outline" ColumnName="outline" />
+                <ScalarProperty Name="outlineColor" ColumnName="outlineColor" />
+                <ScalarProperty Name="outlineOffset" ColumnName="outlineOffset" />
+                <ScalarProperty Name="outlineWidth" ColumnName="outlineWidth" />
+                <ScalarProperty Name="padding" ColumnName="padding" />
+                <ScalarProperty Name="paddingBlock" ColumnName="paddingBlock" />
+                <ScalarProperty Name="paddingBlockEnd" ColumnName="paddingBlockEnd" />
+                <ScalarProperty Name="paddingBlockStart" ColumnName="paddingBlockStart" />
+                <ScalarProperty Name="paddingInLineEnd" ColumnName="paddingInLineEnd" />
+                <ScalarProperty Name="paddingInLineStart" ColumnName="paddingInLineStart" />
+                <ScalarProperty Name="pageBreakInside" ColumnName="pageBreakInside" />
+                <ScalarProperty Name="rotate" ColumnName="rotate" />
+                <ScalarProperty Name="textAlignLast" ColumnName="textAlignLast" />
+                <ScalarProperty Name="textCombineUpright" ColumnName="textCombineUpright" />
+                <ScalarProperty Name="textDecorationColor" ColumnName="textDecorationColor" />
+                <ScalarProperty Name="textDecorationLine" ColumnName="textDecorationLine" />
+                <ScalarProperty Name="textDecorationSkipInk" ColumnName="textDecorationSkipInk" />
+                <ScalarProperty Name="textDecorationStyle" ColumnName="textDecorationStyle" />
+                <ScalarProperty Name="textDecorationThickness" ColumnName="textDecorationThickness" />
+                <ScalarProperty Name="textEmphasis" ColumnName="textEmphasis" />
+                <ScalarProperty Name="textEmphasisColor" ColumnName="textEmphasisColor" />
+                <ScalarProperty Name="textEmphasisPosition" ColumnName="textEmphasisPosition" />
+                <ScalarProperty Name="textEmphasisStyle" ColumnName="textEmphasisStyle" />
+                <ScalarProperty Name="textJustify" ColumnName="textJustify" />
+                <ScalarProperty Name="textOrientation" ColumnName="textOrientation" />
+                <ScalarProperty Name="textRendering" ColumnName="textRendering" />
+                <ScalarProperty Name="textShadow" ColumnName="textShadow" />
+                <ScalarProperty Name="textUnderLineOffset" ColumnName="textUnderLineOffset" />
+                <ScalarProperty Name="textUnderLinePosition" ColumnName="textUnderLinePosition" />
+                <ScalarProperty Name="transformBox" ColumnName="transformBox" />
+                <ScalarProperty Name="transformOrigin" ColumnName="transformOrigin" />
+                <ScalarProperty Name="transition" ColumnName="transition" />
+                <ScalarProperty Name="transitionDelay" ColumnName="transitionDelay" />
+                <ScalarProperty Name="transitionDuration" ColumnName="transitionDuration" />
+                <ScalarProperty Name="transitionProperty" ColumnName="transitionProperty" />
+                <ScalarProperty Name="transitionTimingFunction" ColumnName="transitionTimingFunction" />
+                <ScalarProperty Name="translate" ColumnName="translate" />
+                <ScalarProperty Name="whiteSpace" ColumnName="whiteSpace" />
+                <ScalarProperty Name="wordBreak" ColumnName="wordBreak" />
+                <ScalarProperty Name="wordSpacing" ColumnName="wordSpacing" />
+                <ScalarProperty Name="wordWrap" ColumnName="wordWrap" />
+                <ScalarProperty Name="flex" ColumnName="flex" />
+                <ScalarProperty Name="alignContent" ColumnName="alignContent" />
+                <ScalarProperty Name="alignItems" ColumnName="alignItems" />
+                <ScalarProperty Name="alignSelf" ColumnName="alignSelf" />
+                <ScalarProperty Name="customField" ColumnName="customField" />
+                <ScalarProperty Name="customFieldTwo" ColumnName="customFieldTwo" />
+                <ScalarProperty Name="customFieldThree" ColumnName="customFieldThree" />
+                <ScalarProperty Name="customFieldFour" ColumnName="customFieldFour" />
+                <ScalarProperty Name="customFieldFive" ColumnName="customFieldFive" />
+                <ScalarProperty Name="animationName" ColumnName="animationName" />
+                <ScalarProperty Name="animationDuration" ColumnName="animationDuration" />
+                <ScalarProperty Name="animationTimingFunction" ColumnName="animationTimingFunction" />
+                <ScalarProperty Name="animationDelay" ColumnName="animationDelay" />
+                <ScalarProperty Name="animationIterationCount" ColumnName="animationIterationCount" />
+                <ScalarProperty Name="animationDirection" ColumnName="animationDirection" />
+                <ScalarProperty Name="animationFillMode" ColumnName="animationFillMode" />
+                <ScalarProperty Name="animationPlayState" ColumnName="animationPlayState" />
+                <ScalarProperty Name="flexBasis" ColumnName="flexBasis" />
+                <ScalarProperty Name="flexDirection" ColumnName="flexDirection" />
+                <ScalarProperty Name="flexFlow" ColumnName="flexFlow" />
+                <ScalarProperty Name="flexGrow" ColumnName="flexGrow" />
+                <ScalarProperty Name="flexShrink" ColumnName="flexShrink" />
+                <ScalarProperty Name="flexWrap" ColumnName="flexWrap" />
+                <ScalarProperty Name="fontFeatureSettings" ColumnName="fontFeatureSettings" />
+                <ScalarProperty Name="fontVariantCaps" ColumnName="fontVariantCaps" />
+                <ScalarProperty Name="resize" ColumnName="resize" />
+                <ScalarProperty Name="scrollBehavior" ColumnName="scrollBehavior" />
+                <ScalarProperty Name="writingMode" ColumnName="writingMode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

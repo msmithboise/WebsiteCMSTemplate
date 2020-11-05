@@ -9,9 +9,9 @@ namespace WebsiteTemplateProject.Service
 {
     public class SubContentService
     {
-        public readonly WebUserDBEntities _context;
+        public readonly NewWebUserDBEntities _context;
 
-        public SubContentService(WebUserDBEntities context)
+        public SubContentService(NewWebUserDBEntities context)
         {
             _context = context;
         }
@@ -21,7 +21,7 @@ namespace WebsiteTemplateProject.Service
 
         }
 
-        public List<Models.WebContent> GetWebContentByPageIdAndSubPageId(int pageId, int subPageId, WebUserDBEntities db)
+        public List<Models.WebContent> GetWebContentByPageIdAndSubPageId(int pageId, int subPageId, NewWebUserDBEntities db)
         {
             List<Models.WebContent> webContentByPageIdAndSubId = new List<Models.WebContent>();
 
@@ -69,7 +69,7 @@ namespace WebsiteTemplateProject.Service
             return webContentByPageIdAndSubId.OrderBy(x => x.Id).ToList();
         }
 
-        public WebsiteTemplateProject.Models.WebContent UpsertSubContent(Models.WebContent webContent, WebUserDBEntities db)
+        public WebsiteTemplateProject.Models.WebContent UpsertSubContent(Models.WebContent webContent, NewWebUserDBEntities db)
         {
             using (db)
             {
