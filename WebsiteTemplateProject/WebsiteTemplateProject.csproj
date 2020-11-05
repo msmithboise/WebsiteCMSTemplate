@@ -217,6 +217,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Controllers\NavBarController.cs" />
+    <Compile Include="Controllers\RowController.cs" />
     <Compile Include="Controllers\SubContentController.cs" />
     <Compile Include="Controllers\SubPageAudioUploadController.cs" />
     <Compile Include="Controllers\SubPageContentController.cs" />
@@ -232,6 +233,24 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Column.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Column.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Column.cs">
+      <DependentUpon>Column.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Column.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Column.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Column1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Column.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CustomImage.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -430,6 +449,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NewWebUserDBEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Row.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Row.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Row.cs">
+      <DependentUpon>Row.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Row.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Row.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Row1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Row.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>WebUserContent.tt</DependentUpon>
     </Compile>
@@ -620,6 +657,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\Column.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Column.edmx</DependentUpon>
+      <LastGenOutput>Column.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Column.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Column.edmx</DependentUpon>
+      <LastGenOutput>Column1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\CustomImage.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CustomImage.edmx</DependentUpon>
@@ -739,6 +786,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NewWebUserDBEntities.edmx</DependentUpon>
       <LastGenOutput>NewWebUserDBEntities.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Row.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Row.edmx</DependentUpon>
+      <LastGenOutput>Row.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Row.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Row.edmx</DependentUpon>
+      <LastGenOutput>Row1.cs</LastGenOutput>
     </Content>
     <Content Include="Models\SubPage.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -997,6 +1054,20 @@
     </EntityDeploy>
     <Content Include="Models\NewWebUserDBEntities.edmx.diagram">
       <DependentUpon>NewWebUserDBEntities.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Column.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Column.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Column.edmx.diagram">
+      <DependentUpon>Column.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Row.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Row.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Row.edmx.diagram">
+      <DependentUpon>Row.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
