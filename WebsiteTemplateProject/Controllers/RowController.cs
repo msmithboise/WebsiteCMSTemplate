@@ -15,7 +15,7 @@ namespace WebsiteTemplateProject.Controllers
 {
     public class RowController : ApiController
     {
-        private RowDBEntities db = new RowDBEntities();
+        private NewRowDBEntities db = new NewRowDBEntities();
 
         // GET: api/Row
         public IQueryable<Row> GetRows()

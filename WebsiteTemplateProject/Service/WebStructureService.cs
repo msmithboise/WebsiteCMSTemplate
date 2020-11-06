@@ -10,7 +10,7 @@ namespace WebsiteTemplateProject.Service
     public class WebStructureService
     {
 
-        public Row UpsertRows(Row row, RowDBEntities db)
+        public Row UpsertRows(Row row, NewRowDBEntities db)
         {
             using (db)
             {
@@ -19,6 +19,7 @@ namespace WebsiteTemplateProject.Service
 
                 if (row.RowId == default(int))
                 {
+                    row.RowClass = "row";
                     db.Rows.Add(row);
                 }
                 else
@@ -31,7 +32,7 @@ namespace WebsiteTemplateProject.Service
             }
         }
 
-        public List<Row> GetRowsByPageId(int pageId, RowDBEntities db)
+        public List<Row> GetRowsByPageId(int pageId, NewRowDBEntities db)
         {
             List<Row> rowsByPageId = new List<Row>();
 

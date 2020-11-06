@@ -455,7 +455,7 @@
       <DependentUpon>Row.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Row.cs">
-      <DependentUpon>Row.tt</DependentUpon>
+      <DependentUpon>Rows.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Row.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -466,6 +466,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Row.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rows.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rows.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rows.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rows.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rows.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rows.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>WebUserContent.tt</DependentUpon>
@@ -798,6 +813,16 @@
       <DependentUpon>Row.edmx</DependentUpon>
       <LastGenOutput>Row1.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Rows.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Rows.edmx</DependentUpon>
+      <LastGenOutput>Rows.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Rows.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Rows.edmx</DependentUpon>
+      <LastGenOutput>Rows.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\SubPage.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SubPage.edmx</DependentUpon>
@@ -1069,6 +1094,13 @@
     </EntityDeploy>
     <Content Include="Models\Row.edmx.diagram">
       <DependentUpon>Row.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Rows.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Rows.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Rows.edmx.diagram">
+      <DependentUpon>Rows.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
