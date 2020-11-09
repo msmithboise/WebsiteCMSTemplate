@@ -207,6 +207,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AudioUploadController.cs" />
     <Compile Include="Controllers\ColumnsController.cs" />
+    <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\CustomImagesController.cs" />
     <Compile Include="Controllers\CustomPagesController.cs" />
     <Compile Include="Controllers\CustomTextController.cs" />

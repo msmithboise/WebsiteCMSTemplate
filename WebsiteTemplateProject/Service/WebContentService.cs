@@ -108,5 +108,39 @@ namespace WebsiteTemplateProject.Service
             return webContentById.OrderBy(x => x.Id).ToList();
         }
 
+        //Get all content by column array method here
+
+        public List<Models.WebContent> GetContentByColumnId(int columnId, NewWebUserDBEntities db)
+        {
+            List<Models.WebContent> contentByColumnId = new List<Models.WebContent>();
+
+
+            //Ignore any content that is tied to a subpage id
+
+            foreach (var webContent in db.WebContents)
+            {
+                
+                    contentByColumnId.Add(webContent);
+
+                
+
+            }
+
+            foreach (var webContent in contentByColumnId.ToList())
+            {
+               
+                    if (webContent.ColumnId!= columnId)
+                    {
+                        contentByColumnId.Remove(webContent);
+                    }
+
+             
+
+            }
+
+
+            return contentByColumnId.OrderBy(x => x.Id).ToList();
+        }
+
     }
 }
