@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using WebsiteTemplateProject.Models;
 
 namespace WebsiteTemplateProject.Service
@@ -40,24 +41,24 @@ namespace WebsiteTemplateProject.Service
             //Add all rows to new list
             foreach (var row in db.Rows)
             {
-               
-                
-                    rowsByPageId.Add(row);
 
-                
+
+                rowsByPageId.Add(row);
+
+
 
             }
 
             // filter out list of rows
             foreach (var row in rowsByPageId.ToList())
             {
-               
-                    if (row.PageId != pageId)
-                    {
-                        rowsByPageId.Remove(row);
-                    }
 
-                
+                if (row.PageId != pageId)
+                {
+                    rowsByPageId.Remove(row);
+                }
+
+
 
             }
 
@@ -73,7 +74,7 @@ namespace WebsiteTemplateProject.Service
             {
                 if (column.ColumnId == default(int))
                 {
-                    column.ColumnClass = "col-" + column.ColumnClass ;
+                    column.ColumnClass = "col-" + column.ColumnClass;
                     db.Columns.Add(column);
                 }
                 else
@@ -92,33 +93,51 @@ namespace WebsiteTemplateProject.Service
         {
             List<Column> columnsByRowId = new List<Column>();
 
-
             //Add all rows to new list
             foreach (var column in db.Columns)
             {
-
-
                 columnsByRowId.Add(column);
-
-
-
             }
 
             // filter out list of rows
             foreach (var column in columnsByRowId.ToList())
             {
-
                 if (column.RowId != rowId)
                 {
                     columnsByRowId.Remove(column);
                 }
-
-
-
             }
 
-
             return columnsByRowId.OrderBy(x => x.Id).ToList();
+        }
+
+        //Get columns by VM list
+
+        public List<List<Column>> GetColumnVMLists(int rowId, ColumnDBEntities db)
+        {
+            ColumnVmList columnVMList = new ColumnVmList();
+            List<Column> columnsByRowId = new List<Column>();
+
+            List<List<Column>> columnVmList = new List<List<Column>>();
+
+            foreach (var column in db.Columns)
+            {
+                foreach (var c in db.Columns.Where(x => x.RowId == column.RowId))
+                {
+                    columnsByRowId.Add(c);
+                }
+            }
+
+            
+            columnVmList.Add(columnsByRowId);
+
+            foreach (var columnList in columnVmList)
+            {
+
+                columnList.OrderBy(x => x.Id).ToList();
+            }
+
+            return columnVmList;
         }
     }
 }

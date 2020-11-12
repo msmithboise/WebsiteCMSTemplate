@@ -24,4 +24,9 @@ namespace WebsiteTemplateProject.Models
         public string ElementTag { get; set; }
         public string Id { get; set; }
     }
+
+    public class ColumnVmList
+    {
+        public List<Column> columnList { get; set; }
+    }
 }

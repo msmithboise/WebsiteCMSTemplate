@@ -29,7 +29,7 @@ namespace WebsiteTemplateProject.Controllers
         {
             WebStructureService webStructureService = new WebStructureService();
 
-            var content = webStructureService.GetColumnsByRowId(id, db);
+            var content = webStructureService.GetColumnVMLists(id, db);
 
             return Ok(content);
         }
