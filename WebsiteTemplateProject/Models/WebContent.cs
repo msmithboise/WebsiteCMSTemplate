@@ -218,4 +218,9 @@ namespace WebsiteTemplateProject.Models
         public string scrollBehavior { get; set; }
         public string writingMode { get; set; }
     }
+
+    public class ContentVMList
+    {
+        public List<WebContent> contentList { get; set; }
+    }
 }

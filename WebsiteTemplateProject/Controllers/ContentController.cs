@@ -29,7 +29,7 @@ namespace WebsiteTemplateProject.Controllers
         {
             WebContentService webContentService = new WebContentService();
 
-          var content =  webContentService.GetContentByColumnId(id,db);
+          var content =  webContentService.GetContentVMLists(id,db);
 
             return Ok(content);
         }

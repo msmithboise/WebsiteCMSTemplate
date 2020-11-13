@@ -5,6 +5,7 @@ using System.Web;
 
 using System.Data.Entity;
 using WebsiteTemplateProject.Models;
+using System.Web.UI.WebControls;
 
 namespace WebsiteTemplateProject.Service
 {
@@ -140,6 +141,34 @@ namespace WebsiteTemplateProject.Service
 
 
             return contentByColumnId.OrderBy(x => x.Id).ToList();
+        }
+
+        public List<List<Models.WebContent>> GetContentVMLists(int columnId, NewWebUserDBEntities db)
+        {
+            List<List<Models.WebContent>> contentVmList = new List<List<Models.WebContent>>();
+
+            List<Models.WebContent> contentByColumnId = new List<Models.WebContent>();
+
+            List<Models.WebContent> listToFilter = new List<Models.WebContent>();
+
+
+
+            foreach (var content in db.WebContents)
+            {
+                listToFilter.Add(content);
+            }
+
+            foreach (var content in listToFilter.ToList())
+            {
+                contentByColumnId.Add(content);
+
+                listToFilter.Remove(content);
+            }
+
+            contentVmList.Add(contentByColumnId);
+
+
+            return contentVmList;
         }
 
     }
