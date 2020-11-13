@@ -117,25 +117,27 @@ namespace WebsiteTemplateProject.Service
         {
             ColumnVmList columnVMList = new ColumnVmList();
             List<Column> columnsByRowId = new List<Column>();
+            List<Column> listToFilter = new List<Column>();
 
-            List<List<Column>> columnVmList = new List<List<Column>>();
+            //First add all columns to two arrays. columnsByRowId and Listtofilter
 
             foreach (var column in db.Columns)
             {
-                foreach (var c in db.Columns.Where(x => x.RowId == column.RowId))
-                {
-                    columnsByRowId.Add(c);
-                }
+                listToFilter.Add(column);
             }
 
+            foreach (var column in listToFilter.ToList())
+            {
+                columnsByRowId.Add(column);
+
+                listToFilter.Remove(column); //20 - 1 is removed
+            }
+
+            //when nothing is left to filter, the columns get added to the return list
+
+            List<List<Column>> columnVmList = new List<List<Column>>();
             
             columnVmList.Add(columnsByRowId);
-
-            foreach (var columnList in columnVmList)
-            {
-
-                columnList.OrderBy(x => x.Id).ToList();
-            }
 
             return columnVmList;
         }
