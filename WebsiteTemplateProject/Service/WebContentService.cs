@@ -6,6 +6,8 @@ using System.Web;
 using System.Data.Entity;
 using WebsiteTemplateProject.Models;
 using System.Web.UI.WebControls;
+using System.Data.Entity.Validation;
+using WebsiteTemplateProject.Validation;
 
 namespace WebsiteTemplateProject.Service
 {
@@ -46,7 +48,18 @@ namespace WebsiteTemplateProject.Service
                     db.Entry(webContent).State = EntityState.Modified;
                 }
 
-                db.SaveChanges();
+                try
+                {
+
+                    db.SaveChanges();
+                }
+                catch (DbEntityValidationException e)
+                {
+                    var newException = new FormattedDbEntityValidationException(e);
+                    throw newException;
+                }
+
+             
                 return webContent;
             }
         }
