@@ -20,6 +20,8 @@ namespace WebsiteTemplateProject.Controllers
             var httpRequest = HttpContext.Current.Request;
             //Upload Audio
             var postedFormPageId = httpRequest.Form["pageId"];
+
+            var postedFormColumnId = httpRequest.Form["columnId"];
         
             var postedFormUrl = httpRequest.Form["audioUrl"];
            
@@ -29,8 +31,9 @@ namespace WebsiteTemplateProject.Controllers
             {
                 var fireBaseUrl = postedFormUrl;
                 var pageId = Int32.Parse(postedFormPageId);
-            
-             
+                var columnId = Int32.Parse(postedFormColumnId);
+
+
 
 
                 //Save to DB
@@ -40,6 +43,7 @@ namespace WebsiteTemplateProject.Controllers
                     {
                         AudioUrl = fireBaseUrl,
                         PageId = pageId,
+                        ColumnId = columnId,
                       
                        
                       
