@@ -26,17 +26,21 @@ namespace WebsiteTemplateProject.Controllers
             var httpRequest = HttpContext.Current.Request;
             //Upload Image
             var postedFormPageId = httpRequest.Form["pageId"];
+            var postedFormColumnId = httpRequest.Form["columnId"];
 
 
             var postedFormUrl = httpRequest.Form["imageUrl"];
-            var postedBackgroundImage = httpRequest.Form["backgroundImage"];
+           // var postedBackgroundImage = httpRequest.Form["backgroundImage"];
             var postedFile = httpRequest.Files["imageUrl"];
+            var postedUrl400px = httpRequest.Form["body"];
+
 
             if (postedFormUrl != null && postedFile == null)
             {
                 var fireBaseUrl = postedFormUrl;
                 var pageId = Int32.Parse(postedFormPageId);
-                var bgImage = postedBackgroundImage;
+                var columnId = Int32.Parse(postedFormColumnId);
+                //var bgImage = postedBackgroundImage;
 
              
 
@@ -47,10 +51,13 @@ namespace WebsiteTemplateProject.Controllers
                 {
                     Models.WebContent uploadImage = new Models.WebContent()
                     {
-                        ImageUrl = fireBaseUrl,
+                        //ImageUrl = fireBaseUrl,
                         PageId = pageId,
+                        ColumnId = columnId,
                     
-                        backgroundImage = fireBaseUrl
+
+
+                      backgroundImage = fireBaseUrl
                   
                     };
                     db.WebContents.Add(uploadImage);
@@ -70,7 +77,47 @@ namespace WebsiteTemplateProject.Controllers
                 }
 
             }
-                return Request.CreateResponse(HttpStatusCode.Created);
+
+            if (postedUrl400px != null && postedFormUrl == null)
+            {
+                var fireBaseUrl = postedUrl400px;
+                var pageId = Int32.Parse(postedFormPageId);
+                var columnId = Int32.Parse(postedFormColumnId);
+                //var bgImage = postedBackgroundImage;
+
+                //Save to DB
+                using (NewWebUserDBEntities db = new NewWebUserDBEntities())
+                {
+                    Models.WebContent uploadImage = new Models.WebContent()
+                    {
+                        //ImageUrl = fireBaseUrl,
+                        PageId = pageId,
+                        ColumnId = columnId,
+
+
+
+                        Body = fireBaseUrl
+
+                    };
+                    db.WebContents.Add(uploadImage);
+
+                    try
+                    {
+
+                        db.SaveChanges();
+                    }
+                    catch (DbEntityValidationException e)
+                    {
+                        var newException = new FormattedDbEntityValidationException(e);
+                        throw newException;
+                    }
+
+
+                }
+
+
+            }
+            return Request.CreateResponse(HttpStatusCode.Created);
         }
 
         
