@@ -225,6 +225,7 @@
     <Compile Include="Controllers\SubPageContentController.cs" />
     <Compile Include="Controllers\SubPagesController.cs" />
     <Compile Include="Controllers\TextBoxOneController.cs" />
+    <Compile Include="Controllers\UploadGalleryController.cs" />
     <Compile Include="Controllers\UploadImageController.cs" />
     <Compile Include="Controllers\UploadSubPageImageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
