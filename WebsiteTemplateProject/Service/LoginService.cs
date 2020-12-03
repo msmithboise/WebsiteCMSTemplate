@@ -75,7 +75,7 @@ namespace WebsiteTemplateProject.Service
                     user.Salt = u.Salt;
                     u.isLoggedIn = true;
                     user.isLoggedIn = u.isLoggedIn;
-                    user.Token = "test";
+                    user.Token = u.Token;
                     user.timeLoggedIn = DateTime.Now;
 
 

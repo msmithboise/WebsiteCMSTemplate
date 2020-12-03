@@ -19,5 +19,8 @@ namespace WebsiteTemplateProject.Models
         public Nullable<int> TextId { get; set; }
         public string PageDescription { get; set; }
         public string IsPrivate { get; set; }
+        public Nullable<bool> isPublished { get; set; }
+        public Nullable<int> ClientId { get; set; }
+        public string PageColor { get; set; }
     }
 }

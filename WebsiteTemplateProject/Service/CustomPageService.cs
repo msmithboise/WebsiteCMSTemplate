@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using WebsiteTemplateProject.Models;
 using System.Data.Entity;
+using System.Web.UI;
 
 namespace WebsiteTemplateProject.Service
 {
@@ -16,9 +17,9 @@ namespace WebsiteTemplateProject.Service
 
     public class CustomPageService
     {
-        public readonly WebsiteDBCustomPageEntities _context;
+        public readonly  PagesDBEntities _context;
 
-        public CustomPageService(WebsiteDBCustomPageEntities context)
+        public CustomPageService(PagesDBEntities context)
         {
             _context = context;
         }
@@ -28,7 +29,7 @@ namespace WebsiteTemplateProject.Service
 
         }
 
-        public CustomPage UpsertCustomPage(CustomPage customPage, WebsiteDBCustomPageEntities db)
+        public CustomPage UpsertCustomPage(CustomPage customPage, PagesDBEntities db)
         {
             using (db)
             {

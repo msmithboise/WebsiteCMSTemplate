@@ -13,10 +13,10 @@ namespace WebsiteTemplateProject.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HomePageDBEntities1 : DbContext
+    public partial class PagesDBEntities : DbContext
     {
-        public HomePageDBEntities1()
-            : base("name=HomePageDBEntities1")
+        public PagesDBEntities()
+            : base("name=PagesDBEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace WebsiteTemplateProject.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<HomePage> HomePages { get; set; }
+        public virtual DbSet<CustomPage> CustomPages { get; set; }
     }
 }
