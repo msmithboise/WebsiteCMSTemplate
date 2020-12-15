@@ -12,7 +12,7 @@ namespace WebsiteTemplateProject.Controllers
 {
     public class SubContentController : ApiController
     {
-        private NewWebUserDBEntities db = new NewWebUserDBEntities();
+        private NewWebContent1 db = new NewWebContent1();
 
         // GET: api/SubContent
         public IEnumerable<Models.WebContent> Get()
