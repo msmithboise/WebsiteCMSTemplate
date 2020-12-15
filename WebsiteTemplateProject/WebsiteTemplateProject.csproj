@@ -437,6 +437,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NewUsers.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\NewWebContent1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewWebContent1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewWebContent1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewWebContent1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewWebContent1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewWebContent1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\NewWebUserDBEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -615,7 +630,7 @@
       <DependentUpon>WebContent.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WebContent.cs">
-      <DependentUpon>NewWebUserDBEntities.tt</DependentUpon>
+      <DependentUpon>NewWebContent1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WebContent.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -810,6 +825,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NewUsers.edmx</DependentUpon>
       <LastGenOutput>NewUsers.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\NewWebContent1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NewWebContent1.edmx</DependentUpon>
+      <LastGenOutput>NewWebContent1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\NewWebContent1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NewWebContent1.edmx</DependentUpon>
+      <LastGenOutput>NewWebContent1.cs</LastGenOutput>
     </Content>
     <Content Include="Models\NewWebUserDBEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -1137,7 +1162,15 @@
     <Content Include="Models\Page.edmx.diagram">
       <DependentUpon>Page.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\NewWebContent1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NewWebContent1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NewWebContent1.edmx.diagram">
+      <DependentUpon>NewWebContent1.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\api.hindsitedevelopment.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\api.riveroflifeidaho.com - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

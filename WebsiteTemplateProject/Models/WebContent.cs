@@ -217,10 +217,62 @@ namespace WebsiteTemplateProject.Models
         public string resize { get; set; }
         public string scrollBehavior { get; set; }
         public string writingMode { get; set; }
-    }
-
-    public class ContentVMList
-    {
-        public List<WebContent> contentList { get; set; }
+        public string borderRadius { get; set; }
+        public string repeatingLinearGradient { get; set; }
+        public string linearGradient { get; set; }
+        public string content { get; set; }
+        public string iconText { get; set; }
+        public Nullable<bool> isHover { get; set; }
+        public Nullable<bool> isActive { get; set; }
+        public Nullable<bool> isAfter { get; set; }
+        public Nullable<bool> isActiveIsAfter { get; set; }
+        public string fontAwesomeIcon { get; set; }
+        public string buttonText { get; set; }
+        public string buttonImage { get; set; }
+        public string buttonHoverTextColor { get; set; }
+        public string buttonHoverText { get; set; }
+        public string buttonHoverBgImage { get; set; }
+        public string buttonHoverImageOverlay { get; set; }
+        public string buttonHoverBgColor { get; set; }
+        public Nullable<int> sliderId { get; set; }
+        public string sliderImage { get; set; }
+        public string sliderText { get; set; }
+        public string sliderOverlay { get; set; }
+        public string sliderArrowColor { get; set; }
+        public string sliderFade { get; set; }
+        public string sliderAnimation { get; set; }
+        public Nullable<int> dropdownId { get; set; }
+        public string dropdownDescription { get; set; }
+        public string dropdownValue { get; set; }
+        public string dropdownHyperlink { get; set; }
+        public Nullable<int> searchId { get; set; }
+        public string metaTag { get; set; }
+        public Nullable<int> cartId { get; set; }
+        public string cartIcon { get; set; }
+        public Nullable<int> cartQuantity { get; set; }
+        public Nullable<int> couponCodeId { get; set; }
+        public string couponCodeDescription { get; set; }
+        public string couponCodeValue { get; set; }
+        public Nullable<bool> couponCodeDisabled { get; set; }
+        public Nullable<int> filterId { get; set; }
+        public string filterQuery { get; set; }
+        public string filterResult { get; set; }
+        public Nullable<int> paginationId { get; set; }
+        public Nullable<int> paginationNumberCurrent { get; set; }
+        public Nullable<int> paginationNumberTotal { get; set; }
+        public Nullable<int> calendarId { get; set; }
+        public string calendarMonth { get; set; }
+        public string calendarDay { get; set; }
+        public string calendarYear { get; set; }
+        public string calendarDescription { get; set; }
+        public Nullable<bool> isEvent { get; set; }
+        public string patchNotes { get; set; }
+        public Nullable<int> patchNotesId { get; set; }
+        public string galleryImage { get; set; }
+        public Nullable<int> galleryImageId { get; set; }
+        public Nullable<System.DateTime> calendarCurrentDate { get; set; }
+        public Nullable<System.DateTime> calendarCurrentDateTime { get; set; }
+        public Nullable<int> templateId { get; set; }
+        public string templateDescription { get; set; }
     }
 }
