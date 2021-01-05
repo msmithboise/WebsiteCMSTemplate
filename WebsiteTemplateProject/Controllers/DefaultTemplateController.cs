@@ -16,19 +16,19 @@ namespace WebsiteTemplateProject.Controllers
 {
     public class DefaultTemplateController : ApiController
     {
-        private NewWebContentEntities2 db = new NewWebContentEntities2();
+        private NewWebContent1 db = new NewWebContent1();
 
         // GET: api/DefaultTemplate
-        public IQueryable<WebContent> GetWebContents()
+        public IQueryable<Models.WebContent> GetWebContents()
         {
             return db.WebContents;
         }
 
         // GET: api/DefaultTemplate/5
-        [ResponseType(typeof(WebContent))]
+        [ResponseType(typeof(Models.WebContent))]
         public IHttpActionResult GetWebContent(int id)
         {
-            WebContent webContent = db.WebContents.Find(id);
+            Models.WebContent webContent = db.WebContents.Find(id);
             if (webContent == null)
             {
                 return NotFound();
@@ -39,7 +39,7 @@ namespace WebsiteTemplateProject.Controllers
 
         // PUT: api/DefaultTemplate/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutWebContent(int id, WebContent webContent)
+        public IHttpActionResult PutWebContent(int id, Models.WebContent webContent)
         {
             if (!ModelState.IsValid)
             {
@@ -73,22 +73,21 @@ namespace WebsiteTemplateProject.Controllers
         }
 
         // POST: api/DefaultTemplate
-        [ResponseType(typeof(WebContent))]
-        public IHttpActionResult PostWebContent(WebContent webContent)
+        [ResponseType(typeof(Models.WebContent))]
+        public IHttpActionResult PostWebContent(Models.WebContent webContent)
         {
             DefaultTemplateService defaultTemplateService = new DefaultTemplateService();
 
-            defaultTemplateService.CreateHeroImage(webContent,db);
-            defaultTemplateService.CreateTextHeader(webContent, db);
+            
 
             return CreatedAtRoute("DefaultApi", new { id = webContent.Id }, webContent);
         }
 
         // DELETE: api/DefaultTemplate/5
-        [ResponseType(typeof(WebContent))]
+        [ResponseType(typeof(Models.WebContent))]
         public IHttpActionResult DeleteWebContent(int id)
         {
-            WebContent webContent = db.WebContents.Find(id);
+            Models.WebContent webContent = db.WebContents.Find(id);
             if (webContent == null)
             {
                 return NotFound();
