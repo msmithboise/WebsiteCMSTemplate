@@ -15,7 +15,7 @@ namespace WebsiteTemplateProject.Controllers
 {
     public class CustomPagesController : ApiController
     {
-        private PagesDBEntities db = new PagesDBEntities();
+        private NewCustomPagesDBEntities db = new NewCustomPagesDBEntities();
 
         // GET: api/CustomPages
         public IQueryable<CustomPage> GetCustomPages()

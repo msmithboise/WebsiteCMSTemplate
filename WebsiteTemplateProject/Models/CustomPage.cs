@@ -22,5 +22,7 @@ namespace WebsiteTemplateProject.Models
         public Nullable<bool> isPublished { get; set; }
         public Nullable<int> ClientId { get; set; }
         public string PageColor { get; set; }
+        public string ClientUrl { get; set; }
+        public string ClientApi { get; set; }
     }
 }

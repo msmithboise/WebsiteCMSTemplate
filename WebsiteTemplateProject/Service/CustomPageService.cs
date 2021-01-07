@@ -17,9 +17,9 @@ namespace WebsiteTemplateProject.Service
 
     public class CustomPageService
     {
-        public readonly  PagesDBEntities _context;
+        public readonly  NewCustomPagesDBEntities _context;
 
-        public CustomPageService(PagesDBEntities context)
+        public CustomPageService(NewCustomPagesDBEntities context)
         {
             _context = context;
         }
@@ -29,7 +29,7 @@ namespace WebsiteTemplateProject.Service
 
         }
 
-        public CustomPage UpsertCustomPage(CustomPage customPage, PagesDBEntities db)
+        public CustomPage UpsertCustomPage(CustomPage customPage, NewCustomPagesDBEntities db)
         {
             using (db)
             {

@@ -278,7 +278,7 @@
       <DependentUpon>CustomPage.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomPage.cs">
-      <DependentUpon>Page.tt</DependentUpon>
+      <DependentUpon>NewCustomPages.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomPage.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -421,6 +421,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NavBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewCustomPages.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewCustomPages.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewCustomPages.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewCustomPages.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewCustomPages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewCustomPages.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\NewUsers.Context.cs">
       <AutoGen>True</AutoGen>
@@ -816,6 +831,16 @@
       <DependentUpon>NavBar.edmx</DependentUpon>
       <LastGenOutput>NavBar1.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\NewCustomPages.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NewCustomPages.edmx</DependentUpon>
+      <LastGenOutput>NewCustomPages.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\NewCustomPages.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NewCustomPages.edmx</DependentUpon>
+      <LastGenOutput>NewCustomPages.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\NewUsers.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NewUsers.edmx</DependentUpon>
@@ -1168,6 +1193,13 @@
     </EntityDeploy>
     <Content Include="Models\NewWebContent1.edmx.diagram">
       <DependentUpon>NewWebContent1.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\NewCustomPages.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NewCustomPages.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NewCustomPages.edmx.diagram">
+      <DependentUpon>NewCustomPages.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\api.hindsitedevelopment.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\api.riveroflifeidaho.com - Web Deploy.pubxml" />
