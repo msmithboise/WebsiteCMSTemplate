@@ -46,5 +46,21 @@ namespace WebsiteTemplateProject.Service
                 return customPage;
             }
         }
+
+        public List<CustomPage> GetAllPagesByClientUrl(string clientUrl, NewCustomPagesDBEntities db)
+        {
+            //Write method to grab all pages from the db that are attached to the clientUrl
+
+            List<CustomPage> pageByClientList = new List<CustomPage>();
+
+            foreach (var page in db.CustomPages)
+            {
+                if (page.ClientUrl == clientUrl)
+                {
+                    pageByClientList.Add(page);
+                }
+            }
+            return pageByClientList;
+        }
     }
 }

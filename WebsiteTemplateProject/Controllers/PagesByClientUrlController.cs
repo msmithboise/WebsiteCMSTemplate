@@ -13,30 +13,32 @@ using WebsiteTemplateProject.Service;
 
 namespace WebsiteTemplateProject.Controllers
 {
-    public class CustomPagesController : ApiController
+    public class PagesByClientUrlController : ApiController
     {
-        public NewCustomPagesDBEntities db = new NewCustomPagesDBEntities();
+        private NewCustomPagesDBEntities db = new NewCustomPagesDBEntities();
 
-        // GET: api/CustomPages
+        // GET: api/PagesByClientUrl
         public IQueryable<CustomPage> GetCustomPages()
         {
             return db.CustomPages;
         }
 
-        // GET: api/CustomPages/5
+        // GET: api/PagesByClientUrl/5
         [ResponseType(typeof(CustomPage))]
-        public IHttpActionResult GetCustomPage(int id)
+        public IHttpActionResult GetCustomPage(string id)
         {
-            CustomPage customPage = db.CustomPages.Find(id);
-            if (customPage == null)
-            {
-                return NotFound();
-            }
+            CustomPageService customPageService = new CustomPageService();
 
-            return Ok(customPage);
+           
+
+            var pages = customPageService.GetAllPagesByClientUrl(id, db);
+
+
+
+            return Ok(pages);
         }
 
-        // PUT: api/CustomPages/5
+        // PUT: api/PagesByClientUrl/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutCustomPage(int id, CustomPage customPage)
         {
@@ -71,22 +73,22 @@ namespace WebsiteTemplateProject.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/CustomPages
+        // POST: api/PagesByClientUrl
         [ResponseType(typeof(CustomPage))]
         public IHttpActionResult PostCustomPage(CustomPage customPage)
         {
-            
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-
-            CustomPageService customPageService = new CustomPageService();
-
-            customPageService.UpsertCustomPage(customPage, db);
+            db.CustomPages.Add(customPage);
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = customPage.PageId }, customPage);
-           
         }
 
-        // DELETE: api/CustomPages/5
+        // DELETE: api/PagesByClientUrl/5
         [ResponseType(typeof(CustomPage))]
         public IHttpActionResult DeleteCustomPage(int id)
         {
