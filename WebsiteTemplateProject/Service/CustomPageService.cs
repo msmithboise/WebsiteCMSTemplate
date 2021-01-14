@@ -60,7 +60,7 @@ namespace WebsiteTemplateProject.Service
                     pageByClientList.Add(page);
                 }
             }
-            return pageByClientList;
+            return pageByClientList.OrderByDescending(x => x.PageDescription == "Home").ThenBy(x => x.PageId).ToList();
         }
     }
 }
