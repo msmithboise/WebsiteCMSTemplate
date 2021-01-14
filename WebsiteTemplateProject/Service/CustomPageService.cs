@@ -5,6 +5,7 @@ using System.Web;
 using WebsiteTemplateProject.Models;
 using System.Data.Entity;
 using System.Web.UI;
+using System.Web.Http.Results;
 
 namespace WebsiteTemplateProject.Service
 {
@@ -33,6 +34,11 @@ namespace WebsiteTemplateProject.Service
         {
             using (db)
             {
+                if (customPage.PageDescription.Equals("Home", StringComparison.OrdinalIgnoreCase))
+                {
+                    return customPage;
+                }
+
                 if (customPage.PageId == default(int))
                 {
                     db.CustomPages.Add(customPage);

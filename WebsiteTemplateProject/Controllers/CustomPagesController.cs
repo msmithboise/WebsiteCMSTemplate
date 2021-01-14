@@ -75,9 +75,6 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(CustomPage))]
         public IHttpActionResult PostCustomPage(CustomPage customPage)
         {
-            
-
-
             CustomPageService customPageService = new CustomPageService();
 
             customPageService.UpsertCustomPage(customPage, db);
@@ -92,6 +89,12 @@ namespace WebsiteTemplateProject.Controllers
         {
             CustomPage customPage = db.CustomPages.Find(id);
             if (customPage == null)
+            {
+                return NotFound();
+            }
+
+            //To ensure the Home page cannot be deleted.
+            if (customPage.PageDescription.Equals("Home",StringComparison.OrdinalIgnoreCase))
             {
                 return NotFound();
             }
