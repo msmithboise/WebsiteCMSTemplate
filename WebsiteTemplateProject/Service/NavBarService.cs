@@ -41,6 +41,24 @@ namespace WebsiteTemplateProject.Service
         }
         return navbarsByClientList;
     }
+
+        public NavBar UpsertNavBarDataByClientUrl(NavBar navBarData, ClientNavbarDBEntities2 db)
+        {
+            using (db)
+            {
+                if (navBarData.NavBarId == default(int))
+                {
+                    db.NavBars.Add(navBarData);
+                }
+                else
+                {
+                    db.Entry(navBarData).State = EntityState.Modified;
+                }
+
+                db.SaveChanges();
+                return navBarData;
+            }
+        }
     }
 
 }

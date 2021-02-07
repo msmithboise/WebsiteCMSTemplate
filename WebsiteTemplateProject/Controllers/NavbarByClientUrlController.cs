@@ -86,13 +86,9 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(NavBar))]
         public IHttpActionResult PostNavBar(NavBar navBar)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            NavBarService navBarService = new NavBarService();
 
-            db.NavBars.Add(navBar);
-            db.SaveChanges();
+            navBarService.UpsertNavBarDataByClientUrl(navBar, db);
 
             return CreatedAtRoute("DefaultApi", new { id = navBar.NavBarId }, navBar);
         }
