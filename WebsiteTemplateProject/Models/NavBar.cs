@@ -80,5 +80,7 @@ namespace WebsiteTemplateProject.Models
         public string NavHyperLink { get; set; }
         public string NavFontLineHeight { get; set; }
         public string NavFontLetterSpacing { get; set; }
+        public string ClientUrl { get; set; }
+        public Nullable<bool> ClientHasNavbar { get; set; }
     }
 }

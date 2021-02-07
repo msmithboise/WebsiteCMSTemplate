@@ -218,6 +218,7 @@
     <Compile Include="Controllers\loggedInUserController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
+    <Compile Include="Controllers\NavbarByClientUrlController.cs" />
     <Compile Include="Controllers\NavBarController.cs" />
     <Compile Include="Controllers\PagesByClientController.cs" />
     <Compile Include="Controllers\PagesByClientUrlController.cs" />
@@ -238,6 +239,21 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\ClientNavBar.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientNavBar.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClientNavBar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientNavBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClientNavBar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientNavBar.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Column.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -412,7 +428,7 @@
       <DependentUpon>NavBar.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NavBar.cs">
-      <DependentUpon>NavBar.tt</DependentUpon>
+      <DependentUpon>ClientNavBar.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NavBar.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -723,6 +739,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\ClientNavBar.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClientNavBar.edmx</DependentUpon>
+      <LastGenOutput>ClientNavBar.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ClientNavBar.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClientNavBar.edmx</DependentUpon>
+      <LastGenOutput>ClientNavBar.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\Column.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Column.edmx</DependentUpon>
@@ -1203,6 +1229,14 @@
     <Content Include="Models\NewCustomPages.edmx.diagram">
       <DependentUpon>NewCustomPages.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\ClientNavBar.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ClientNavBar.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ClientNavBar.edmx.diagram">
+      <DependentUpon>ClientNavBar.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\api.freedomstartsnow.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\api.hindsitedevelopment.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\api.riveroflifeidaho.com - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />

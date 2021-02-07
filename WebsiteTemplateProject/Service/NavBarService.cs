@@ -26,5 +26,21 @@ namespace WebsiteTemplateProject.Service
                 return navBarData;
             }
         }
+    public List<NavBar> GetAllNavbarsByClientUrl(string clientUrl, ClientNavbarDBEntities2 db)
+    {
+        //Write method to grab all pages from the db that are attached to the clientUrl
+
+        List<NavBar> navbarsByClientList = new List<NavBar>();
+
+        foreach (var navbar in db.NavBars)
+        {
+            if (navbar.ClientUrl == clientUrl)
+            {
+                navbarsByClientList.Add(navbar);
+            }
+        }
+        return navbarsByClientList;
     }
+    }
+
 }
