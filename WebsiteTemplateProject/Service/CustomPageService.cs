@@ -34,10 +34,7 @@ namespace WebsiteTemplateProject.Service
         {
             using (db)
             {
-                if (customPage.PageDescription.Equals("Home", StringComparison.OrdinalIgnoreCase))
-                {
-                    return customPage;
-                }
+                
 
                 if (customPage.PageId == default(int))
                 {

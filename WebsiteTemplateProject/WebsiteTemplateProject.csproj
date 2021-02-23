@@ -1238,7 +1238,11 @@
     </Content>
     <None Include="Properties\PublishProfiles\api.freedomstartsnow.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\api.hindsitedevelopment.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\api.hindsitedevelopment.com - Web Deploy1.pubxml" />
     <None Include="Properties\PublishProfiles\api.riveroflifeidaho.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\api.riveroflifeidaho.com - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\api.riveroflifeidaho.com - Web Deploy2.pubxml" />
+    <None Include="Properties\PublishProfiles\api.riveroflifeidaho.com - Web Deploy3.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1301,6 +1305,9 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
