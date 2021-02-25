@@ -79,6 +79,8 @@ namespace WebsiteTemplateProject.Service
                 }
                 else
                 {
+                    column.ColumnClass = "col-" + column.ColumnClass;
+                   
                     db.Entry(column).State = EntityState.Modified;
                 }
 
