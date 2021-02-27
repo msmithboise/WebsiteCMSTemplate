@@ -30,7 +30,7 @@ namespace WebsiteTemplateProject.Service
 
         }
 
-        public CustomPage UpsertCustomPage(CustomPage customPage, NewCustomPagesDBEntities db)
+        public CustomPage UpsertCustomPage(CustomPage customPage, NewClientWebPagesDBEntities db)
         {
             using (db)
             {

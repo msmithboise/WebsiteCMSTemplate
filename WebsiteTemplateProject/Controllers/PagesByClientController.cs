@@ -34,7 +34,7 @@ namespace WebsiteTemplateProject.Controllers
 
         // GET: api/PagesByClient/5
         [ResponseType(typeof(CustomPage))]
-        public IHttpActionResult GetPagesByClient(string id, NewCustomPagesDBEntities db)
+        public IHttpActionResult GetPagesByClient(string id, NewClientWebPagesDBEntities db)
         {
             CustomPageService customPageService = new CustomPageService();
 
