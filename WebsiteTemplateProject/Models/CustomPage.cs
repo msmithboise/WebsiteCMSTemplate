@@ -24,5 +24,8 @@ namespace WebsiteTemplateProject.Models
         public string PageColor { get; set; }
         public string ClientUrl { get; set; }
         public string ClientApi { get; set; }
+        public Nullable<int> ParentId { get; set; }
+        public Nullable<int> ChildId { get; set; }
+        public Nullable<int> OriginId { get; set; }
     }
 }

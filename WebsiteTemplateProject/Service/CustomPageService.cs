@@ -18,9 +18,9 @@ namespace WebsiteTemplateProject.Service
 
     public class CustomPageService
     {
-        public readonly  NewCustomPagesDBEntities _context;
+        public readonly  NewClientWebPagesDBEntities _context;
 
-        public CustomPageService(NewCustomPagesDBEntities context)
+        public CustomPageService(NewClientWebPagesDBEntities context)
         {
             _context = context;
         }
@@ -50,7 +50,7 @@ namespace WebsiteTemplateProject.Service
             }
         }
 
-        public List<CustomPage> GetAllPagesByClientUrl(string clientUrl, NewCustomPagesDBEntities db)
+        public List<CustomPage> GetAllPagesByClientUrl(string clientUrl, NewClientWebPagesDBEntities db)
         {
             //Write method to grab all pages from the db that are attached to the clientUrl
 

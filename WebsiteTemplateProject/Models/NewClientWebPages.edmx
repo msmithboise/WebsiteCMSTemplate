@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NewClientWebPagesDBEntitiesDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CustomPage">
+          <Key>
+            <PropertyRef Name="PageId" />
+          </Key>
+          <Property Name="PageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageId" Type="int" />
+          <Property Name="TextId" Type="int" />
+          <Property Name="PageDescription" Type="varchar" MaxLength="50" />
+          <Property Name="IsPrivate" Type="varchar" MaxLength="50" />
+          <Property Name="isPublished" Type="bit" />
+          <Property Name="ClientId" Type="int" />
+          <Property Name="PageColor" Type="varchar" MaxLength="50" />
+          <Property Name="ClientUrl" Type="varchar" MaxLength="5000" />
+          <Property Name="ClientApi" Type="varchar" MaxLength="5000" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="ChildId" Type="int" />
+          <Property Name="OriginId" Type="int" />
+        </EntityType>
+        <EntityContainer Name="NewClientWebPagesDBEntitiesDBModelStoreContainer">
+          <EntitySet Name="CustomPage" EntityType="Self.CustomPage" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NewClientWebPagesDBEntitiesDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CustomPage">
+          <Key>
+            <PropertyRef Name="PageId" />
+          </Key>
+          <Property Name="PageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageId" Type="Int32" />
+          <Property Name="TextId" Type="Int32" />
+          <Property Name="PageDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsPrivate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isPublished" Type="Boolean" />
+          <Property Name="ClientId" Type="Int32" />
+          <Property Name="PageColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClientUrl" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="ClientApi" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="ChildId" Type="Int32" />
+          <Property Name="OriginId" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="NewClientWebPagesDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CustomPages" EntityType="Self.CustomPage" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NewClientWebPagesDBEntitiesDBModelStoreContainer" CdmEntityContainer="NewClientWebPagesDBEntities">
+          <EntitySetMapping Name="CustomPages">
+            <EntityTypeMapping TypeName="NewClientWebPagesDBEntitiesDBModel.CustomPage">
+              <MappingFragment StoreEntitySet="CustomPage">
+                <ScalarProperty Name="PageId" ColumnName="PageId" />
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+                <ScalarProperty Name="TextId" ColumnName="TextId" />
+                <ScalarProperty Name="PageDescription" ColumnName="PageDescription" />
+                <ScalarProperty Name="IsPrivate" ColumnName="IsPrivate" />
+                <ScalarProperty Name="isPublished" ColumnName="isPublished" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="PageColor" ColumnName="PageColor" />
+                <ScalarProperty Name="ClientUrl" ColumnName="ClientUrl" />
+                <ScalarProperty Name="ClientApi" ColumnName="ClientApi" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+                <ScalarProperty Name="OriginId" ColumnName="OriginId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
