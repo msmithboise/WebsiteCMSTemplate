@@ -226,6 +226,7 @@
     <Compile Include="Controllers\SubContentController.cs" />
     <Compile Include="Controllers\SubPageAudioUploadController.cs" />
     <Compile Include="Controllers\SubPageContentController.cs" />
+    <Compile Include="Controllers\SubPagesByClientUrlController.cs" />
     <Compile Include="Controllers\SubPagesController.cs" />
     <Compile Include="Controllers\TextBoxOneController.cs" />
     <Compile Include="Controllers\UploadGalleryController.cs" />
