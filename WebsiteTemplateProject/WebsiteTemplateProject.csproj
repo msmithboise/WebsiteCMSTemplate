@@ -735,6 +735,7 @@
     <Compile Include="Service\LogoutService.cs" />
     <Compile Include="Service\NavBarService.cs" />
     <Compile Include="Service\SubContentService.cs" />
+    <Compile Include="Service\SubPageByClientUrlService.cs" />
     <Compile Include="Service\SubPageService.cs" />
     <Compile Include="Service\TextBoxOneService.cs" />
     <Compile Include="Service\UserService.cs" />
