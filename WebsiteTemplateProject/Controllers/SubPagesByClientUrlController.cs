@@ -24,16 +24,14 @@ namespace WebsiteTemplateProject.Controllers
         }
 
         // GET: api/SubPagesByClientUrl/5
-        [ResponseType(typeof(CustomPage))]
+        [ResponseType(typeof(List<CustomPage>))]
         public IHttpActionResult GetCustomPage(int id)
         {
-            CustomPage customPage = db.CustomPages.Find(id);
-            if (customPage == null)
-            {
-                return NotFound();
-            }
+            SubPageByClientUrlService subPageByClientUrlService = new SubPageByClientUrlService();
 
-            return Ok(customPage);
+            var subPages = subPageByClientUrlService.GetSubNavLinks(db, id);
+
+            return Ok(subPages);
         }
 
         // PUT: api/SubPagesByClientUrl/5

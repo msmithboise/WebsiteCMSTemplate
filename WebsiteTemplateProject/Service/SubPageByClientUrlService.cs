@@ -28,5 +28,25 @@ namespace WebsiteTemplateProject.Service
                 return customPage;
             }
         }
+
+        public List<CustomPage> GetSubNavLinks(NewClientWebPagesDBEntities db, int id)
+        {
+
+            List<CustomPage> subPagesByParentId = new List<CustomPage>();
+
+            using (db)
+            {
+                foreach (var page in db.CustomPages)
+                {
+                    if (page.ParentId == id)
+                    {
+                        subPagesByParentId.Add(page);
+                    }
+                }
+
+
+                return subPagesByParentId.ToList();
+            }
+        }
     }
 }
