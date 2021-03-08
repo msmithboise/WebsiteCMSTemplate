@@ -54,6 +54,7 @@ namespace WebsiteTemplateProject.Controllers
                         //ImageUrl = fireBaseUrl,
                         PageId = pageId,
                         ColumnId = columnId,
+                        animationName = "none",
                     
 
 
