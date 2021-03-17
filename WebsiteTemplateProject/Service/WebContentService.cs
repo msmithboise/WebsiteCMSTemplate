@@ -20,9 +20,9 @@ namespace WebsiteTemplateProject.Service
 
     public class WebContentService
     {
-        public readonly NewWebContent1 _context;
+        public readonly GlobalContentDBEntities _context;
 
-        public WebContentService(NewWebContent1 context)
+        public WebContentService(GlobalContentDBEntities context)
         {
             _context = context;
         }
@@ -32,7 +32,7 @@ namespace WebsiteTemplateProject.Service
 
         }
 
-        public WebsiteTemplateProject.Models.WebContent UpsertWebContent(WebsiteTemplateProject.Models.WebContent webContent, NewWebContent1 db)
+        public WebsiteTemplateProject.Models.WebContent UpsertWebContent(WebsiteTemplateProject.Models.WebContent webContent, GlobalContentDBEntities db)
         {
             using (db)
             {
@@ -68,7 +68,7 @@ namespace WebsiteTemplateProject.Service
 
 
 
-        public List<Models.WebContent> GetWebContentByPageId(int pageId, NewWebContent1 db)
+        public List<Models.WebContent> GetWebContentByPageId(int pageId, GlobalContentDBEntities db)
         {
             List<Models.WebContent> webContentByPageId = new List<Models.WebContent>();
 
@@ -103,7 +103,7 @@ namespace WebsiteTemplateProject.Service
             return webContentByPageId.OrderBy(x => x.Id).ToList();
         }
 
-        public List<Models.WebContent> GetWebContentById(int id, NewWebContent1 db)
+        public List<Models.WebContent> GetWebContentById(int id, GlobalContentDBEntities db)
         {
             List<Models.WebContent> webContentById = new List<Models.WebContent>();
 
@@ -124,7 +124,7 @@ namespace WebsiteTemplateProject.Service
 
         //Get all content by column array method here
 
-        public List<Models.WebContent> GetContentByColumnId(int columnId, NewWebContent1 db)
+        public List<Models.WebContent> GetContentByColumnId(int columnId, GlobalContentDBEntities db)
         {
             List<Models.WebContent> contentByColumnId = new List<Models.WebContent>();
 
@@ -156,7 +156,7 @@ namespace WebsiteTemplateProject.Service
             return contentByColumnId.OrderBy(x => x.Id).ToList();
         }
 
-        public List<List<Models.WebContent>> GetContentVMLists(int columnId, NewWebContent1 db)
+        public List<List<Models.WebContent>> GetContentVMLists(int columnId, GlobalContentDBEntities db)
         {
             List<List<Models.WebContent>> contentVmList = new List<List<Models.WebContent>>();
 
