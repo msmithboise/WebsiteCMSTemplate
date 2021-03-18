@@ -80,7 +80,7 @@ namespace WebsiteTemplateProject.Controllers
         {
             DefaultTemplateService defaultTemplateService = new DefaultTemplateService();
 
-            defaultTemplateService.CreateTemplate();
+            defaultTemplateService.CreateTemplate(webContent);
 
             HttpResponseMessage response = new HttpResponseMessage();
 
