@@ -16,7 +16,7 @@ namespace WebsiteTemplateProject.Controllers
 {
     public class DefaultTemplateController : ApiController
     {
-        private NewWebContent1 db = new NewWebContent1();
+        private GlobalContentDBEntities db = new GlobalContentDBEntities();
 
         // GET: api/DefaultTemplate
         public IQueryable<Models.WebContent> GetWebContents()
@@ -72,15 +72,21 @@ namespace WebsiteTemplateProject.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        //post: api/Default
+
         // POST: api/DefaultTemplate
-        [ResponseType(typeof(Models.WebContent))]
-        public IHttpActionResult PostWebContent(Models.WebContent webContent)
+        [ResponseType(typeof(HttpResponseMessage))]
+        public HttpResponseMessage PostWebContent(Models.WebContent webContent)
         {
             DefaultTemplateService defaultTemplateService = new DefaultTemplateService();
 
-            
+            defaultTemplateService.CreateTemplate();
 
-            return CreatedAtRoute("DefaultApi", new { id = webContent.Id }, webContent);
+            HttpResponseMessage response = new HttpResponseMessage();
+
+            response.Content = new StringContent("Template Created!");
+
+            return response;
         }
 
         // DELETE: api/DefaultTemplate/5
