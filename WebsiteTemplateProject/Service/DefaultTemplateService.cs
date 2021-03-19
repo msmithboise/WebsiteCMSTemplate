@@ -100,7 +100,47 @@ namespace WebsiteTemplateProject.Service
 
             CreateHalfPageHeroImage(newColumnThreeId);
 
+            //Add a new row
 
+            var rowSix = CreateRow(newPageId);
+            var rowSixId = rowSix.RowId;
+
+            //Create 3 col-4
+
+            var leftHeaderColTwo = CreateFourSizeColumn(rowSixId);
+            var leftHeaderColIdTwo = leftHeaderColTwo.ColumnId;
+
+            var midHeaderColTwo = CreateFourSizeColumn(rowSixId);
+            var midHeaderColIdTwo = midHeaderColTwo.ColumnId;
+
+            var rightHeaderColTwo = CreateFourSizeColumn(rowSixId);
+            var rightHeaderColIdTwo = rightHeaderColTwo.ColumnId;
+
+            CreateHeaderForLeftColumnTwo(leftHeaderColIdTwo);
+            CreateHeaderForMidColumnTwo(midHeaderColIdTwo);
+            CreateHeaderForRightColumnTwo(rightHeaderColIdTwo);
+
+            //Create new row
+
+            var rowSeven = CreateRow(newPageId);
+            var rowSevenId = rowSeven.RowId;
+
+            //Add 3 col size 4 to row
+
+            var leftTextColTwo = CreateFourSizeColumn(rowSevenId);
+            var leftTextColIdTwo = leftTextColTwo.ColumnId;
+
+            var midTextColTwo = CreateFourSizeColumn(rowSevenId);
+            var midTextColIdTwo = midTextColTwo.ColumnId;
+
+            var rightTextColTwo = CreateFourSizeColumn(rowSevenId);
+            var rightTextColIdTwo = rightTextColTwo.ColumnId;
+
+            //Add text to new columns
+
+            CreateTextForLeftColumnTwo(leftTextColIdTwo);
+            CreateTextForMidColumnTwo(midTextColIdTwo);
+            CreateTextForRightColumnTwo(rightTextColIdTwo);
 
 
         }
@@ -332,6 +372,177 @@ namespace WebsiteTemplateProject.Service
             }
         }
 
+        public void CreateHeaderForLeftColumnTwo(int midHeaderColId)
+        {
+            Models.WebContent webContent = new Models.WebContent();
+            GlobalContentDBEntities db = new GlobalContentDBEntities();
+
+            using (db)
+            {
+                if (webContent.Id == default(int))
+                {
+                    webContent.ColumnId = midHeaderColId;
+
+                    //SETTING Global
+
+                    //Set text
+                    webContent.TextBody = "Left Header";
+
+                    //Font color
+                    webContent.color = "#222222";
+                    //Set font size:
+                    webContent.fontSize = "25px";
+                    //Set font family
+                    webContent.fontFamily = "Work Sans";
+                    //Set padding
+                    webContent.padding = "30px";
+                    //Set text align
+                    webContent.textAlign = "center";
+
+
+                    //SETTING MOBILE
+
+
+                    webContent.fontSizeMobile = "25px";
+                    webContent.fontFamily = "Work Sans";
+
+                    //SETTING TABLET
+
+                    webContent.fontSizeTablet = "25px";
+                    webContent.fontFamily = "Work Sans";
+
+
+                    //SETTING LAPTOP
+
+                    webContent.fontSizeLaptop = "25px";
+                    webContent.fontFamily = "Work Sans";
+
+                    db.WebContents.Add(webContent);
+                }
+                else
+                {
+                    db.Entry(webContent).State = EntityState.Modified;
+                }
+
+                db.SaveChanges();
+
+            }
+        }
+
+        public void CreateHeaderForMidColumnTwo(int midHeaderColId)
+        {
+            Models.WebContent webContent = new Models.WebContent();
+            GlobalContentDBEntities db = new GlobalContentDBEntities();
+
+            using (db)
+            {
+                if (webContent.Id == default(int))
+                {
+                    webContent.ColumnId = midHeaderColId;
+
+                    //SETTING Global
+
+                    //Set text
+                    webContent.TextBody = "Middle Header";
+
+                    //Font color
+                    webContent.color = "#222222";
+                    //Set font size:
+                    webContent.fontSize = "25px";
+                    //Set font family
+                    webContent.fontFamily = "Work Sans";
+                    //Set padding
+                    webContent.padding = "30px";
+                    //Set text align
+                    webContent.textAlign = "center";
+
+
+                    //SETTING MOBILE
+
+
+                    webContent.fontSizeMobile = "25px";
+                    webContent.fontFamily = "Work Sans";
+
+                    //SETTING TABLET
+
+                    webContent.fontSizeTablet = "25px";
+                    webContent.fontFamily = "Work Sans";
+
+
+                    //SETTING LAPTOP
+
+                    webContent.fontSizeLaptop = "25px";
+                    webContent.fontFamily = "Work Sans";
+
+                    db.WebContents.Add(webContent);
+                }
+                else
+                {
+                    db.Entry(webContent).State = EntityState.Modified;
+                }
+
+                db.SaveChanges();
+
+            }
+        }
+
+        public void CreateHeaderForRightColumnTwo(int midHeaderColId)
+        {
+            Models.WebContent webContent = new Models.WebContent();
+            GlobalContentDBEntities db = new GlobalContentDBEntities();
+
+            using (db)
+            {
+                if (webContent.Id == default(int))
+                {
+                    webContent.ColumnId = midHeaderColId;
+
+                    //SETTING Global
+
+                    //Set text
+                    webContent.TextBody = "Right Header";
+
+                    //Font color
+                    webContent.color = "#222222";
+                    //Set font size:
+                    webContent.fontSize = "25px";
+                    //Set font family
+                    webContent.fontFamily = "Work Sans";
+                    //Set padding
+                    webContent.padding = "30px";
+                    //Set text align
+                    webContent.textAlign = "center";
+
+
+                    //SETTING MOBILE
+
+
+                    webContent.fontSizeMobile = "25px";
+                    webContent.fontFamily = "Work Sans";
+
+                    //SETTING TABLET
+
+                    webContent.fontSizeTablet = "25px";
+                    webContent.fontFamily = "Work Sans";
+
+
+                    //SETTING LAPTOP
+
+                    webContent.fontSizeLaptop = "25px";
+                    webContent.fontFamily = "Work Sans";
+
+                    db.WebContents.Add(webContent);
+                }
+                else
+                {
+                    db.Entry(webContent).State = EntityState.Modified;
+                }
+
+                db.SaveChanges();
+
+            }
+        }
+
         public void CreateTextForMidColumn(int midHeaderColId)
         {
             Models.WebContent webContent = new Models.WebContent();
@@ -414,6 +625,177 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING MOBILE
                     webContent.heightMobile = "400px";
+
+                    db.WebContents.Add(webContent);
+                }
+                else
+                {
+                    db.Entry(webContent).State = EntityState.Modified;
+                }
+
+                db.SaveChanges();
+
+            }
+        }
+
+        public void CreateTextForLeftColumnTwo(int colId)
+        {
+            Models.WebContent webContent = new Models.WebContent();
+            GlobalContentDBEntities db = new GlobalContentDBEntities();
+
+            using (db)
+            {
+                if (webContent.Id == default(int))
+                {
+                    webContent.ColumnId = colId;
+
+                    //SETTING Global
+
+                    //Set text
+                    webContent.TextBody = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+
+                    //Font color
+                    webContent.color = "#222222";
+                    //Set font size:
+                    webContent.fontSize = "19px";
+                    //Set font family
+                    webContent.fontFamily = "Work Sans";
+                    //Set padding
+                    webContent.padding = "30px";
+                    //Set text align
+                    webContent.textAlign = "center";
+
+
+                    //SETTING MOBILE
+
+
+                    webContent.fontSizeMobile = "19px";
+                    webContent.fontFamily = "Work Sans";
+
+                    //SETTING TABLET
+
+                    webContent.fontSizeTablet = "19px";
+                    webContent.fontFamily = "Work Sans";
+
+
+                    //SETTING LAPTOP
+
+                    webContent.fontSizeLaptop = "19px";
+                    webContent.fontFamily = "Work Sans";
+
+                    db.WebContents.Add(webContent);
+                }
+                else
+                {
+                    db.Entry(webContent).State = EntityState.Modified;
+                }
+
+                db.SaveChanges();
+
+            }
+        }
+
+        public void CreateTextForMidColumnTwo(int colId)
+        {
+            Models.WebContent webContent = new Models.WebContent();
+            GlobalContentDBEntities db = new GlobalContentDBEntities();
+
+            using (db)
+            {
+                if (webContent.Id == default(int))
+                {
+                    webContent.ColumnId = colId;
+
+                    //SETTING Global
+
+                    //Set text
+                    webContent.TextBody = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+
+                    //Font color
+                    webContent.color = "#222222";
+                    //Set font size:
+                    webContent.fontSize = "19px";
+                    //Set font family
+                    webContent.fontFamily = "Work Sans";
+                    //Set padding
+                    webContent.padding = "30px";
+                    //Set text align
+                    webContent.textAlign = "center";
+
+
+                    //SETTING MOBILE
+
+
+                    webContent.fontSizeMobile = "19px";
+                    webContent.fontFamily = "Work Sans";
+
+                    //SETTING TABLET
+
+                    webContent.fontSizeTablet = "19px";
+                    webContent.fontFamily = "Work Sans";
+
+
+                    //SETTING LAPTOP
+
+                    webContent.fontSizeLaptop = "19px";
+                    webContent.fontFamily = "Work Sans";
+
+                    db.WebContents.Add(webContent);
+                }
+                else
+                {
+                    db.Entry(webContent).State = EntityState.Modified;
+                }
+
+                db.SaveChanges();
+
+            }
+        }
+
+        public void CreateTextForRightColumnTwo(int colId)
+        {
+            Models.WebContent webContent = new Models.WebContent();
+            GlobalContentDBEntities db = new GlobalContentDBEntities();
+
+            using (db)
+            {
+                if (webContent.Id == default(int))
+                {
+                    webContent.ColumnId = colId;
+
+                    //SETTING Global
+
+                    //Set text
+                    webContent.TextBody = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+
+                    //Font color
+                    webContent.color = "#222222";
+                    //Set font size:
+                    webContent.fontSize = "19px";
+                    //Set font family
+                    webContent.fontFamily = "Work Sans";
+                    //Set padding
+                    webContent.padding = "30px";
+                    //Set text align
+                    webContent.textAlign = "center";
+
+
+                    //SETTING MOBILE
+
+
+                    webContent.fontSizeMobile = "19px";
+                    webContent.fontFamily = "Work Sans";
+
+                    //SETTING TABLET
+
+                    webContent.fontSizeTablet = "19px";
+                    webContent.fontFamily = "Work Sans";
+
+
+                    //SETTING LAPTOP
+
+                    webContent.fontSizeLaptop = "19px";
+                    webContent.fontFamily = "Work Sans";
 
                     db.WebContents.Add(webContent);
                 }
