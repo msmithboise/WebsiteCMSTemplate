@@ -142,7 +142,7 @@ namespace WebsiteTemplateProject.Service
                 {
                     webContent.ColumnId = newColumnId;
 
-                    //SETTING DESKTOP
+                    //SETTING Global
 
                     //Set text
                     webContent.TextBody = "Your site name here";
@@ -156,25 +156,27 @@ namespace WebsiteTemplateProject.Service
                     webContent.fontSize = "90px";
                     //Set bottom to 500px
                     webContent.bottom = "500px";
+                    //Set font family
+                    webContent.fontFamily = "Work Sans";
 
                     //SETTING MOBILE
 
                     webContent.positionMobile = "absolute";
-                    webContent.leftMobile = "20%";
+                    webContent.leftMobile = "18%";
                     webContent.bottomMobile = "350px";
                     webContent.fontSizeMobile = "40px";
 
                     //SETTING TABLET
                     webContent.positionTablet = "absolute";
                     webContent.leftTablet = "25%";
-                    webContent.bottomTablet = "200px";
+                    webContent.bottomTablet = "250px";
                     webContent.fontSizeTablet = "60px";
 
 
                     //SETTING LAPTOP
                     webContent.positionLaptop = "absolute";
                     webContent.leftLaptop = "30%";
-                    webContent.bottomLaptop = "150px";
+                    webContent.bottomLaptop = "300px";
                     webContent.fontSizeLaptop = "60px";
 
                     db.WebContents.Add(webContent);
