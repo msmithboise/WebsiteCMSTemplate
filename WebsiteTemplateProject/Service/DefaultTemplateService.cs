@@ -5,6 +5,7 @@ using System.Web;
 
 using System.Data.Entity;
 using WebsiteTemplateProject.Models;
+using System.Data.Entity.Migrations.Model;
 
 namespace WebsiteTemplateProject.Service
 {
@@ -142,6 +143,38 @@ namespace WebsiteTemplateProject.Service
             CreateTextForMidColumnTwo(midTextColIdTwo);
             CreateTextForRightColumnTwo(rightTextColIdTwo);
 
+            //Create new row
+
+            var rowEight = CreateRow(newPageId);
+            var rowEightId = rowEight.RowId;
+
+            //Create 4 col-3
+
+            var leftImageCol = CreateThreeSizeColumn(rowEightId);
+            var leftImageColId = leftImageCol.ColumnId;
+
+            var leftMidImageCol = CreateThreeSizeColumn(rowEightId);
+            var leftMidImageColId = leftMidImageCol.ColumnId;
+
+            var rightMidImageCol = CreateThreeSizeColumn(rowEightId);
+            var rightMidImageColId = rightMidImageCol.ColumnId;
+
+            var rightImageCol = CreateThreeSizeColumn(rowEightId);
+            var rightImageColId = rightImageCol.ColumnId;
+
+            //Add new image to each col
+
+            CreateImageForLeftColumn(leftImageColId);
+            CreateImageForLeftMidColumn(leftMidImageColId);
+            CreateImageForRightMidColumn(rightMidImageColId);
+            CreateImageForRightColumn(rightImageColId);
+
+
+
+
+
+
+
 
         }
 
@@ -214,6 +247,28 @@ namespace WebsiteTemplateProject.Service
             }
         }
 
+        public Column CreateThreeSizeColumn(int newRowId)
+        {
+            Column column = new Column();
+            ColumnDBEntities db = new ColumnDBEntities();
+
+            using (db)
+            {
+                if (column.ColumnId == default(int))
+                {
+                    column.ColumnClass = "col-3";
+                    column.RowId = newRowId;
+                    db.Columns.Add(column);
+                }
+                else
+                {
+                    db.Entry(column).State = EntityState.Modified;
+                }
+
+                db.SaveChanges();
+                return column;
+            }
+        }
 
         public void CreateHeroImage(int newColumnId)
         {
@@ -348,17 +403,23 @@ namespace WebsiteTemplateProject.Service
                     
                     webContent.fontSizeMobile = "25px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
                     webContent.fontSizeTablet = "25px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignTablet = "center";
+                    webContent.paddingMobile = "30px";
+                    webContent.paddingTablet = "30px";
+                    webContent.paddingLaptop = "30px";
 
 
                     //SETTING LAPTOP
 
                     webContent.fontSizeLaptop = "25px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignLaptop = "center";
 
                     db.WebContents.Add(webContent);
                 }
@@ -399,23 +460,29 @@ namespace WebsiteTemplateProject.Service
                     //Set text align
                     webContent.textAlign = "center";
 
+                    webContent.paddingMobile = "30px";
+                    webContent.paddingTablet = "30px";
+                    webContent.paddingLaptop = "30px";
 
                     //SETTING MOBILE
 
 
                     webContent.fontSizeMobile = "25px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
                     webContent.fontSizeTablet = "25px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignTablet = "center";
 
 
                     //SETTING LAPTOP
 
                     webContent.fontSizeLaptop = "25px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignLaptop = "center";
 
                     db.WebContents.Add(webContent);
                 }
@@ -442,6 +509,10 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING Global
 
+                    webContent.paddingMobile = "30px";
+                    webContent.paddingTablet = "30px";
+                    webContent.paddingLaptop = "30px";
+
                     //Set text
                     webContent.TextBody = "Middle Header";
 
@@ -462,18 +533,20 @@ namespace WebsiteTemplateProject.Service
 
                     webContent.fontSizeMobile = "25px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
                     webContent.fontSizeTablet = "25px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignTablet = "center";
 
 
                     //SETTING LAPTOP
 
                     webContent.fontSizeLaptop = "25px";
                     webContent.fontFamily = "Work Sans";
-
+                    webContent.textAlignLaptop = "center";
                     db.WebContents.Add(webContent);
                 }
                 else
@@ -512,6 +585,9 @@ namespace WebsiteTemplateProject.Service
                     webContent.padding = "30px";
                     //Set text align
                     webContent.textAlign = "center";
+                    webContent.paddingMobile = "30px";
+                    webContent.paddingTablet = "30px";
+                    webContent.paddingLaptop = "30px";
 
 
                     //SETTING MOBILE
@@ -519,17 +595,20 @@ namespace WebsiteTemplateProject.Service
 
                     webContent.fontSizeMobile = "25px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
                     webContent.fontSizeTablet = "25px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignTablet = "center";
 
 
                     //SETTING LAPTOP
 
                     webContent.fontSizeLaptop = "25px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignLaptop = "center";
 
                     db.WebContents.Add(webContent);
                 }
@@ -569,6 +648,9 @@ namespace WebsiteTemplateProject.Service
                     webContent.padding = "30px";
                     //Set text align
                     webContent.textAlign = "center";
+                    webContent.paddingMobile = "30px";
+                    webContent.paddingTablet = "30px";
+                    webContent.paddingLaptop = "30px";
 
 
                     //SETTING MOBILE
@@ -576,17 +658,19 @@ namespace WebsiteTemplateProject.Service
 
                     webContent.fontSizeMobile = "19px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
                     webContent.fontSizeTablet = "19px";
                     webContent.fontFamily = "Work Sans";
-
+                    webContent.textAlignTablet = "center";
 
                     //SETTING LAPTOP
 
                     webContent.fontSizeLaptop = "19px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignLaptop = "center";
 
                     db.WebContents.Add(webContent);
                 }
@@ -627,6 +711,12 @@ namespace WebsiteTemplateProject.Service
                     webContent.heightMobile = "400px";
 
                     db.WebContents.Add(webContent);
+
+                    //SETTING LAPTOP
+                    webContent.heightLaptop = "400px";
+
+                    //SETTING TABLET
+                    webContent.heightTablet = "400px";
                 }
                 else
                 {
@@ -664,6 +754,9 @@ namespace WebsiteTemplateProject.Service
                     webContent.padding = "30px";
                     //Set text align
                     webContent.textAlign = "center";
+                    webContent.paddingMobile = "30px";
+                    webContent.paddingTablet = "30px";
+                    webContent.paddingLaptop = "30px";
 
 
                     //SETTING MOBILE
@@ -671,17 +764,20 @@ namespace WebsiteTemplateProject.Service
 
                     webContent.fontSizeMobile = "19px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
                     webContent.fontSizeTablet = "19px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignTablet = "center";
 
 
                     //SETTING LAPTOP
 
                     webContent.fontSizeLaptop = "19px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignLaptop = "center";
 
                     db.WebContents.Add(webContent);
                 }
@@ -721,6 +817,9 @@ namespace WebsiteTemplateProject.Service
                     webContent.padding = "30px";
                     //Set text align
                     webContent.textAlign = "center";
+                    webContent.paddingMobile = "30px";
+                    webContent.paddingTablet = "30px";
+                    webContent.paddingLaptop = "30px";
 
 
                     //SETTING MOBILE
@@ -728,17 +827,20 @@ namespace WebsiteTemplateProject.Service
 
                     webContent.fontSizeMobile = "19px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
                     webContent.fontSizeTablet = "19px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignTablet = "center";
 
 
                     //SETTING LAPTOP
 
                     webContent.fontSizeLaptop = "19px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignLaptop = "center";
 
                     db.WebContents.Add(webContent);
                 }
@@ -778,6 +880,9 @@ namespace WebsiteTemplateProject.Service
                     webContent.padding = "30px";
                     //Set text align
                     webContent.textAlign = "center";
+                    webContent.paddingMobile = "30px";
+                    webContent.paddingTablet = "30px";
+                    webContent.paddingLaptop = "30px";
 
 
                     //SETTING MOBILE
@@ -785,17 +890,20 @@ namespace WebsiteTemplateProject.Service
 
                     webContent.fontSizeMobile = "19px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
                     webContent.fontSizeTablet = "19px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignTablet = "center";
 
 
                     //SETTING LAPTOP
 
                     webContent.fontSizeLaptop = "19px";
                     webContent.fontFamily = "Work Sans";
+                    webContent.textAlignLaptop = "center";
 
                     db.WebContents.Add(webContent);
                 }
@@ -808,6 +916,177 @@ namespace WebsiteTemplateProject.Service
 
             }
         }
+
+        public void CreateImageForLeftColumn(int colId)
+        {
+            Models.WebContent webContent = new Models.WebContent();
+            GlobalContentDBEntities db = new GlobalContentDBEntities();
+
+            using (db)
+            {
+                if (webContent.Id == default(int))
+                {
+
+                    webContent.ColumnId = colId;
+
+                    //set background image
+                    //blue orange
+                    webContent.backgroundImage = "https://firebasestorage.googleapis.com/v0/b/webcms-786a8.appspot.com/o/images%2Fphoto-1542291026-7eec264c27ff_1616189886119?alt=media&token=9ebea9b2-1740-4d8d-9299-148711ce1981";
+                    webContent.animationName = "pulse";
+                    webContent.HyperLink = "https://www.google.com/";
+
+                   
+
+
+                    //Set image height to 1000px
+                    webContent.height = "400px";
+                    webContent.width = "400px";
+
+                    
+
+
+                    //SETTING MOBILE
+                    
+
+                    db.WebContents.Add(webContent);
+                }
+                else
+                {
+                    db.Entry(webContent).State = EntityState.Modified;
+                }
+
+                db.SaveChanges();
+
+            }
+        }
+
+        public void CreateImageForLeftMidColumn(int colId)
+        {
+            Models.WebContent webContent = new Models.WebContent();
+            GlobalContentDBEntities db = new GlobalContentDBEntities();
+
+            using (db)
+            {
+                if (webContent.Id == default(int))
+                {
+
+                    webContent.ColumnId = colId;
+
+                    //set background image
+                    //blue orange
+                    webContent.backgroundImage = "https://firebasestorage.googleapis.com/v0/b/webcms-786a8.appspot.com/o/images%2Fphoto-1561641377-f7456d23aa9b_1616190006643?alt=media&token=c8fb9e12-9d36-4056-b628-bfeba7259b97";
+                    webContent.animationName = "pulse";
+                    webContent.HyperLink = "https://www.google.com/";
+
+
+
+                    //Set image height to 1000px
+                    webContent.height = "400px";
+                    webContent.width = "400px";
+
+                    
+
+
+                    //SETTING MOBILE
+
+
+                    db.WebContents.Add(webContent);
+                }
+                else
+                {
+                    db.Entry(webContent).State = EntityState.Modified;
+                }
+
+                db.SaveChanges();
+
+            }
+        }
+
+        public void CreateImageForRightMidColumn(int colId)
+        {
+            Models.WebContent webContent = new Models.WebContent();
+            GlobalContentDBEntities db = new GlobalContentDBEntities();
+
+            using (db)
+            {
+                if (webContent.Id == default(int))
+                {
+
+                    webContent.ColumnId = colId;
+
+                    //set background image
+                    //blue orange
+                    webContent.backgroundImage = "https://firebasestorage.googleapis.com/v0/b/webcms-786a8.appspot.com/o/images%2Fphoto-1494252713559-f26b4bf0b174_1616190061683?alt=media&token=e5ff501b-9cc9-499b-b953-d279689b2647";
+                    webContent.animationName = "pulse";
+                    webContent.HyperLink = "https://www.google.com/";
+
+
+
+                    //Set image height to 1000px
+                    webContent.height = "400px";
+                    webContent.width = "400px";
+
+               
+
+
+                    //SETTING MOBILE
+
+
+                    db.WebContents.Add(webContent);
+                }
+                else
+                {
+                    db.Entry(webContent).State = EntityState.Modified;
+                }
+
+                db.SaveChanges();
+
+            }
+        }
+
+        public void CreateImageForRightColumn(int colId)
+        {
+            Models.WebContent webContent = new Models.WebContent();
+            GlobalContentDBEntities db = new GlobalContentDBEntities();
+
+            using (db)
+            {
+                if (webContent.Id == default(int))
+                {
+
+                    webContent.ColumnId = colId;
+
+                    //set background image
+                    //blue orange
+                    webContent.backgroundImage = "https://firebasestorage.googleapis.com/v0/b/webcms-786a8.appspot.com/o/images%2Fphoto-1517816428104-797678c7cf0c_1616190072283?alt=media&token=326c0eb0-da61-446c-a97a-86923eb15120";
+                    webContent.animationName = "pulse";
+                    webContent.HyperLink = "https://www.google.com/";
+
+
+
+                    //Set image height to 1000px
+                    webContent.height = "400px";
+                    webContent.width = "400px";
+
+                    
+
+
+                    //SETTING MOBILE
+
+
+                    db.WebContents.Add(webContent);
+                }
+                else
+                {
+                    db.Entry(webContent).State = EntityState.Modified;
+                }
+
+                db.SaveChanges();
+
+            }
+        }
+
+
     }
 }
 
