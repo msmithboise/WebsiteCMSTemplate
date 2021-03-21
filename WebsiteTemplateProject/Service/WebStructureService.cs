@@ -68,7 +68,7 @@ namespace WebsiteTemplateProject.Service
 
         //Upsert Columns
 
-        public Column UpsertColumns(Column column, ColumnDBEntities db)
+        public Column UpsertColumns(Column column, NewColumnDBEntities2 db)
         {
             using (db)
             {
@@ -91,7 +91,7 @@ namespace WebsiteTemplateProject.Service
 
         //Get columns by row id
 
-        public List<Column> GetColumnsByRowId(int rowId, ColumnDBEntities db)
+        public List<Column> GetColumnsByRowId(int rowId, NewColumnDBEntities2 db)
         {
             List<Column> columnsByRowId = new List<Column>();
 
@@ -115,7 +115,7 @@ namespace WebsiteTemplateProject.Service
 
         //Get columns by VM list
 
-        public List<List<Column>> GetColumnVMLists(int rowId, ColumnDBEntities db)
+        public List<List<Column>> GetColumnVMLists(int rowId, NewColumnDBEntities2 db)
         {
             ColumnVmList columnVMList = new ColumnVmList();
             List<Column> columnsByRowId = new List<Column>();

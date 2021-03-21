@@ -23,8 +23,11 @@ namespace WebsiteTemplateProject.Models
         public Nullable<int> ElementTagId { get; set; }
         public string ElementTag { get; set; }
         public string Id { get; set; }
+        public string ColumnClassMobile { get; set; }
+        public string ColumnClassTablet { get; set; }
+        public string ColumnClassLaptop { get; set; }
+        public string ColumnClassDesktop { get; set; }
     }
-
     public class ColumnVmList
     {
         public List<Column> columnList { get; set; }

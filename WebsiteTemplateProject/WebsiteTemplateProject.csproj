@@ -261,7 +261,7 @@
       <DependentUpon>Column.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Column.cs">
-      <DependentUpon>Column.tt</DependentUpon>
+      <DependentUpon>NewColumn.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Column.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -470,6 +470,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NewClientWebPages.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewColumn.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewColumn.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewColumn.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewColumn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewColumn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewColumn.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\NewCustomPages.Context.cs">
       <AutoGen>True</AutoGen>
@@ -911,6 +926,16 @@
       <DependentUpon>NewClientWebPages.edmx</DependentUpon>
       <LastGenOutput>NewClientWebPages.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\NewColumn.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NewColumn.edmx</DependentUpon>
+      <LastGenOutput>NewColumn.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\NewColumn.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NewColumn.edmx</DependentUpon>
+      <LastGenOutput>NewColumn.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\NewCustomPages.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NewCustomPages.edmx</DependentUpon>
@@ -1301,6 +1326,13 @@
     </EntityDeploy>
     <Content Include="Models\GlobalWebContent.edmx.diagram">
       <DependentUpon>GlobalWebContent.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\NewColumn.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NewColumn.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NewColumn.edmx.diagram">
+      <DependentUpon>NewColumn.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\api.freedomstartsnow.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\api.hindsitedevelopment.com - Web Deploy.pubxml" />

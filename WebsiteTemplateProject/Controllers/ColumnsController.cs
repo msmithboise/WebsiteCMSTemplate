@@ -15,7 +15,7 @@ namespace WebsiteTemplateProject.Controllers
 {
     public class ColumnsController : ApiController
     {
-        private ColumnDBEntities db = new ColumnDBEntities();
+        private NewColumnDBEntities2 db = new NewColumnDBEntities2();
 
         // GET: api/Columns
         public IQueryable<Column> GetColumns()

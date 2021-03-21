@@ -204,7 +204,7 @@ namespace WebsiteTemplateProject.Service
         public Column CreateColumn(int newRowId)
         {
             Column column = new Column();
-            ColumnDBEntities db = new ColumnDBEntities();
+            NewColumnDBEntities2 db = new NewColumnDBEntities2();
 
             using (db)
             {
@@ -227,7 +227,7 @@ namespace WebsiteTemplateProject.Service
         public Column CreateFourSizeColumn(int newRowId)
         {
             Column column = new Column();
-            ColumnDBEntities db = new ColumnDBEntities();
+            NewColumnDBEntities2 db = new NewColumnDBEntities2();
 
             using (db)
             {
@@ -250,7 +250,7 @@ namespace WebsiteTemplateProject.Service
         public Column CreateThreeSizeColumn(int newRowId)
         {
             Column column = new Column();
-            ColumnDBEntities db = new ColumnDBEntities();
+            NewColumnDBEntities2 db = new NewColumnDBEntities2();
 
             using (db)
             {

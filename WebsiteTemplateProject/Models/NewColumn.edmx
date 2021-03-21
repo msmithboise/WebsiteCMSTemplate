@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NewColumnDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Column">
+          <Key>
+            <PropertyRef Name="ColumnId" />
+          </Key>
+          <Property Name="ColumnId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ColumnClass" Type="varchar" MaxLength="5000" />
+          <Property Name="RowId" Type="int" />
+          <Property Name="RowClass" Type="varchar" MaxLength="5000" />
+          <Property Name="PageId" Type="int" />
+          <Property Name="PageDescription" Type="varchar" MaxLength="5000" />
+          <Property Name="ElementTagId" Type="int" />
+          <Property Name="ElementTag" Type="varchar" MaxLength="5000" />
+          <Property Name="Id" Type="nchar" MaxLength="10" />
+          <Property Name="ColumnClassMobile" Type="varchar" MaxLength="5000" />
+          <Property Name="ColumnClassTablet" Type="varchar" MaxLength="5000" />
+          <Property Name="ColumnClassLaptop" Type="varchar" MaxLength="5000" />
+          <Property Name="ColumnClassDesktop" Type="varchar" MaxLength="5000" />
+        </EntityType>
+        <EntityContainer Name="NewColumnDBModelStoreContainer">
+          <EntitySet Name="Column" EntityType="Self.Column" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NewColumnDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Column">
+          <Key>
+            <PropertyRef Name="ColumnId" />
+          </Key>
+          <Property Name="ColumnId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ColumnClass" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="RowId" Type="Int32" />
+          <Property Name="RowClass" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="PageId" Type="Int32" />
+          <Property Name="PageDescription" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="ElementTagId" Type="Int32" />
+          <Property Name="ElementTag" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ColumnClassMobile" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="ColumnClassTablet" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="ColumnClassLaptop" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="ColumnClassDesktop" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="NewColumnDBEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Columns" EntityType="Self.Column" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NewColumnDBModelStoreContainer" CdmEntityContainer="NewColumnDBEntities2">
+          <EntitySetMapping Name="Columns">
+            <EntityTypeMapping TypeName="NewColumnDBModel.Column">
+              <MappingFragment StoreEntitySet="Column">
+                <ScalarProperty Name="ColumnId" ColumnName="ColumnId" />
+                <ScalarProperty Name="ColumnClass" ColumnName="ColumnClass" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="RowClass" ColumnName="RowClass" />
+                <ScalarProperty Name="PageId" ColumnName="PageId" />
+                <ScalarProperty Name="PageDescription" ColumnName="PageDescription" />
+                <ScalarProperty Name="ElementTagId" ColumnName="ElementTagId" />
+                <ScalarProperty Name="ElementTag" ColumnName="ElementTag" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ColumnClassMobile" ColumnName="ColumnClassMobile" />
+                <ScalarProperty Name="ColumnClassTablet" ColumnName="ColumnClassTablet" />
+                <ScalarProperty Name="ColumnClassLaptop" ColumnName="ColumnClassLaptop" />
+                <ScalarProperty Name="ColumnClassDesktop" ColumnName="ColumnClassDesktop" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
