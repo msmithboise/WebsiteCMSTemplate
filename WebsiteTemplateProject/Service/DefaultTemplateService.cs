@@ -23,7 +23,7 @@ namespace WebsiteTemplateProject.Service
             //take id from that row
             var newRowId = newRow.RowId;
 
-            //pass it to create a column
+            //pass it to create a 12 size column
             var newColumn = CreateColumn(newRowId);
 
             //take column id
@@ -211,6 +211,9 @@ namespace WebsiteTemplateProject.Service
                 if (column.ColumnId == default(int))
                 {
                     column.ColumnClass = "col-12";
+                    column.ColumnClassMobile = "col-12";
+                    column.ColumnClassLaptop = "col-12";
+                    column.ColumnClassTablet = "col-12";
                     column.RowId = newRowId;
                     db.Columns.Add(column);
                 }
@@ -234,6 +237,9 @@ namespace WebsiteTemplateProject.Service
                 if (column.ColumnId == default(int))
                 {
                     column.ColumnClass = "col-4";
+                    column.ColumnClassMobile = "col-12";
+                    column.ColumnClassLaptop = "col-4";
+                    column.ColumnClassTablet = "col-4";
                     column.RowId = newRowId;
                     db.Columns.Add(column);
                 }
@@ -257,6 +263,9 @@ namespace WebsiteTemplateProject.Service
                 if (column.ColumnId == default(int))
                 {
                     column.ColumnClass = "col-3";
+                    column.ColumnClassMobile = "col-12";
+                    column.ColumnClassLaptop = "col-3";
+                    column.ColumnClassTablet = "col-3";
                     column.RowId = newRowId;
                     db.Columns.Add(column);
                 }
@@ -339,13 +348,14 @@ namespace WebsiteTemplateProject.Service
                     webContent.fontFamily = "Work Sans";
 
                     //SETTING MOBILE
-
+                    webContent.textMobile = "Your site name here";
                     webContent.positionMobile = "absolute";
                     webContent.leftMobile = "18%";
                     webContent.bottomMobile = "350px";
                     webContent.fontSizeMobile = "40px";
 
                     //SETTING TABLET
+                    webContent.textTablet = "Your site name here";
                     webContent.positionTablet = "absolute";
                     webContent.leftTablet = "25%";
                     webContent.bottomTablet = "250px";
@@ -353,6 +363,7 @@ namespace WebsiteTemplateProject.Service
 
 
                     //SETTING LAPTOP
+                    webContent.textLaptop = "Your site name here";
                     webContent.positionLaptop = "absolute";
                     webContent.leftLaptop = "30%";
                     webContent.bottomLaptop = "300px";
@@ -400,12 +411,14 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING MOBILE
 
-                    
+                    webContent.textMobile = "This is your header";
                     webContent.fontSizeMobile = "25px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
+
+                    webContent.textTablet = "This is your header";
 
                     webContent.fontSizeTablet = "25px";
                     webContent.fontFamily = "Work Sans";
@@ -416,6 +429,8 @@ namespace WebsiteTemplateProject.Service
 
 
                     //SETTING LAPTOP
+
+                    webContent.textLaptop = "This is your header";
 
                     webContent.fontSizeLaptop = "25px";
                     webContent.fontFamily = "Work Sans";
@@ -466,6 +481,7 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING MOBILE
 
+                    webContent.textMobile = "";
 
                     webContent.fontSizeMobile = "25px";
                     webContent.fontFamily = "Work Sans";
@@ -473,12 +489,16 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING TABLET
 
+                    webContent.textTablet = "Left Header";
+
                     webContent.fontSizeTablet = "25px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignTablet = "center";
 
 
                     //SETTING LAPTOP
+
+                    webContent.textLaptop = "Left Header";
 
                     webContent.fontSizeLaptop = "25px";
                     webContent.fontFamily = "Work Sans";
@@ -530,6 +550,7 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING MOBILE
 
+                    webContent.textMobile = "";
 
                     webContent.fontSizeMobile = "25px";
                     webContent.fontFamily = "Work Sans";
@@ -537,12 +558,16 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING TABLET
 
+                    webContent.textTablet = "Middle Header";
+
                     webContent.fontSizeTablet = "25px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignTablet = "center";
 
 
                     //SETTING LAPTOP
+
+                    webContent.textLaptop = "Middle Header";
 
                     webContent.fontSizeLaptop = "25px";
                     webContent.fontFamily = "Work Sans";
@@ -592,6 +617,7 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING MOBILE
 
+                    webContent.textMobile = "";
 
                     webContent.fontSizeMobile = "25px";
                     webContent.fontFamily = "Work Sans";
@@ -599,12 +625,16 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING TABLET
 
+                    webContent.textTablet = "Right Header";
+
                     webContent.fontSizeTablet = "25px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignTablet = "center";
 
 
                     //SETTING LAPTOP
+
+                    webContent.textLaptop= "Right Header";
 
                     webContent.fontSizeLaptop = "25px";
                     webContent.fontFamily = "Work Sans";
@@ -655,19 +685,21 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING MOBILE
 
-
+                    webContent.textMobile = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
                     webContent.fontSizeMobile = "19px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
+                    webContent.textTablet = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
                     webContent.fontSizeTablet = "19px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignTablet = "center";
 
                     //SETTING LAPTOP
 
+                    webContent.textLaptop = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
                     webContent.fontSizeLaptop = "19px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignLaptop = "center";
@@ -761,13 +793,14 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING MOBILE
 
-
+                    webContent.textMobile = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
                     webContent.fontSizeMobile = "19px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
+                    webContent.textTablet = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
                     webContent.fontSizeTablet = "19px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignTablet = "center";
@@ -775,6 +808,7 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING LAPTOP
 
+                    webContent.textLaptop = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
                     webContent.fontSizeLaptop = "19px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignLaptop = "center";
@@ -824,13 +858,14 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING MOBILE
 
-
+                    webContent.textMobile = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
                     webContent.fontSizeMobile = "19px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
+                    webContent.textTablet = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
                     webContent.fontSizeTablet = "19px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignTablet = "center";
@@ -838,6 +873,7 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING LAPTOP
 
+                    webContent.textLaptop = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
                     webContent.fontSizeLaptop = "19px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignLaptop = "center";
@@ -887,13 +923,14 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING MOBILE
 
-
+                    webContent.textMobile= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
                     webContent.fontSizeMobile = "19px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
+                    webContent.textTablet= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
                     webContent.fontSizeTablet = "19px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignTablet = "center";
@@ -901,6 +938,7 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING LAPTOP
 
+                    webContent.textLaptop = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
                     webContent.fontSizeLaptop = "19px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignLaptop = "center";

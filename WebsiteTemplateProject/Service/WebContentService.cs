@@ -41,6 +41,27 @@ namespace WebsiteTemplateProject.Service
 
                 if (webContent.Id == default(int))
                 {
+                    //Add text to mobile 
+                    if (webContent.TextBody != null)
+                    {
+                        webContent.textMobile = webContent.TextBody;
+
+                    }
+
+                    //Add text to tablet
+                    if (webContent.TextBody != null)
+                    {
+                        webContent.textTablet = webContent.TextBody;
+
+                    }
+
+                    //Add text to laptop
+                    if (webContent.TextBody!= null)
+                    {
+                        webContent.textLaptop = webContent.TextBody;
+
+                    }
+
                     db.WebContents.Add(webContent);
                 }
                 else

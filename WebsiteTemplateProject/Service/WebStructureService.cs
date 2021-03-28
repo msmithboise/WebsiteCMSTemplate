@@ -75,12 +75,25 @@ namespace WebsiteTemplateProject.Service
                 if (column.ColumnId == default(int))
                 {
                     column.ColumnClass = "col-" + column.ColumnClass;
+                    column.ColumnClassMobile = column.ColumnClass;
+                    column.ColumnClassTablet = column.ColumnClass;
+                    column.ColumnClassLaptop = column.ColumnClass;
+
+
+
                     db.Columns.Add(column);
+
                 }
                 else
                 {
                     column.ColumnClass = "col-" + column.ColumnClass;
-                   
+                    column.ColumnClassMobile = "col-" + column.ColumnClassMobile;
+                    column.ColumnClassTablet = "col-" + column.ColumnClassTablet;
+                    column.ColumnClassLaptop = "col-" + column.ColumnClassLaptop;
+
+
+
+
                     db.Entry(column).State = EntityState.Modified;
                 }
 
@@ -130,9 +143,14 @@ namespace WebsiteTemplateProject.Service
 
             foreach (var column in listToFilter.ToList())
             {
-                columnsByRowId.Add(column);
+                if (column.RowId == rowId)
+                {
 
+                columnsByRowId.Add(column);
                 listToFilter.Remove(column); //20 - 1 is removed
+                }
+
+
             }
 
             //when nothing is left to filter, the columns get added to the return list
