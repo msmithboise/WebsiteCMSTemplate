@@ -404,9 +404,11 @@ namespace WebsiteTemplateProject.Service
                     //Set font family
                     webContent.fontFamily = "Work Sans";
                     //Set padding
-                    webContent.padding = "30px";
+                    webContent.padding = "15px";
                     //Set text align
                     webContent.textAlign = "center";
+                    //Set font wieght
+                    webContent.fontWieght = "bold";
 
 
                     //SETTING MOBILE
@@ -415,6 +417,7 @@ namespace WebsiteTemplateProject.Service
                     webContent.fontSizeMobile = "25px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignMobile = "center";
+                    
 
                     //SETTING TABLET
 
@@ -423,9 +426,9 @@ namespace WebsiteTemplateProject.Service
                     webContent.fontSizeTablet = "25px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignTablet = "center";
-                    webContent.paddingMobile = "30px";
-                    webContent.paddingTablet = "30px";
-                    webContent.paddingLaptop = "30px";
+                    webContent.paddingMobile = "15px";
+                    webContent.paddingTablet = "15px";
+                    webContent.paddingLaptop = "15px";
 
 
                     //SETTING LAPTOP
@@ -471,13 +474,15 @@ namespace WebsiteTemplateProject.Service
                     //Set font family
                     webContent.fontFamily = "Work Sans";
                     //Set padding
-                    webContent.padding = "30px";
+                    webContent.padding = "15px";
                     //Set text align
                     webContent.textAlign = "center";
+                    // Set font wieght
+                    webContent.fontWieght = "bold";
 
-                    webContent.paddingMobile = "30px";
-                    webContent.paddingTablet = "30px";
-                    webContent.paddingLaptop = "30px";
+
+                    webContent.paddingTablet = "15px";
+                    webContent.paddingLaptop = "15px";
 
                     //SETTING MOBILE
 
@@ -529,9 +534,9 @@ namespace WebsiteTemplateProject.Service
 
                     //SETTING Global
 
-                    webContent.paddingMobile = "30px";
-                    webContent.paddingTablet = "30px";
-                    webContent.paddingLaptop = "30px";
+                    webContent.paddingMobile = "15px";
+                    webContent.paddingTablet = "15px";
+                    webContent.paddingLaptop = "15px";
 
                     //Set text
                     webContent.TextBody = "Middle Header";
@@ -546,11 +551,13 @@ namespace WebsiteTemplateProject.Service
                     webContent.padding = "30px";
                     //Set text align
                     webContent.textAlign = "center";
+                    //Set font wieght
+                    webContent.fontWieght = "bold";
 
 
                     //SETTING MOBILE
 
-                    webContent.textMobile = "";
+                    webContent.textMobile = "Another Middle Header";
 
                     webContent.fontSizeMobile = "25px";
                     webContent.fontFamily = "Work Sans";
@@ -607,12 +614,15 @@ namespace WebsiteTemplateProject.Service
                     //Set font family
                     webContent.fontFamily = "Work Sans";
                     //Set padding
-                    webContent.padding = "30px";
+                    webContent.padding = "15px";
                     //Set text align
                     webContent.textAlign = "center";
-                    webContent.paddingMobile = "30px";
+                  
                     webContent.paddingTablet = "30px";
                     webContent.paddingLaptop = "30px";
+
+                    //Set font wieght
+                    webContent.fontWieght = "bold";
 
 
                     //SETTING MOBILE
@@ -671,36 +681,36 @@ namespace WebsiteTemplateProject.Service
                     //Font color
                     webContent.color = "#222222";
                     //Set font size:
-                    webContent.fontSize = "19px";
+                    webContent.fontSize = "18px";
                     //Set font family
                     webContent.fontFamily = "Work Sans";
                     //Set padding
-                    webContent.padding = "30px";
+                    webContent.padding = "15px";
                     //Set text align
                     webContent.textAlign = "center";
-                    webContent.paddingMobile = "30px";
-                    webContent.paddingTablet = "30px";
-                    webContent.paddingLaptop = "30px";
+                    webContent.paddingMobile = "15px";
+                    webContent.paddingTablet = "15px";
+                    webContent.paddingLaptop = "15px";
 
 
                     //SETTING MOBILE
 
                     webContent.textMobile = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-                    webContent.fontSizeMobile = "19px";
+                    webContent.fontSizeMobile = "18px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
                     webContent.textTablet = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-                    webContent.fontSizeTablet = "19px";
+                    webContent.fontSizeTablet = "18px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignTablet = "center";
 
                     //SETTING LAPTOP
 
                     webContent.textLaptop = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-                    webContent.fontSizeLaptop = "19px";
+                    webContent.fontSizeLaptop = "18px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignLaptop = "center";
 
@@ -779,11 +789,11 @@ namespace WebsiteTemplateProject.Service
                     //Font color
                     webContent.color = "#222222";
                     //Set font size:
-                    webContent.fontSize = "19px";
+                    webContent.fontSize = "18px";
                     //Set font family
                     webContent.fontFamily = "Work Sans";
                     //Set padding
-                    webContent.padding = "30px";
+                    webContent.padding = "15px";
                     //Set text align
                     webContent.textAlign = "center";
                     webContent.paddingMobile = "30px";
@@ -794,14 +804,14 @@ namespace WebsiteTemplateProject.Service
                     //SETTING MOBILE
 
                     webContent.textMobile = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-                    webContent.fontSizeMobile = "19px";
+                    webContent.fontSizeMobile = "18px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
                     webContent.textTablet = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-                    webContent.fontSizeTablet = "19px";
+                    webContent.fontSizeTablet = "18px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignTablet = "center";
 
@@ -809,7 +819,7 @@ namespace WebsiteTemplateProject.Service
                     //SETTING LAPTOP
 
                     webContent.textLaptop = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-                    webContent.fontSizeLaptop = "19px";
+                    webContent.fontSizeLaptop = "18px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignLaptop = "center";
 
@@ -844,29 +854,29 @@ namespace WebsiteTemplateProject.Service
                     //Font color
                     webContent.color = "#222222";
                     //Set font size:
-                    webContent.fontSize = "19px";
+                    webContent.fontSize = "18px";
                     //Set font family
                     webContent.fontFamily = "Work Sans";
                     //Set padding
-                    webContent.padding = "30px";
+                    webContent.padding = "15px";
                     //Set text align
                     webContent.textAlign = "center";
-                    webContent.paddingMobile = "30px";
-                    webContent.paddingTablet = "30px";
-                    webContent.paddingLaptop = "30px";
+                    webContent.paddingMobile = "15px";
+                    webContent.paddingTablet = "15px";
+                    webContent.paddingLaptop = "15px";
 
 
                     //SETTING MOBILE
 
                     webContent.textMobile = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-                    webContent.fontSizeMobile = "19px";
+                    webContent.fontSizeMobile = "18px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
                     webContent.textTablet = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-                    webContent.fontSizeTablet = "19px";
+                    webContent.fontSizeTablet = "18px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignTablet = "center";
 
@@ -874,7 +884,7 @@ namespace WebsiteTemplateProject.Service
                     //SETTING LAPTOP
 
                     webContent.textLaptop = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-                    webContent.fontSizeLaptop = "19px";
+                    webContent.fontSizeLaptop = "18px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignLaptop = "center";
 
@@ -909,29 +919,29 @@ namespace WebsiteTemplateProject.Service
                     //Font color
                     webContent.color = "#222222";
                     //Set font size:
-                    webContent.fontSize = "19px";
+                    webContent.fontSize = "18px";
                     //Set font family
                     webContent.fontFamily = "Work Sans";
                     //Set padding
-                    webContent.padding = "30px";
+                    webContent.padding = "15px";
                     //Set text align
                     webContent.textAlign = "center";
-                    webContent.paddingMobile = "30px";
-                    webContent.paddingTablet = "30px";
-                    webContent.paddingLaptop = "30px";
+                    webContent.paddingMobile = "15px";
+                    webContent.paddingTablet = "15px";
+                    webContent.paddingLaptop = "15px";
 
 
                     //SETTING MOBILE
 
                     webContent.textMobile= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-                    webContent.fontSizeMobile = "19px";
+                    webContent.fontSizeMobile = "18px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignMobile = "center";
 
                     //SETTING TABLET
 
                     webContent.textTablet= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-                    webContent.fontSizeTablet = "19px";
+                    webContent.fontSizeTablet = "18px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignTablet = "center";
 
@@ -939,7 +949,7 @@ namespace WebsiteTemplateProject.Service
                     //SETTING LAPTOP
 
                     webContent.textLaptop = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-                    webContent.fontSizeLaptop = "19px";
+                    webContent.fontSizeLaptop = "18px";
                     webContent.fontFamily = "Work Sans";
                     webContent.textAlignLaptop = "center";
 
