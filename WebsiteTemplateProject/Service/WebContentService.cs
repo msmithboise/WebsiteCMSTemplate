@@ -181,15 +181,10 @@ namespace WebsiteTemplateProject.Service
 
             foreach (var content in db.WebContents)
             {
-                listToFilter.Add(content);
-            }
-
-            foreach (var content in listToFilter.ToList())
-            {
                 contentByColumnId.Add(content);
-
-                listToFilter.Remove(content);
             }
+
+            
 
             contentVmList.Add(contentByColumnId);
 

@@ -979,7 +979,7 @@ namespace WebsiteTemplateProject.Service
 
                     //set background image
                     //blue orange
-                    webContent.backgroundImage = "https://firebasestorage.googleapis.com/v0/b/webcms-786a8.appspot.com/o/images%2Fphoto-1542291026-7eec264c27ff_1616189886119?alt=media&token=9ebea9b2-1740-4d8d-9299-148711ce1981";
+                    webContent.backgroundImage = "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80";
                     webContent.animationName = "pulse";
                     webContent.HyperLink = "https://www.google.com/";
 
@@ -1022,7 +1022,7 @@ namespace WebsiteTemplateProject.Service
 
                     //set background image
                     //blue orange
-                    webContent.backgroundImage = "https://firebasestorage.googleapis.com/v0/b/webcms-786a8.appspot.com/o/images%2Fphoto-1561641377-f7456d23aa9b_1616190006643?alt=media&token=c8fb9e12-9d36-4056-b628-bfeba7259b97";
+                    webContent.backgroundImage = "https://images.unsplash.com/photo-1561641377-f7456d23aa9b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1226&q=80";
                     webContent.animationName = "pulse";
                     webContent.HyperLink = "https://www.google.com/";
 
@@ -1064,7 +1064,7 @@ namespace WebsiteTemplateProject.Service
 
                     //set background image
                     //blue orange
-                    webContent.backgroundImage = "https://firebasestorage.googleapis.com/v0/b/webcms-786a8.appspot.com/o/images%2Fphoto-1494252713559-f26b4bf0b174_1616190061683?alt=media&token=e5ff501b-9cc9-499b-b953-d279689b2647";
+                    webContent.backgroundImage = "https://images.unsplash.com/photo-1494252713559-f26b4bf0b174?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80";
                     webContent.animationName = "pulse";
                     webContent.HyperLink = "https://www.google.com/";
 
@@ -1106,7 +1106,7 @@ namespace WebsiteTemplateProject.Service
 
                     //set background image
                     //blue orange
-                    webContent.backgroundImage = "https://firebasestorage.googleapis.com/v0/b/webcms-786a8.appspot.com/o/images%2Fphoto-1517816428104-797678c7cf0c_1616190072283?alt=media&token=326c0eb0-da61-446c-a97a-86923eb15120";
+                    webContent.backgroundImage = "https://images.unsplash.com/photo-1517816428104-797678c7cf0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80";
                     webContent.animationName = "pulse";
                     webContent.HyperLink = "https://www.google.com/";
 
