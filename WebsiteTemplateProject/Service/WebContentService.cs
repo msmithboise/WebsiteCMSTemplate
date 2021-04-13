@@ -181,7 +181,12 @@ namespace WebsiteTemplateProject.Service
 
             foreach (var content in db.WebContents)
             {
+                if (content.ColumnId == columnId)
+                {
                 contentByColumnId.Add(content);
+
+                }
+
             }
 
             
