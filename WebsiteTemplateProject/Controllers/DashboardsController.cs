@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebsiteTemplateProject.Models;
+using WebsiteTemplateProject.Service;
 
 namespace WebsiteTemplateProject.Controllers
 {
@@ -70,17 +71,24 @@ namespace WebsiteTemplateProject.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        // POST: api/WebContent
+        [ResponseType(typeof(WebContent))]
+        //public IHttpActionResult PostWebContent(Models.WebContent webContent)
+        //{
+        //    WebContentService webContentService = new WebContentService();
+
+        //    webContentService.UpsertWebContent(webContent, db);
+
+        //    return CreatedAtRoute("DefaultApi", new { id = webContent.Id }, webContent);
+        //}
+
         // POST: api/Dashboards
         [ResponseType(typeof(Dashboard))]
         public IHttpActionResult PostDashboard(Dashboard dashboard)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            DashboardPresetService dashboardPresetService = new DashboardPresetService();
 
-            db.Dashboards.Add(dashboard);
-            db.SaveChanges();
+            dashboardPresetService.UpsertDashboardPresets(dashboard,db);
 
             return CreatedAtRoute("DefaultApi", new { id = dashboard.presetId }, dashboard);
         }

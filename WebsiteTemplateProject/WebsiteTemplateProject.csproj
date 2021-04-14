@@ -777,6 +777,7 @@
     <Compile Include="Service\CustomImageService.cs" />
     <Compile Include="Service\CustomPageService.cs" />
     <Compile Include="Service\CustomTextService.cs" />
+    <Compile Include="Service\DashboardPresetService.cs" />
     <Compile Include="Service\DefaultTemplateService.cs" />
     <Compile Include="Service\HomePageService.cs" />
     <Compile Include="Service\LoggedInUserService.cs" />
