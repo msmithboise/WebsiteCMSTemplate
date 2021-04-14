@@ -211,6 +211,7 @@
     <Compile Include="Controllers\CustomImagesController.cs" />
     <Compile Include="Controllers\CustomPagesController.cs" />
     <Compile Include="Controllers\CustomTextController.cs" />
+    <Compile Include="Controllers\DashboardsController.cs" />
     <Compile Include="Controllers\DefaultTemplateController.cs" />
     <Compile Include="Controllers\EditContentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -326,6 +327,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dashboard.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dashboard.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dashboard.cs">
+      <DependentUpon>Dashboard.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dashboard.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dashboard.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dashboard1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dashboard.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DBHomePage.Context.cs">
       <AutoGen>True</AutoGen>
@@ -836,6 +855,16 @@
       <DependentUpon>CustomText.edmx</DependentUpon>
       <LastGenOutput>CustomText1.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Dashboard.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Dashboard.edmx</DependentUpon>
+      <LastGenOutput>Dashboard.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Dashboard.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Dashboard.edmx</DependentUpon>
+      <LastGenOutput>Dashboard1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\DBHomePage.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBHomePage.edmx</DependentUpon>
@@ -1333,6 +1362,13 @@
     </EntityDeploy>
     <Content Include="Models\NewColumn.edmx.diagram">
       <DependentUpon>NewColumn.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Dashboard.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Dashboard.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Dashboard.edmx.diagram">
+      <DependentUpon>Dashboard.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\api.freedomstartsnow.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\api.hindsitedevelopment.com - Web Deploy.pubxml" />

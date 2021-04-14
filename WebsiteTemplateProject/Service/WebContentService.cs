@@ -175,7 +175,7 @@ namespace WebsiteTemplateProject.Service
 
             List<Models.WebContent> contentByColumnId = new List<Models.WebContent>();
 
-            List<Models.WebContent> listToFilter = new List<Models.WebContent>();
+          
 
 
 

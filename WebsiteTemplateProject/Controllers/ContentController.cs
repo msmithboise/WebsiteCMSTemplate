@@ -16,6 +16,7 @@ namespace WebsiteTemplateProject.Controllers
     public class ContentController : ApiController
     {
         private GlobalContentDBEntities db = new GlobalContentDBEntities();
+         private  WebContentService webContentService = new WebContentService();
 
         // GET: api/Content
         public IQueryable<WebsiteTemplateProject.Models.WebContent> GetWebContents()
@@ -27,7 +28,6 @@ namespace WebsiteTemplateProject.Controllers
         [ResponseType(typeof(WebsiteTemplateProject.Models.WebContent))]
         public IHttpActionResult GetWebContent(int id)
         {
-            WebContentService webContentService = new WebContentService();
 
           var content =  webContentService.GetContentVMLists(id,db);
 

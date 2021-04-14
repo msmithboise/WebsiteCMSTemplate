@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DashboardDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Dashboard">
+          <Key>
+            <PropertyRef Name="presetId" />
+          </Key>
+          <Property Name="presetId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="selectedPresetId" Type="int" />
+          <Property Name="selectedPresetValue" Type="varchar" MaxLength="50" />
+          <Property Name="headingColor" Type="varchar" MaxLength="50" />
+          <Property Name="headingFontSize" Type="varchar" MaxLength="50" />
+          <Property Name="FontFamily" Type="varchar" MaxLength="50" />
+          <Property Name="rowColor" Type="varchar" MaxLength="50" />
+          <Property Name="columnColor" Type="varchar" MaxLength="50" />
+          <Property Name="buttonColor" Type="varchar" MaxLength="50" />
+          <Property Name="editIconColor" Type="varchar" MaxLength="50" />
+          <Property Name="deleteIconColor" Type="varchar" MaxLength="50" />
+          <Property Name="bgImage" Type="varchar" MaxLength="5000" />
+          <Property Name="rowBgImage" Type="varchar" MaxLength="5000" />
+          <Property Name="columnBgImage" Type="varchar" MaxLength="5000" />
+          <Property Name="contentHeaderColor" Type="varchar" MaxLength="50" />
+          <Property Name="contentHeaderFontSize" Type="varchar" MaxLength="50" />
+          <Property Name="sidebarMenuColor" Type="varchar" MaxLength="50" />
+          <Property Name="sidebarTextColor" Type="varchar" MaxLength="50" />
+          <Property Name="sidebarHeadingTextColor" Type="varchar" MaxLength="50" />
+          <Property Name="selectedPresetName" Type="varchar" MaxLength="5000" />
+          <Property Name="isLightMode" Type="bit" />
+          <Property Name="isDarkMode" Type="bit" />
+          <Property Name="isCustom" Type="bit" />
+          <Property Name="isAdvanced" Type="bit" />
+          <Property Name="selectedMode" Type="varchar" MaxLength="50" />
+          <Property Name="tabFontColor" Type="varchar" MaxLength="50" />
+          <Property Name="toolTipColor" Type="varchar" MaxLength="50" />
+          <Property Name="lineColor" Type="varchar" MaxLength="50" />
+          <Property Name="saveChangesButtonColor" Type="varchar" MaxLength="50" />
+          <Property Name="deleteButtonColor" Type="varchar" MaxLength="50" />
+          <Property Name="dropdownColor" Type="varchar" MaxLength="50" />
+          <Property Name="dropdownFontColor" Type="varchar" MaxLength="50" />
+          <Property Name="mobileCardColor" Type="varchar" MaxLength="50" />
+          <Property Name="tabletCardColor" Type="varchar" MaxLength="50" />
+          <Property Name="laptopCardColor" Type="varchar" MaxLength="50" />
+          <Property Name="desktopCardColor" Type="varchar" MaxLength="50" />
+          <Property Name="colorOne" Type="varchar" MaxLength="50" />
+          <Property Name="colorTwo" Type="varchar" MaxLength="50" />
+          <Property Name="colorThree" Type="varchar" MaxLength="50" />
+          <Property Name="colorFour" Type="varchar" MaxLength="50" />
+          <Property Name="colorFive" Type="varchar" MaxLength="50" />
+          <Property Name="colorSix" Type="varchar" MaxLength="50" />
+          <Property Name="colorSeven" Type="varchar" MaxLength="50" />
+          <Property Name="colorEight" Type="varchar" MaxLength="50" />
+          <Property Name="colorNine" Type="varchar" MaxLength="50" />
+          <Property Name="colorTen" Type="varchar" MaxLength="50" />
+          <Property Name="fontColor" Type="varchar" MaxLength="50" />
+          <Property Name="clientUrl" Type="varchar" MaxLength="5000" />
+          <Property Name="defaultPreset" Type="varchar" MaxLength="50" />
+          <Property Name="isDefault" Type="bit" />
+          <Property Name="savedPreset" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="DashboardDBModelStoreContainer">
+          <EntitySet Name="Dashboard" EntityType="Self.Dashboard" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DashboardDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Dashboard">
+          <Key>
+            <PropertyRef Name="presetId" />
+          </Key>
+          <Property Name="presetId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="selectedPresetId" Type="Int32" />
+          <Property Name="selectedPresetValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="headingColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="headingFontSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FontFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rowColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="columnColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="buttonColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="editIconColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="deleteIconColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bgImage" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="rowBgImage" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="columnBgImage" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="contentHeaderColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contentHeaderFontSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sidebarMenuColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sidebarTextColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sidebarHeadingTextColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="selectedPresetName" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="isLightMode" Type="Boolean" />
+          <Property Name="isDarkMode" Type="Boolean" />
+          <Property Name="isCustom" Type="Boolean" />
+          <Property Name="isAdvanced" Type="Boolean" />
+          <Property Name="selectedMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tabFontColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="toolTipColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lineColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="saveChangesButtonColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="deleteButtonColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dropdownColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dropdownFontColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mobileCardColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tabletCardColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="laptopCardColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="desktopCardColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="colorOne" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="colorTwo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="colorThree" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="colorFour" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="colorFive" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="colorSix" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="colorSeven" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="colorEight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="colorNine" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="colorTen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fontColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="clientUrl" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="defaultPreset" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isDefault" Type="Boolean" />
+          <Property Name="savedPreset" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DashboardDBEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Dashboards" EntityType="Self.Dashboard" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DashboardDBModelStoreContainer" CdmEntityContainer="DashboardDBEntities2">
+          <EntitySetMapping Name="Dashboards">
+            <EntityTypeMapping TypeName="DashboardDBModel.Dashboard">
+              <MappingFragment StoreEntitySet="Dashboard">
+                <ScalarProperty Name="presetId" ColumnName="presetId" />
+                <ScalarProperty Name="selectedPresetId" ColumnName="selectedPresetId" />
+                <ScalarProperty Name="selectedPresetValue" ColumnName="selectedPresetValue" />
+                <ScalarProperty Name="headingColor" ColumnName="headingColor" />
+                <ScalarProperty Name="headingFontSize" ColumnName="headingFontSize" />
+                <ScalarProperty Name="FontFamily" ColumnName="FontFamily" />
+                <ScalarProperty Name="rowColor" ColumnName="rowColor" />
+                <ScalarProperty Name="columnColor" ColumnName="columnColor" />
+                <ScalarProperty Name="buttonColor" ColumnName="buttonColor" />
+                <ScalarProperty Name="editIconColor" ColumnName="editIconColor" />
+                <ScalarProperty Name="deleteIconColor" ColumnName="deleteIconColor" />
+                <ScalarProperty Name="bgImage" ColumnName="bgImage" />
+                <ScalarProperty Name="rowBgImage" ColumnName="rowBgImage" />
+                <ScalarProperty Name="columnBgImage" ColumnName="columnBgImage" />
+                <ScalarProperty Name="contentHeaderColor" ColumnName="contentHeaderColor" />
+                <ScalarProperty Name="contentHeaderFontSize" ColumnName="contentHeaderFontSize" />
+                <ScalarProperty Name="sidebarMenuColor" ColumnName="sidebarMenuColor" />
+                <ScalarProperty Name="sidebarTextColor" ColumnName="sidebarTextColor" />
+                <ScalarProperty Name="sidebarHeadingTextColor" ColumnName="sidebarHeadingTextColor" />
+                <ScalarProperty Name="selectedPresetName" ColumnName="selectedPresetName" />
+                <ScalarProperty Name="isLightMode" ColumnName="isLightMode" />
+                <ScalarProperty Name="isDarkMode" ColumnName="isDarkMode" />
+                <ScalarProperty Name="isCustom" ColumnName="isCustom" />
+                <ScalarProperty Name="isAdvanced" ColumnName="isAdvanced" />
+                <ScalarProperty Name="selectedMode" ColumnName="selectedMode" />
+                <ScalarProperty Name="tabFontColor" ColumnName="tabFontColor" />
+                <ScalarProperty Name="toolTipColor" ColumnName="toolTipColor" />
+                <ScalarProperty Name="lineColor" ColumnName="lineColor" />
+                <ScalarProperty Name="saveChangesButtonColor" ColumnName="saveChangesButtonColor" />
+                <ScalarProperty Name="deleteButtonColor" ColumnName="deleteButtonColor" />
+                <ScalarProperty Name="dropdownColor" ColumnName="dropdownColor" />
+                <ScalarProperty Name="dropdownFontColor" ColumnName="dropdownFontColor" />
+                <ScalarProperty Name="mobileCardColor" ColumnName="mobileCardColor" />
+                <ScalarProperty Name="tabletCardColor" ColumnName="tabletCardColor" />
+                <ScalarProperty Name="laptopCardColor" ColumnName="laptopCardColor" />
+                <ScalarProperty Name="desktopCardColor" ColumnName="desktopCardColor" />
+                <ScalarProperty Name="colorOne" ColumnName="colorOne" />
+                <ScalarProperty Name="colorTwo" ColumnName="colorTwo" />
+                <ScalarProperty Name="colorThree" ColumnName="colorThree" />
+                <ScalarProperty Name="colorFour" ColumnName="colorFour" />
+                <ScalarProperty Name="colorFive" ColumnName="colorFive" />
+                <ScalarProperty Name="colorSix" ColumnName="colorSix" />
+                <ScalarProperty Name="colorSeven" ColumnName="colorSeven" />
+                <ScalarProperty Name="colorEight" ColumnName="colorEight" />
+                <ScalarProperty Name="colorNine" ColumnName="colorNine" />
+                <ScalarProperty Name="colorTen" ColumnName="colorTen" />
+                <ScalarProperty Name="fontColor" ColumnName="fontColor" />
+                <ScalarProperty Name="clientUrl" ColumnName="clientUrl" />
+                <ScalarProperty Name="defaultPreset" ColumnName="defaultPreset" />
+                <ScalarProperty Name="isDefault" ColumnName="isDefault" />
+                <ScalarProperty Name="savedPreset" ColumnName="savedPreset" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
